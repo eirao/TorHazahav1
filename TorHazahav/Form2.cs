@@ -56,15 +56,7 @@ namespace TorHazahav
 
                 dc.SubmitChanges();
 
-
-                if (independencyTl.Text != "")
-                    if (mobilityTl.Text != "")
-                        if (professionTl.Checked == )
-                            if (holocaustSurv.)
-                                if (nurseryLaw)
-                                    if (activeClubTl)
-                                        if ()
-                                            }
-        }
+                {
+                }
     }
 }
