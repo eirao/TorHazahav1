@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TOR_HAZAHAV" Class="tzDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-805B3L5\SQLEXPRESS;Initial Catalog=TOR_HAZAHAV;Integrated Security=True" SettingsObjectName="TorHazahav.Properties.Settings" SettingsPropertyName="TOR_HAZAHAVConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.activity" Member="activities">
+    <Type Name="activity">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="activity_type" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="activity_details" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="qualification" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="activity_customer_activity" Member="customer_activities" ThisKey="ID" OtherKey="activity_id" Type="customer_activity" />
+    </Type>
+  </Table>
+  <Table Name="dbo.wh_address" Member="wh_addresses">
+    <Type Name="wh_address">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="city_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="street_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="house_num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="appartment_num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="neighborhood" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="zip_code" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Association Name="wh_address_contact_address" Member="contact_addresses" ThisKey="ID" OtherKey="address_id" Type="contact_address" />
+      <Association Name="wh_address_customer_address" Member="customer_addresses" ThisKey="ID" OtherKey="address_id" Type="customer_address" />
+      <Association Name="wh_address_ext_contact_address" Member="ext_contact_addresses" ThisKey="ID" OtherKey="address_id" Type="ext_contact_address" />
+      <Association Name="wh_address_external_contact" Member="external_contacts" ThisKey="ID" OtherKey="address_id" Type="external_contact" />
+    </Type>
+  </Table>
+  <Table Name="dbo.contact" Member="contacts">
+    <Type Name="contact">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="first_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="last_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email_address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="job" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="contact_contact_address" Member="contact_addresses" ThisKey="ID" OtherKey="contact_id" Type="contact_address" />
+      <Association Name="contact_customer_contact" Member="customer_contacts" ThisKey="ID" OtherKey="contact_id" Type="customer_contact" />
+      <Association Name="contact_ext_contact_address" Member="ext_contact_addresses" ThisKey="ID" OtherKey="contact_id" Type="ext_contact_address" />
+      <Association Name="contact_request" Member="requests" ThisKey="ID" OtherKey="contact_id" Type="request" />
+    </Type>
+  </Table>
+  <Table Name="dbo.contact_address" Member="contact_addresses">
+    <Type Name="contact_address">
+      <Column Name="contact_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="address_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="wh_address_contact_address" Member="wh_address" ThisKey="address_id" OtherKey="ID" Type="wh_address" IsForeignKey="true" />
+      <Association Name="contact_contact_address" Member="contact" ThisKey="contact_id" OtherKey="ID" Type="contact" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.contact_phone" Member="contact_phones">
+    <Type Name="contact_phone">
+      <Column Name="contact_id" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="phone_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="Customer_contact_phone" Member="Customer" ThisKey="contact_id" OtherKey="Id" Type="Customer" IsForeignKey="true" />
+      <Association Name="phone_contact_phone" Member="phone" ThisKey="phone_id" OtherKey="ID" Type="phone" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customer" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="Id" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="first_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="last_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="NChar(5)" CanBeNull="true" />
+      <Column Name="birthdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="marital_status" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="working" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="holocaust_survaviour" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="mobility" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="independency" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="comments" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="entitled_todiscount" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="email_address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="active_inclub" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="day_care" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="foreign_worker" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="nursing_law" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="status_cd" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="Customer_contact_phone" Member="contact_phones" ThisKey="Id" OtherKey="contact_id" Type="contact_phone" />
+      <Association Name="Customer_customer_activity" Member="customer_activities" ThisKey="Id" OtherKey="customer_id" Type="customer_activity" />
+      <Association Name="Customer_customer_address" Member="customer_addresses" ThisKey="Id" OtherKey="customer_id" Type="customer_address" />
+      <Association Name="Customer_customer_contact" Member="customer_contacts" ThisKey="Id" OtherKey="customer_id" Type="customer_contact" />
+      <Association Name="Customer_customer_medical_history" Member="customer_medical_histories" ThisKey="Id" OtherKey="customer_id" Type="customer_medical_history" />
+      <Association Name="Customer_customer_phone" Member="customer_phones" ThisKey="Id" OtherKey="customer_id" Type="customer_phone" />
+      <Association Name="Customer_customer_program" Member="customer_programs" ThisKey="Id" OtherKey="customer_id" Type="customer_program" />
+      <Association Name="Customer_Volunteer_for_customer" Member="Volunteer_for_customers" ThisKey="Id" OtherKey="customer_id" Type="Volunteer_for_customer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.customer_activity" Member="customer_activities">
+    <Type Name="customer_activity">
+      <Column Name="customer_id" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="activity_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="activity_customer_activity" Member="activity" ThisKey="activity_id" OtherKey="ID" Type="activity" IsForeignKey="true" />
+      <Association Name="Customer_customer_activity" Member="Customer" ThisKey="customer_id" OtherKey="Id" Type="Customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.customer_address" Member="customer_addresses">
+    <Type Name="customer_address">
+      <Column Name="customer_id" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="address_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="wh_address_customer_address" Member="wh_address" ThisKey="address_id" OtherKey="ID" Type="wh_address" IsForeignKey="true" />
+      <Association Name="Customer_customer_address" Member="Customer" ThisKey="customer_id" OtherKey="Id" Type="Customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.customer_contact" Member="customer_contacts">
+    <Type Name="customer_contact">
+      <Column Name="customer_id" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="contact_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="contact_customer_contact" Member="contact" ThisKey="contact_id" OtherKey="ID" Type="contact" IsForeignKey="true" />
+      <Association Name="Customer_customer_contact" Member="Customer" ThisKey="customer_id" OtherKey="Id" Type="Customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.customer_medical_history" Member="customer_medical_histories">
+    <Type Name="customer_medical_history">
+      <Column Name="customer_id" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="desease" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Customer_customer_medical_history" Member="Customer" ThisKey="customer_id" OtherKey="Id" Type="Customer" IsForeignKey="true" />
+      <Association Name="medical_history_customer_medical_history" Member="medical_history" ThisKey="desease" OtherKey="name" Type="medical_history" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.customer_phone" Member="customer_phones">
+    <Type Name="customer_phone">
+      <Column Name="customer_id" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="phone_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="Customer_customer_phone" Member="Customer" ThisKey="customer_id" OtherKey="Id" Type="Customer" IsForeignKey="true" />
+      <Association Name="phone_customer_phone" Member="phone" ThisKey="phone_id" OtherKey="ID" Type="phone" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.customer_program" Member="customer_programs">
+    <Type Name="customer_program">
+      <Column Name="customer_id" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="program_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="start_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="end_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Customer_customer_program" Member="Customer" ThisKey="customer_id" OtherKey="Id" Type="Customer" IsForeignKey="true" />
+      <Association Name="program_customer_program" Member="program" ThisKey="program_id" OtherKey="ID" Type="program" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.employee" Member="employees">
+    <Type Name="employee">
+      <Column Name="employee_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="first_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="last_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email_address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="job" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="employee_status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="phone_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="employee_program" Member="programs" ThisKey="employee_id" OtherKey="employee_id" Type="program" />
+      <Association Name="employee_request" Member="requests" ThisKey="employee_id" OtherKey="employee_id" Type="request" />
+      <Association Name="phone_employee" Member="phone" ThisKey="phone_id" OtherKey="ID" Type="phone" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ext_contact_address" Member="ext_contact_addresses">
+    <Type Name="ext_contact_address">
+      <Column Name="contact_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="address_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="wh_address_ext_contact_address" Member="wh_address" ThisKey="address_id" OtherKey="ID" Type="wh_address" IsForeignKey="true" />
+      <Association Name="contact_ext_contact_address" Member="contact" ThisKey="contact_id" OtherKey="ID" Type="contact" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.external_contact" Member="external_contacts">
+    <Type Name="external_contact">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="first_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="last_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="phone_num1" Type="System.String" DbType="Char(9) NOT NULL" CanBeNull="false" />
+      <Column Name="phone_num2" Type="System.String" DbType="Char(9)" CanBeNull="true" />
+      <Column Name="email_address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="job" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="comments" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="address_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="external_contact_program" Member="programs" ThisKey="ID" OtherKey="external_contact_id" Type="program" />
+      <Association Name="wh_address_external_contact" Member="wh_address" ThisKey="address_id" OtherKey="ID" Type="wh_address" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.medical_history" Member="medical_histories">
+    <Type Name="medical_history">
+      <Column Name="name" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="comments" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="severity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="medical_history_customer_medical_history" Member="customer_medical_histories" ThisKey="name" OtherKey="desease" Type="customer_medical_history" />
+    </Type>
+  </Table>
+  <Table Name="dbo.phone" Member="phones">
+    <Type Name="phone">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="area_code" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="phone_type" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="phone_num" Type="System.String" DbType="Char(7) NOT NULL" CanBeNull="false" />
+      <Association Name="phone_contact_phone" Member="contact_phones" ThisKey="ID" OtherKey="phone_id" Type="contact_phone" />
+      <Association Name="phone_customer_phone" Member="customer_phones" ThisKey="ID" OtherKey="phone_id" Type="customer_phone" />
+      <Association Name="phone_employee" Member="employees" ThisKey="ID" OtherKey="phone_id" Type="employee" />
+    </Type>
+  </Table>
+  <Table Name="dbo.program" Member="programs">
+    <Type Name="program">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="program_type" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="program_details" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="start_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="end_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="comments" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="frequency" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="employee_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="external_contact_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="coordinator" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="program_customer_program" Member="customer_programs" ThisKey="ID" OtherKey="program_id" Type="customer_program" />
+      <Association Name="program_Volunteer_for_customer" Member="Volunteer_for_customers" ThisKey="ID" OtherKey="program_id" Type="Volunteer_for_customer" />
+      <Association Name="employee_program" Member="employee" ThisKey="employee_id" OtherKey="employee_id" Type="employee" IsForeignKey="true" />
+      <Association Name="external_contact_program" Member="external_contact" ThisKey="external_contact_id" OtherKey="ID" Type="external_contact" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.request" Member="requests">
+    <Type Name="request">
+      <Column Name="request_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="request_status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="request_descrip" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="comments" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="request_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="contact_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="employee_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="return_contact" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="contact_request" Member="contact" ThisKey="contact_id" OtherKey="ID" Type="contact" IsForeignKey="true" />
+      <Association Name="employee_request" Member="employee" ThisKey="employee_id" OtherKey="employee_id" Type="employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.volunteer" Member="volunteers">
+    <Type Name="volunteer">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="first_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="last_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email_address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="comments" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="start_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="end_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="volunteer_Volunteer_for_customer" Member="Volunteer_for_customers" ThisKey="ID" OtherKey="volunteer_id" Type="Volunteer_for_customer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Volunteer_for_customer" Member="Volunteer_for_customers">
+    <Type Name="Volunteer_for_customer">
+      <Column Name="volunteer_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="customer_id" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="program_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="start_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="end_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Customer_Volunteer_for_customer" Member="Customer" ThisKey="customer_id" OtherKey="Id" Type="Customer" IsForeignKey="true" />
+      <Association Name="program_Volunteer_for_customer" Member="program" ThisKey="program_id" OtherKey="ID" Type="program" IsForeignKey="true" />
+      <Association Name="volunteer_Volunteer_for_customer" Member="volunteer" ThisKey="volunteer_id" OtherKey="ID" Type="volunteer" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
