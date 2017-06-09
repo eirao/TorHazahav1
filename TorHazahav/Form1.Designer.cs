@@ -69,6 +69,7 @@
             this.areaCodeM = new System.Windows.Forms.ComboBox();
             this.strComments = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // strId
@@ -483,11 +484,21 @@
             this.label19.TabIndex = 42;
             this.label19.Text = "הערות:";
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(385, 61);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(60, 13);
+            this.label20.TabIndex = 43;
+            this.label20.Text = "שירן שירן";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.strComments);
             this.Controls.Add(this.areaCodeM);
@@ -580,6 +591,7 @@
         private System.Windows.Forms.ComboBox areaCodeM;
         private System.Windows.Forms.TextBox strComments;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
     }
 }
 
