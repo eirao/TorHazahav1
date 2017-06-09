@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace TorHazahav
 {
-    public partial class Form2 : Form
+    public partial class AddCustomerPage2 : Form
     {
         tzDataContext dc;
 
-        public Form2()
+        public AddCustomerPage2()
         {
             InitializeComponent();
             dc = connection.getDataContextInstance();
@@ -51,12 +51,26 @@ namespace TorHazahav
                 customerId.mobility = mobility.Text;
                 customerId.active_inclub = activeClub.Text;
                 customerId.day_care = dayCenter.Text;
-                customerId.entitled_todiscount = entitledDiscount.Text;
+                if (entitledDisctrue.Checked)
+                    customerId.entitled_todiscount = true;
+                else if (entitledDiscfalse.Checked)
+                    customerId.entitled_todiscount = false;
+                if (holocSurvtrue.Checked)
+                    customerId.holocaust_survaviour = true;
+                else if (holocSurvfalse.Checked)
+                    customerId.holocaust_survaviour = false;
+                if (nursLawtrue.Checked)
+                    customerId.nursing_law = true;
+                else if (nursLawfalse.Checked)
+                    customerId.nursing_law= false;
+
+
+
 
 
                 dc.SubmitChanges();
 
-                {
-                }
+              
+               
     }
 }

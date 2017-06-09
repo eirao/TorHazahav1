@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace TorHazahav
 {
-    public partial class Form1 : Form
+    public partial class AddCustomerPage1 : Form
     {
 
         tzDataContext dc;
-        public Form1()
+        public AddCustomerPage1()
         {
             InitializeComponent();
             dc = connection.getDataContextInstance();
@@ -168,7 +168,7 @@ namespace TorHazahav
         private void nextButton_Click(object sender, EventArgs e)
         {
             Program.custId = strId.Text;
-              Form2 f = new Form2 ();
+              AddCustomerPage2 f = new AddCustomerPage2 ();
                 f.Show();
                this.Hide();
         }

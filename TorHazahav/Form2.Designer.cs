@@ -1,6 +1,6 @@
 ﻿namespace TorHazahav
 {
-    partial class Form2
+    partial class AddCustomerPage2
     {
         /// <summary>
         /// Required designer variable.
@@ -37,15 +37,15 @@
             this.dayCenterTl = new System.Windows.Forms.Label();
             this.entitledDiscountTl = new System.Windows.Forms.Label();
             this.nurseryLaw = new System.Windows.Forms.Label();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.nursLawfalse = new System.Windows.Forms.RadioButton();
+            this.nursLawtrue = new System.Windows.Forms.RadioButton();
+            this.holocSurvfalse = new System.Windows.Forms.RadioButton();
+            this.holocSurvtrue = new System.Windows.Forms.RadioButton();
             this.holocaustSurv = new System.Windows.Forms.Label();
             this.mobility = new System.Windows.Forms.ComboBox();
             this.mobilityTl = new System.Windows.Forms.Label();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.retiredCheck = new System.Windows.Forms.RadioButton();
+            this.workCheck = new System.Windows.Forms.RadioButton();
             this.professionTl = new System.Windows.Forms.Label();
             this.independencyTl = new System.Windows.Forms.Label();
             this.indepependency = new System.Windows.Forms.ComboBox();
@@ -55,13 +55,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.family = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.activNeedfalse = new System.Windows.Forms.RadioButton();
+            this.activNeedtrue = new System.Windows.Forms.RadioButton();
             this.needSpecialActivity = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
+            this.entitledDisctrue = new System.Windows.Forms.RadioButton();
+            this.entitledDiscfalse = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // radioButton9
@@ -164,53 +166,53 @@
             this.nurseryLaw.TabIndex = 74;
             this.nurseryLaw.Text = "חוק סיעוד:";
             // 
-            // radioButton7
+            // nursLawfalse
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(223, 288);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radioButton7.Size = new System.Drawing.Size(40, 17);
-            this.radioButton7.TabIndex = 73;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "לא";
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.nursLawfalse.AutoSize = true;
+            this.nursLawfalse.Location = new System.Drawing.Point(223, 288);
+            this.nursLawfalse.Name = "nursLawfalse";
+            this.nursLawfalse.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.nursLawfalse.Size = new System.Drawing.Size(40, 17);
+            this.nursLawfalse.TabIndex = 73;
+            this.nursLawfalse.TabStop = true;
+            this.nursLawfalse.Text = "לא";
+            this.nursLawfalse.UseVisualStyleBackColor = true;
             // 
-            // radioButton8
+            // nursLawtrue
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(291, 289);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radioButton8.Size = new System.Drawing.Size(37, 17);
-            this.radioButton8.TabIndex = 72;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "כן";
-            this.radioButton8.UseVisualStyleBackColor = true;
+            this.nursLawtrue.AutoSize = true;
+            this.nursLawtrue.Location = new System.Drawing.Point(291, 289);
+            this.nursLawtrue.Name = "nursLawtrue";
+            this.nursLawtrue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.nursLawtrue.Size = new System.Drawing.Size(37, 17);
+            this.nursLawtrue.TabIndex = 72;
+            this.nursLawtrue.TabStop = true;
+            this.nursLawtrue.Text = "כן";
+            this.nursLawtrue.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // holocSurvfalse
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(223, 261);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radioButton6.Size = new System.Drawing.Size(40, 17);
-            this.radioButton6.TabIndex = 71;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "לא";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.holocSurvfalse.AutoSize = true;
+            this.holocSurvfalse.Location = new System.Drawing.Point(223, 261);
+            this.holocSurvfalse.Name = "holocSurvfalse";
+            this.holocSurvfalse.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.holocSurvfalse.Size = new System.Drawing.Size(40, 17);
+            this.holocSurvfalse.TabIndex = 71;
+            this.holocSurvfalse.TabStop = true;
+            this.holocSurvfalse.Text = "לא";
+            this.holocSurvfalse.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // holocSurvtrue
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(291, 261);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radioButton5.Size = new System.Drawing.Size(37, 17);
-            this.radioButton5.TabIndex = 70;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "כן";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.holocSurvtrue.AutoSize = true;
+            this.holocSurvtrue.Location = new System.Drawing.Point(291, 261);
+            this.holocSurvtrue.Name = "holocSurvtrue";
+            this.holocSurvtrue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.holocSurvtrue.Size = new System.Drawing.Size(37, 17);
+            this.holocSurvtrue.TabIndex = 70;
+            this.holocSurvtrue.TabStop = true;
+            this.holocSurvtrue.Text = "כן";
+            this.holocSurvtrue.UseVisualStyleBackColor = true;
             // 
             // holocaustSurv
             // 
@@ -244,29 +246,29 @@
             this.mobilityTl.TabIndex = 67;
             this.mobilityTl.Text = "ניידות:";
             // 
-            // radioButton4
+            // retiredCheck
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(553, 264);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radioButton4.Size = new System.Drawing.Size(56, 17);
-            this.radioButton4.TabIndex = 66;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "פנסיה";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.retiredCheck.AutoSize = true;
+            this.retiredCheck.Location = new System.Drawing.Point(553, 264);
+            this.retiredCheck.Name = "retiredCheck";
+            this.retiredCheck.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.retiredCheck.Size = new System.Drawing.Size(56, 17);
+            this.retiredCheck.TabIndex = 66;
+            this.retiredCheck.TabStop = true;
+            this.retiredCheck.Text = "פנסיה";
+            this.retiredCheck.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // workCheck
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(621, 264);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radioButton3.Size = new System.Drawing.Size(51, 17);
-            this.radioButton3.TabIndex = 65;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "עובד";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.workCheck.AutoSize = true;
+            this.workCheck.Location = new System.Drawing.Point(621, 264);
+            this.workCheck.Name = "workCheck";
+            this.workCheck.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.workCheck.Size = new System.Drawing.Size(51, 17);
+            this.workCheck.TabIndex = 65;
+            this.workCheck.TabStop = true;
+            this.workCheck.Text = "עובד";
+            this.workCheck.UseVisualStyleBackColor = true;
             // 
             // professionTl
             // 
@@ -360,29 +362,29 @@
             this.button2.Text = "לחץ להזנה";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // activNeedfalse
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(206, 410);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radioButton1.Size = new System.Drawing.Size(40, 17);
-            this.radioButton1.TabIndex = 91;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "לא";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.activNeedfalse.AutoSize = true;
+            this.activNeedfalse.Location = new System.Drawing.Point(206, 410);
+            this.activNeedfalse.Name = "activNeedfalse";
+            this.activNeedfalse.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.activNeedfalse.Size = new System.Drawing.Size(40, 17);
+            this.activNeedfalse.TabIndex = 91;
+            this.activNeedfalse.TabStop = true;
+            this.activNeedfalse.Text = "לא";
+            this.activNeedfalse.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // activNeedtrue
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(274, 411);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radioButton2.Size = new System.Drawing.Size(37, 17);
-            this.radioButton2.TabIndex = 90;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "כן";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.activNeedtrue.AutoSize = true;
+            this.activNeedtrue.Location = new System.Drawing.Point(274, 411);
+            this.activNeedtrue.Name = "activNeedtrue";
+            this.activNeedtrue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.activNeedtrue.Size = new System.Drawing.Size(37, 17);
+            this.activNeedtrue.TabIndex = 90;
+            this.activNeedtrue.TabStop = true;
+            this.activNeedtrue.Text = "כן";
+            this.activNeedtrue.UseVisualStyleBackColor = true;
             // 
             // needSpecialActivity
             // 
@@ -433,17 +435,43 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // Form2
+            // entitledDisctrue
+            // 
+            this.entitledDisctrue.AutoSize = true;
+            this.entitledDisctrue.Location = new System.Drawing.Point(274, 383);
+            this.entitledDisctrue.Name = "entitledDisctrue";
+            this.entitledDisctrue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.entitledDisctrue.Size = new System.Drawing.Size(37, 17);
+            this.entitledDisctrue.TabIndex = 97;
+            this.entitledDisctrue.TabStop = true;
+            this.entitledDisctrue.Text = "כן";
+            this.entitledDisctrue.UseVisualStyleBackColor = true;
+            // 
+            // entitledDiscfalse
+            // 
+            this.entitledDiscfalse.AutoSize = true;
+            this.entitledDiscfalse.Location = new System.Drawing.Point(206, 383);
+            this.entitledDiscfalse.Name = "entitledDiscfalse";
+            this.entitledDiscfalse.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.entitledDiscfalse.Size = new System.Drawing.Size(40, 17);
+            this.entitledDiscfalse.TabIndex = 98;
+            this.entitledDiscfalse.TabStop = true;
+            this.entitledDiscfalse.Text = "לא";
+            this.entitledDiscfalse.UseVisualStyleBackColor = true;
+            // 
+            // AddCustomerPage2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.Controls.Add(this.entitledDiscfalse);
+            this.Controls.Add(this.entitledDisctrue);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.activNeedfalse);
+            this.Controls.Add(this.activNeedtrue);
             this.Controls.Add(this.needSpecialActivity);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.family);
@@ -459,20 +487,20 @@
             this.Controls.Add(this.dayCenterTl);
             this.Controls.Add(this.entitledDiscountTl);
             this.Controls.Add(this.nurseryLaw);
-            this.Controls.Add(this.radioButton7);
-            this.Controls.Add(this.radioButton8);
-            this.Controls.Add(this.radioButton6);
-            this.Controls.Add(this.radioButton5);
+            this.Controls.Add(this.nursLawfalse);
+            this.Controls.Add(this.nursLawtrue);
+            this.Controls.Add(this.holocSurvfalse);
+            this.Controls.Add(this.holocSurvtrue);
             this.Controls.Add(this.holocaustSurv);
             this.Controls.Add(this.mobility);
             this.Controls.Add(this.mobilityTl);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.retiredCheck);
+            this.Controls.Add(this.workCheck);
             this.Controls.Add(this.professionTl);
             this.Controls.Add(this.independencyTl);
             this.Controls.Add(this.indepependency);
             this.Controls.Add(this.label19);
-            this.Name = "Form2";
+            this.Name = "AddCustomerPage2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
@@ -491,15 +519,15 @@
         private System.Windows.Forms.Label dayCenterTl;
         private System.Windows.Forms.Label entitledDiscountTl;
         private System.Windows.Forms.Label nurseryLaw;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton nursLawfalse;
+        private System.Windows.Forms.RadioButton nursLawtrue;
+        private System.Windows.Forms.RadioButton holocSurvfalse;
+        private System.Windows.Forms.RadioButton holocSurvtrue;
         private System.Windows.Forms.Label holocaustSurv;
         private System.Windows.Forms.ComboBox mobility;
         private System.Windows.Forms.Label mobilityTl;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton retiredCheck;
+        private System.Windows.Forms.RadioButton workCheck;
         private System.Windows.Forms.Label professionTl;
         private System.Windows.Forms.Label independencyTl;
         private System.Windows.Forms.ComboBox indepependency;
@@ -509,12 +537,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label family;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton activNeedfalse;
+        private System.Windows.Forms.RadioButton activNeedtrue;
         private System.Windows.Forms.Label needSpecialActivity;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.RadioButton entitledDisctrue;
+        private System.Windows.Forms.RadioButton entitledDiscfalse;
     }
 }

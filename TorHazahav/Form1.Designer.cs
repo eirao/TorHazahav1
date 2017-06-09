@@ -1,6 +1,6 @@
 ﻿namespace TorHazahav
 {
-    partial class Form1
+    partial class AddCustomerPage1
     {
         /// <summary>
         /// Required designer variable.
@@ -513,7 +513,7 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // AddCustomerPage1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -562,7 +562,7 @@
             this.Controls.Add(this.strLName);
             this.Controls.Add(this.strFName);
             this.Controls.Add(this.strId);
-            this.Name = "Form1";
+            this.Name = "AddCustomerPage1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
