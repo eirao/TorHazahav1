@@ -80,7 +80,7 @@
             this.כליםוניהולמערכתToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.strComments = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -626,13 +626,13 @@
             this.label21.TabIndex = 76;
             this.label21.Text = "הוספת מקבל שירות חדש";
             // 
-            // richTextBox2
+            // strComments
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(675, 407);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(300, 109);
-            this.richTextBox2.TabIndex = 77;
-            this.richTextBox2.Text = "";
+            this.strComments.Location = new System.Drawing.Point(675, 407);
+            this.strComments.Name = "strComments";
+            this.strComments.Size = new System.Drawing.Size(300, 109);
+            this.strComments.TabIndex = 77;
+            this.strComments.Text = "";
             // 
             // AddCustomerPage1
             // 
@@ -640,7 +640,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.strComments);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -752,7 +752,7 @@
         private System.Windows.Forms.ToolStripMenuItem כליםוניהולמערכתToolStripMenuItem;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox strComments;
     }
 }
 

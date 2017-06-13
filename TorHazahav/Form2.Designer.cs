@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.foreignWorkerNo = new System.Windows.Forms.RadioButton();
+            this.foreignWorkerYes = new System.Windows.Forms.RadioButton();
             this.label28 = new System.Windows.Forms.Label();
             this.activeClub = new System.Windows.Forms.ComboBox();
             this.activeClubTl = new System.Windows.Forms.Label();
@@ -65,29 +65,30 @@
             this.needSpAct_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // radioButton9
+            // foreignWorkerNo
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(545, 54);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radioButton9.Size = new System.Drawing.Size(40, 17);
-            this.radioButton9.TabIndex = 83;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "לא";
-            this.radioButton9.UseVisualStyleBackColor = true;
+            this.foreignWorkerNo.AutoSize = true;
+            this.foreignWorkerNo.Location = new System.Drawing.Point(545, 54);
+            this.foreignWorkerNo.Name = "foreignWorkerNo";
+            this.foreignWorkerNo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.foreignWorkerNo.Size = new System.Drawing.Size(40, 17);
+            this.foreignWorkerNo.TabIndex = 83;
+            this.foreignWorkerNo.TabStop = true;
+            this.foreignWorkerNo.Text = "לא";
+            this.foreignWorkerNo.UseVisualStyleBackColor = true;
             // 
-            // radioButton10
+            // foreignWorkerYes
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(613, 55);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radioButton10.Size = new System.Drawing.Size(37, 17);
-            this.radioButton10.TabIndex = 82;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "כן";
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.foreignWorkerYes.AutoSize = true;
+            this.foreignWorkerYes.Location = new System.Drawing.Point(613, 55);
+            this.foreignWorkerYes.Name = "foreignWorkerYes";
+            this.foreignWorkerYes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.foreignWorkerYes.Size = new System.Drawing.Size(37, 17);
+            this.foreignWorkerYes.TabIndex = 82;
+            this.foreignWorkerYes.TabStop = true;
+            this.foreignWorkerYes.Text = "כן";
+            this.foreignWorkerYes.UseVisualStyleBackColor = true;
+            this.foreignWorkerYes.CheckedChanged += new System.EventHandler(this.foreignWorkerYes_CheckedChanged);
             // 
             // label28
             // 
@@ -361,6 +362,7 @@
             this.family_btn.TabIndex = 88;
             this.family_btn.Text = "לחץ להזנה";
             this.family_btn.UseVisualStyleBackColor = true;
+            this.family_btn.Click += new System.EventHandler(this.family_btn_Click);
             // 
             // button3
             // 
@@ -462,8 +464,8 @@
             this.Controls.Add(this.mainCarrier_btn);
             this.Controls.Add(this.mainCarrier);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton9);
-            this.Controls.Add(this.radioButton10);
+            this.Controls.Add(this.foreignWorkerNo);
+            this.Controls.Add(this.foreignWorkerYes);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.activeClub);
             this.Controls.Add(this.activeClubTl);
@@ -494,8 +496,8 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.RadioButton foreignWorkerNo;
+        private System.Windows.Forms.RadioButton foreignWorkerYes;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.ComboBox activeClub;
         private System.Windows.Forms.Label activeClubTl;

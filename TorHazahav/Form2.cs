@@ -27,10 +27,10 @@ namespace TorHazahav
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        
+
 
         private void saveButton_Click(object sender, EventArgs e)
         {
@@ -56,25 +56,33 @@ namespace TorHazahav
                 else if (nursLawfalse.Checked)
                     customerId.nursing_law = false;
                 dc.SubmitChanges();
+
+
+                if (foreignWorkerYes.Checked)
+                    customerId.foreign_worker = true;
+                else if (foreignWorkerYes.Checked)
+                    customerId.foreign_worker = false;
+
+
             }
 
 
-                                    
 
 
 
 
 
-              
-              
-               
-    }
 
-        
+
+
+
+        }
+
+
 
         private void needSpAct_btn_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void mainCarrier_btn_Click(object sender, EventArgs e)
@@ -83,4 +91,22 @@ namespace TorHazahav
             f.Show();
             this.Enabled = false;
         }
+
+        private void family_btn_Click(object sender, EventArgs e)
+        {
+            AddFamilyMember b = new AddFamilyMember();
+            b.Show();
+            this.Enabled = false;
+        }
+
+        private void foreignWorkerYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (foreignWorkerYes.Checked == true)
+            {
+                AddForeignWorker a = new AddForeignWorker();
+                a.Show();
+                this.Enabled = false;
+            }
+        }
     }
+}
