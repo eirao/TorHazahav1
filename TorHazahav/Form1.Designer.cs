@@ -69,9 +69,6 @@
             this.areaCodeM = new System.Windows.Forms.ComboBox();
             this.strComments = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // strId
@@ -486,41 +483,11 @@
             this.label19.TabIndex = 42;
             this.label19.Text = "הערות:";
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(385, 61);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(60, 13);
-            this.label20.TabIndex = 43;
-            this.label20.Text = "שירן שירן";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(474, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "Eira";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(68, 50);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 45;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // AddCustomerPage1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.strComments);
             this.Controls.Add(this.areaCodeM);
@@ -613,9 +580,6 @@
         private System.Windows.Forms.ComboBox areaCodeM;
         private System.Windows.Forms.TextBox strComments;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }
 
