@@ -78,7 +78,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(29, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(34, 33);
             this.pictureBox1.TabIndex = 69;
@@ -86,7 +86,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(63, 29);
+            this.button4.Location = new System.Drawing.Point(41, 9);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(85, 33);
             this.button4.TabIndex = 68;
@@ -143,7 +143,7 @@
             this.מתנדביםToolStripMenuItem,
             this.עובדיםToolStripMenuItem,
             this.כליםוניהולמערכתToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(157, 29);
+            this.menuStrip1.Location = new System.Drawing.Point(164, 9);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(600, 33);
             this.menuStrip1.TabIndex = 63;
@@ -370,7 +370,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(761, 65);
+            this.label1.Location = new System.Drawing.Point(777, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(214, 17);
             this.label1.TabIndex = 43;
@@ -389,11 +389,11 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(755, 25);
+            this.pictureBox2.Location = new System.Drawing.Point(767, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(255, 37);
+            this.pictureBox2.Size = new System.Drawing.Size(229, 37);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 70;
+            this.pictureBox2.TabIndex = 76;
             this.pictureBox2.TabStop = false;
             // 
             // AddProgram
@@ -431,6 +431,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Name = "AddProgram";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "AddProgram";
             this.Load += new System.EventHandler(this.AddProgram_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

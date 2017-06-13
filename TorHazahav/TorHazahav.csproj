@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddFamilyMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFamilyMember.Designer.cs">
+      <DependentUpon>AddFamilyMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForeignWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForeignWorker.Designer.cs">
+      <DependentUpon>AddForeignWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMainCarrier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMainCarrier.Designer.cs">
+      <DependentUpon>AddMainCarrier.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddProgram.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +96,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>tz.dbml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddFamilyMember.resx">
+      <DependentUpon>AddFamilyMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForeignWorker.resx">
+      <DependentUpon>AddForeignWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMainCarrier.resx">
+      <DependentUpon>AddMainCarrier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddProgram.resx">
       <DependentUpon>AddProgram.cs</DependentUpon>
     </EmbeddedResource>

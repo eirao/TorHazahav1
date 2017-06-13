@@ -173,6 +173,9 @@ namespace TorHazahav
                this.Hide();
         }
 
+        private void areaCodeM_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

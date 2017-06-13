@@ -52,18 +52,17 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.mainCarrier = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.mainCarrier_btn = new System.Windows.Forms.Button();
             this.family = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.activNeedfalse = new System.Windows.Forms.RadioButton();
-            this.activNeedtrue = new System.Windows.Forms.RadioButton();
-            this.needSpecialActivity = new System.Windows.Forms.Label();
+            this.family_btn = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.healthInfo_btn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.entitledDisctrue = new System.Windows.Forms.RadioButton();
             this.entitledDiscfalse = new System.Windows.Forms.RadioButton();
+            this.needSpecialActivity = new System.Windows.Forms.Label();
+            this.needSpAct_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // radioButton9
@@ -334,14 +333,15 @@
             this.mainCarrier.Text = "מטפל עיקרי:";
             this.mainCarrier.Click += new System.EventHandler(this.label2_Click);
             // 
-            // button1
+            // mainCarrier_btn
             // 
-            this.button1.Location = new System.Drawing.Point(575, 86);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 86;
-            this.button1.Text = "לחץ להזנה";
-            this.button1.UseVisualStyleBackColor = true;
+            this.mainCarrier_btn.Location = new System.Drawing.Point(575, 86);
+            this.mainCarrier_btn.Name = "mainCarrier_btn";
+            this.mainCarrier_btn.Size = new System.Drawing.Size(75, 23);
+            this.mainCarrier_btn.TabIndex = 86;
+            this.mainCarrier_btn.Text = "לחץ להזנה";
+            this.mainCarrier_btn.UseVisualStyleBackColor = true;
+            this.mainCarrier_btn.Click += new System.EventHandler(this.mainCarrier_btn_Click);
             // 
             // family
             // 
@@ -353,48 +353,14 @@
             this.family.TabIndex = 87;
             this.family.Text = "משפחה:";
             // 
-            // button2
+            // family_btn
             // 
-            this.button2.Location = new System.Drawing.Point(575, 121);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 88;
-            this.button2.Text = "לחץ להזנה";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // activNeedfalse
-            // 
-            this.activNeedfalse.AutoSize = true;
-            this.activNeedfalse.Location = new System.Drawing.Point(206, 410);
-            this.activNeedfalse.Name = "activNeedfalse";
-            this.activNeedfalse.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.activNeedfalse.Size = new System.Drawing.Size(40, 17);
-            this.activNeedfalse.TabIndex = 91;
-            this.activNeedfalse.TabStop = true;
-            this.activNeedfalse.Text = "לא";
-            this.activNeedfalse.UseVisualStyleBackColor = true;
-            // 
-            // activNeedtrue
-            // 
-            this.activNeedtrue.AutoSize = true;
-            this.activNeedtrue.Location = new System.Drawing.Point(274, 411);
-            this.activNeedtrue.Name = "activNeedtrue";
-            this.activNeedtrue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.activNeedtrue.Size = new System.Drawing.Size(37, 17);
-            this.activNeedtrue.TabIndex = 90;
-            this.activNeedtrue.TabStop = true;
-            this.activNeedtrue.Text = "כן";
-            this.activNeedtrue.UseVisualStyleBackColor = true;
-            // 
-            // needSpecialActivity
-            // 
-            this.needSpecialActivity.AutoSize = true;
-            this.needSpecialActivity.Location = new System.Drawing.Point(333, 413);
-            this.needSpecialActivity.Name = "needSpecialActivity";
-            this.needSpecialActivity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.needSpecialActivity.Size = new System.Drawing.Size(127, 13);
-            this.needSpecialActivity.TabIndex = 89;
-            this.needSpecialActivity.Text = "צורך בפעילות מתואמת:";
+            this.family_btn.Location = new System.Drawing.Point(575, 121);
+            this.family_btn.Name = "family_btn";
+            this.family_btn.Size = new System.Drawing.Size(75, 23);
+            this.family_btn.TabIndex = 88;
+            this.family_btn.Text = "לחץ להזנה";
+            this.family_btn.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -405,14 +371,14 @@
             this.button3.Text = "ביטול";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // healthInfo_btn
             // 
-            this.button5.Location = new System.Drawing.Point(252, 224);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 94;
-            this.button5.Text = "לחץ להזנה";
-            this.button5.UseVisualStyleBackColor = true;
+            this.healthInfo_btn.Location = new System.Drawing.Point(236, 224);
+            this.healthInfo_btn.Name = "healthInfo_btn";
+            this.healthInfo_btn.Size = new System.Drawing.Size(75, 23);
+            this.healthInfo_btn.TabIndex = 94;
+            this.healthInfo_btn.Text = "לחץ להזנה";
+            this.healthInfo_btn.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -423,7 +389,6 @@
             this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 95;
             this.label2.Text = "מידע רפואי חשוב:";
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // saveButton
             // 
@@ -459,23 +424,42 @@
             this.entitledDiscfalse.Text = "לא";
             this.entitledDiscfalse.UseVisualStyleBackColor = true;
             // 
+            // needSpecialActivity
+            // 
+            this.needSpecialActivity.AutoSize = true;
+            this.needSpecialActivity.Location = new System.Drawing.Point(333, 413);
+            this.needSpecialActivity.Name = "needSpecialActivity";
+            this.needSpecialActivity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.needSpecialActivity.Size = new System.Drawing.Size(127, 13);
+            this.needSpecialActivity.TabIndex = 89;
+            this.needSpecialActivity.Text = "צורך בפעילות מתואמת:";
+            // 
+            // needSpAct_btn
+            // 
+            this.needSpAct_btn.Location = new System.Drawing.Point(236, 406);
+            this.needSpAct_btn.Name = "needSpAct_btn";
+            this.needSpAct_btn.Size = new System.Drawing.Size(75, 23);
+            this.needSpAct_btn.TabIndex = 99;
+            this.needSpAct_btn.Text = "לחץ להזנה";
+            this.needSpAct_btn.UseVisualStyleBackColor = true;
+            this.needSpAct_btn.Click += new System.EventHandler(this.needSpAct_btn_Click);
+            // 
             // AddCustomerPage2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.Controls.Add(this.needSpAct_btn);
             this.Controls.Add(this.entitledDiscfalse);
             this.Controls.Add(this.entitledDisctrue);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.healthInfo_btn);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.activNeedfalse);
-            this.Controls.Add(this.activNeedtrue);
             this.Controls.Add(this.needSpecialActivity);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.family_btn);
             this.Controls.Add(this.family);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.mainCarrier_btn);
             this.Controls.Add(this.mainCarrier);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.radioButton9);
@@ -534,17 +518,16 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label mainCarrier;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button mainCarrier_btn;
         private System.Windows.Forms.Label family;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RadioButton activNeedfalse;
-        private System.Windows.Forms.RadioButton activNeedtrue;
-        private System.Windows.Forms.Label needSpecialActivity;
+        private System.Windows.Forms.Button family_btn;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button healthInfo_btn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.RadioButton entitledDisctrue;
         private System.Windows.Forms.RadioButton entitledDiscfalse;
+        private System.Windows.Forms.Label needSpecialActivity;
+        private System.Windows.Forms.Button needSpAct_btn;
     }
 }

@@ -30,15 +30,7 @@ namespace TorHazahav
             
         }
 
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void saveButton_Click(object sender, EventArgs e)
         {
@@ -62,15 +54,33 @@ namespace TorHazahav
                 if (nursLawtrue.Checked)
                     customerId.nursing_law = true;
                 else if (nursLawfalse.Checked)
-                    customerId.nursing_law= false;
-
-
-
-
-
+                    customerId.nursing_law = false;
                 dc.SubmitChanges();
+            }
 
+
+                                    
+
+
+
+
+
+              
               
                
     }
-}
+
+        
+
+        private void needSpAct_btn_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void mainCarrier_btn_Click(object sender, EventArgs e)
+        {
+            AddMainCarrier f = new AddMainCarrier();
+            f.Show();
+            this.Enabled = false;
+        }
+    }
