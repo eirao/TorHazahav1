@@ -1,6 +1,6 @@
 ﻿namespace TorHazahav
 {
-    partial class MainScreen
+    partial class ProgramList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProgramList));
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.מקבלישירותToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,30 +41,47 @@
             this.עובדיםToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.כליםוניהולמערכתToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label20 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tOR_HAZAHAVDataSet1 = new TorHazahav.TOR_HAZAHAVDataSet1();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerTableAdapter = new TorHazahav.TOR_HAZAHAVDataSet1TableAdapters.CustomerTableAdapter();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maritalstatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.holocaustsurvaviourDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.entitledtodiscountDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.MoreInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tOR_HAZAHAVDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tOR_HAZAHAVDataSet2 = new TorHazahav.TOR_HAZAHAVDataSet2();
+            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.programTableAdapter = new TorHazahav.TOR_HAZAHAVDataSet2TableAdapters.programTableAdapter();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.programtypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.programdetailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.frequencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coordinatorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoreInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tOR_HAZAHAVDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(767, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(229, 37);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 80;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 33);
+            this.pictureBox1.TabIndex = 79;
+            this.pictureBox1.TabStop = false;
             // 
             // button4
             // 
@@ -148,160 +167,138 @@
             this.label20.TabIndex = 76;
             this.label20.Text = "מינהל גיל הזהב בעיריית רמת השרון";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label2.Location = new System.Drawing.Point(817, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(177, 32);
+            this.label2.TabIndex = 83;
+            this.label2.Text = "רשימת תוכניות";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.firstnameDataGridViewTextBoxColumn,
-            this.lastnameDataGridViewTextBoxColumn,
-            this.genderDataGridViewTextBoxColumn,
-            this.birthdateDataGridViewTextBoxColumn,
-            this.maritalstatusDataGridViewTextBoxColumn,
-            this.holocaustsurvaviourDataGridViewCheckBoxColumn,
-            this.entitledtodiscountDataGridViewCheckBoxColumn,
+            this.iDDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.programtypeDataGridViewTextBoxColumn,
+            this.programdetailsDataGridViewTextBoxColumn,
+            this.startdateDataGridViewTextBoxColumn,
+            this.enddateDataGridViewTextBoxColumn,
+            this.frequencyDataGridViewTextBoxColumn,
+            this.coordinatorDataGridViewTextBoxColumn,
             this.MoreInfo});
-            this.dataGridView1.DataSource = this.customerBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 129);
+            this.dataGridView1.DataSource = this.programBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(7, 122);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(981, 368);
-            this.dataGridView1.TabIndex = 81;
+            this.dataGridView1.TabIndex = 84;
             // 
-            // tOR_HAZAHAVDataSet1
+            // tOR_HAZAHAVDataSet2
             // 
-            this.tOR_HAZAHAVDataSet1.DataSetName = "TOR_HAZAHAVDataSet1";
-            this.tOR_HAZAHAVDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tOR_HAZAHAVDataSet2.DataSetName = "TOR_HAZAHAVDataSet2";
+            this.tOR_HAZAHAVDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // customerBindingSource
+            // programBindingSource
             // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.tOR_HAZAHAVDataSet1;
+            this.programBindingSource.DataMember = "program";
+            this.programBindingSource.DataSource = this.tOR_HAZAHAVDataSet2;
             // 
-            // customerTableAdapter
+            // programTableAdapter
             // 
-            this.customerTableAdapter.ClearBeforeFill = true;
+            this.programTableAdapter.ClearBeforeFill = true;
             // 
-            // button2
+            // iDDataGridViewTextBoxColumn
             // 
-            this.button2.Location = new System.Drawing.Point(7, 76);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 27);
-            this.button2.TabIndex = 82;
-            this.button2.Text = "חיפוש";
-            this.button2.UseVisualStyleBackColor = true;
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "מספר";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // pictureBox2
+            // nameDataGridViewTextBoxColumn
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(767, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(229, 37);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 80;
-            this.pictureBox2.TabStop = false;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "שם";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // pictureBox1
+            // programtypeDataGridViewTextBoxColumn
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 33);
-            this.pictureBox1.TabIndex = 79;
-            this.pictureBox1.TabStop = false;
+            this.programtypeDataGridViewTextBoxColumn.DataPropertyName = "program_type";
+            this.programtypeDataGridViewTextBoxColumn.HeaderText = "סוג";
+            this.programtypeDataGridViewTextBoxColumn.Name = "programtypeDataGridViewTextBoxColumn";
             // 
-            // idDataGridViewTextBoxColumn
+            // programdetailsDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ת.ז";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.programdetailsDataGridViewTextBoxColumn.DataPropertyName = "program_details";
+            this.programdetailsDataGridViewTextBoxColumn.HeaderText = "תיאור";
+            this.programdetailsDataGridViewTextBoxColumn.Name = "programdetailsDataGridViewTextBoxColumn";
             // 
-            // firstnameDataGridViewTextBoxColumn
+            // startdateDataGridViewTextBoxColumn
             // 
-            this.firstnameDataGridViewTextBoxColumn.DataPropertyName = "first_name";
-            this.firstnameDataGridViewTextBoxColumn.HeaderText = "שם פרטי";
-            this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
+            this.startdateDataGridViewTextBoxColumn.DataPropertyName = "start_date";
+            this.startdateDataGridViewTextBoxColumn.HeaderText = "ת.התחלה";
+            this.startdateDataGridViewTextBoxColumn.Name = "startdateDataGridViewTextBoxColumn";
             // 
-            // lastnameDataGridViewTextBoxColumn
+            // enddateDataGridViewTextBoxColumn
             // 
-            this.lastnameDataGridViewTextBoxColumn.DataPropertyName = "last_name";
-            this.lastnameDataGridViewTextBoxColumn.HeaderText = "שם משפחה";
-            this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
+            this.enddateDataGridViewTextBoxColumn.DataPropertyName = "end_date";
+            this.enddateDataGridViewTextBoxColumn.HeaderText = "ת.סיום";
+            this.enddateDataGridViewTextBoxColumn.Name = "enddateDataGridViewTextBoxColumn";
             // 
-            // genderDataGridViewTextBoxColumn
+            // frequencyDataGridViewTextBoxColumn
             // 
-            this.genderDataGridViewTextBoxColumn.DataPropertyName = "gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "מין";
-            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-            this.genderDataGridViewTextBoxColumn.Width = 70;
+            this.frequencyDataGridViewTextBoxColumn.DataPropertyName = "frequency";
+            this.frequencyDataGridViewTextBoxColumn.HeaderText = "תדירות";
+            this.frequencyDataGridViewTextBoxColumn.Name = "frequencyDataGridViewTextBoxColumn";
             // 
-            // birthdateDataGridViewTextBoxColumn
+            // coordinatorDataGridViewTextBoxColumn
             // 
-            this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "birthdate";
-            this.birthdateDataGridViewTextBoxColumn.HeaderText = "תאריך לידה";
-            this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
-            // 
-            // maritalstatusDataGridViewTextBoxColumn
-            // 
-            this.maritalstatusDataGridViewTextBoxColumn.DataPropertyName = "marital_status";
-            this.maritalstatusDataGridViewTextBoxColumn.HeaderText = "מצב משפחתי";
-            this.maritalstatusDataGridViewTextBoxColumn.Name = "maritalstatusDataGridViewTextBoxColumn";
-            // 
-            // holocaustsurvaviourDataGridViewCheckBoxColumn
-            // 
-            this.holocaustsurvaviourDataGridViewCheckBoxColumn.DataPropertyName = "holocaust_survaviour";
-            this.holocaustsurvaviourDataGridViewCheckBoxColumn.HeaderText = "ניצול שואה";
-            this.holocaustsurvaviourDataGridViewCheckBoxColumn.Name = "holocaustsurvaviourDataGridViewCheckBoxColumn";
-            this.holocaustsurvaviourDataGridViewCheckBoxColumn.Width = 50;
-            // 
-            // entitledtodiscountDataGridViewCheckBoxColumn
-            // 
-            this.entitledtodiscountDataGridViewCheckBoxColumn.DataPropertyName = "entitled_todiscount";
-            this.entitledtodiscountDataGridViewCheckBoxColumn.HeaderText = "זכאות להנחה";
-            this.entitledtodiscountDataGridViewCheckBoxColumn.Name = "entitledtodiscountDataGridViewCheckBoxColumn";
-            this.entitledtodiscountDataGridViewCheckBoxColumn.Width = 50;
+            this.coordinatorDataGridViewTextBoxColumn.DataPropertyName = "coordinator";
+            this.coordinatorDataGridViewTextBoxColumn.HeaderText = "מתאם";
+            this.coordinatorDataGridViewTextBoxColumn.Name = "coordinatorDataGridViewTextBoxColumn";
             // 
             // MoreInfo
             // 
-            this.MoreInfo.DataPropertyName = "Id";
             this.MoreInfo.HeaderText = "פרטים נוספים";
             this.MoreInfo.Name = "MoreInfo";
             // 
-            // label2
+            // button2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label2.Location = new System.Drawing.Point(759, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 32);
-            this.label2.TabIndex = 83;
-            this.label2.Text = "רשימת מקבלי שירות";
+            this.button2.Location = new System.Drawing.Point(7, 83);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(119, 27);
+            this.button2.TabIndex = 85;
+            this.button2.Text = "חיפוש";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // MainScreen
+            // ProgramList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label20);
-            this.Name = "MainScreen";
+            this.Name = "ProgramList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "MainScreen";
-            this.Load += new System.EventHandler(this.MainScreen_Load);
+            this.Text = "ProgramList";
+            this.Load += new System.EventHandler(this.ProgramList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tOR_HAZAHAVDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tOR_HAZAHAVDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,20 +317,20 @@
         private System.Windows.Forms.ToolStripMenuItem עובדיםToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem כליםוניהולמערכתToolStripMenuItem;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private TOR_HAZAHAVDataSet1 tOR_HAZAHAVDataSet1;
-        private System.Windows.Forms.BindingSource customerBindingSource;
-        private TOR_HAZAHAVDataSet1TableAdapters.CustomerTableAdapter customerTableAdapter;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birthdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maritalstatusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn holocaustsurvaviourDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn entitledtodiscountDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MoreInfo;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private TOR_HAZAHAVDataSet2 tOR_HAZAHAVDataSet2;
+        private System.Windows.Forms.BindingSource programBindingSource;
+        private TOR_HAZAHAVDataSet2TableAdapters.programTableAdapter programTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn programtypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn programdetailsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enddateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn frequencyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coordinatorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MoreInfo;
+        private System.Windows.Forms.Button button2;
     }
 }

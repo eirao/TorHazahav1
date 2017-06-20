@@ -89,12 +89,51 @@
     <Compile Include="MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="NeedSpecialActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NeedSpecialActivity.Designer.cs">
+      <DependentUpon>NeedSpecialActivity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProgramList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramList.Designer.cs">
+      <DependentUpon>ProgramList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchCustomer.Designer.cs">
+      <DependentUpon>SearchCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchProgram.Designer.cs">
+      <DependentUpon>SearchProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TOR_HAZAHAVDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TOR_HAZAHAVDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TOR_HAZAHAVDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TOR_HAZAHAVDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TOR_HAZAHAVDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TOR_HAZAHAVDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="tz.designer.cs">
       <AutoGen>True</AutoGen>
@@ -122,10 +161,22 @@
     <EmbeddedResource Include="MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NeedSpecialActivity.resx">
+      <DependentUpon>NeedSpecialActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramList.resx">
+      <DependentUpon>ProgramList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchCustomer.resx">
+      <DependentUpon>SearchCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchProgram.resx">
+      <DependentUpon>SearchProgram.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -136,6 +187,39 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TOR_HAZAHAVDataSet.xsc">
+      <DependentUpon>TOR_HAZAHAVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TOR_HAZAHAVDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TOR_HAZAHAVDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TOR_HAZAHAVDataSet.xss">
+      <DependentUpon>TOR_HAZAHAVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TOR_HAZAHAVDataSet1.xsc">
+      <DependentUpon>TOR_HAZAHAVDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TOR_HAZAHAVDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TOR_HAZAHAVDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TOR_HAZAHAVDataSet1.xss">
+      <DependentUpon>TOR_HAZAHAVDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TOR_HAZAHAVDataSet2.xsc">
+      <DependentUpon>TOR_HAZAHAVDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TOR_HAZAHAVDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TOR_HAZAHAVDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TOR_HAZAHAVDataSet2.xss">
+      <DependentUpon>TOR_HAZAHAVDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="tz.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>tz.designer.cs</LastGenOutput>
