@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProgram));
             this.כליםוניהולמערכתToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -45,9 +44,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -63,9 +60,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // כליםוניהולמערכתToolStripMenuItem
@@ -74,15 +74,6 @@
             this.כליםוניהולמערכתToolStripMenuItem.Name = "כליםוניהולמערכתToolStripMenuItem";
             this.כליםוניהולמערכתToolStripMenuItem.Size = new System.Drawing.Size(124, 29);
             this.כליםוניהולמערכתToolStripMenuItem.Text = "כלים וניהול מערכת";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 33);
-            this.pictureBox1.TabIndex = 69;
-            this.pictureBox1.TabStop = false;
             // 
             // button4
             // 
@@ -213,49 +204,15 @@
             this.label11.TabIndex = 60;
             this.label11.Text = "פירוט התוכנית:";
             // 
-            // checkedListBox2
-            // 
-            this.checkedListBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.checkedListBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Items.AddRange(new object[] {
-            "מתנדב\\ת 1",
-            "מתנדב\\ת 2",
-            "מתנדב\\ת 3",
-            "מתנדב\\ת 4",
-            "מתנדב\\ת 5",
-            "מתנדב\\ת 6"});
-            this.checkedListBox2.Location = new System.Drawing.Point(537, 431);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(194, 105);
-            this.checkedListBox2.TabIndex = 59;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label10.Location = new System.Drawing.Point(673, 400);
+            this.label10.Location = new System.Drawing.Point(889, 451);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(63, 17);
             this.label10.TabIndex = 58;
             this.label10.Text = "מתנדבים:";
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "איש קשר 1",
-            "איש קשר 2",
-            "איש קשר 3",
-            "איש קשר 4",
-            "איש קשר 5",
-            "איש קשר 6"});
-            this.checkedListBox1.Location = new System.Drawing.Point(765, 431);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(182, 105);
-            this.checkedListBox1.TabIndex = 57;
             // 
             // label9
             // 
@@ -396,12 +353,41 @@
             this.pictureBox2.TabIndex = 76;
             this.pictureBox2.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 33);
+            this.pictureBox1.TabIndex = 69;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(598, 400);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 27);
+            this.button1.TabIndex = 77;
+            this.button1.Text = "הוספה";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(598, 441);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(119, 27);
+            this.button5.TabIndex = 78;
+            this.button5.Text = "הוספה";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // AddProgram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button4);
@@ -413,9 +399,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.checkedListBox2);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
@@ -434,10 +418,10 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "AddProgram";
             this.Load += new System.EventHandler(this.AddProgram_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -461,9 +445,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
@@ -479,5 +461,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button5;
     }
 }
