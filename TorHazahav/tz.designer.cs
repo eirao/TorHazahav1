@@ -3414,6 +3414,10 @@ namespace TorHazahav
 		
 		private System.Nullable<int> _phone_id;
 		
+		private string _username;
+		
+		private string _u_password;
+		
 		private EntitySet<program> _programs;
 		
 		private EntitySet<request> _requests;
@@ -3438,6 +3442,10 @@ namespace TorHazahav
     partial void Onemployee_statusChanged();
     partial void Onphone_idChanging(System.Nullable<int> value);
     partial void Onphone_idChanged();
+    partial void OnusernameChanging(string value);
+    partial void OnusernameChanged();
+    partial void Onu_passwordChanging(string value);
+    partial void Onu_passwordChanged();
     #endregion
 		
 		public employee()
@@ -3588,6 +3596,46 @@ namespace TorHazahav
 					this._phone_id = value;
 					this.SendPropertyChanged("phone_id");
 					this.Onphone_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(10)")]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this.OnusernameChanging(value);
+					this.SendPropertyChanging();
+					this._username = value;
+					this.SendPropertyChanged("username");
+					this.OnusernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_password", DbType="VarChar(10)")]
+		public string u_password
+		{
+			get
+			{
+				return this._u_password;
+			}
+			set
+			{
+				if ((this._u_password != value))
+				{
+					this.Onu_passwordChanging(value);
+					this.SendPropertyChanging();
+					this._u_password = value;
+					this.SendPropertyChanged("u_password");
+					this.Onu_passwordChanged();
 				}
 			}
 		}

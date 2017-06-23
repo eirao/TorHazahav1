@@ -153,6 +153,8 @@
       <Column Name="job" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="employee_status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Column Name="phone_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="u_password" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="employee_program" Member="programs" ThisKey="employee_id" OtherKey="employee_id" Type="program" />
       <Association Name="employee_request" Member="requests" ThisKey="employee_id" OtherKey="employee_id" Type="request" />
       <Association Name="phone_employee" Member="phone" ThisKey="phone_id" OtherKey="ID" Type="phone" IsForeignKey="true" />
