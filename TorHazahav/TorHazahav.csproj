@@ -70,6 +70,12 @@
     <Compile Include="AddProgram.Designer.cs">
       <DependentUpon>AddProgram.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddVolunteer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVolunteer.Designer.cs">
+      <DependentUpon>AddVolunteer.cs</DependentUpon>
+    </Compile>
     <Compile Include="connection.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -94,6 +100,12 @@
     </Compile>
     <Compile Include="MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedicalInfo.Designer.cs">
+      <DependentUpon>MedicalInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="NeedSpecialActivity.cs">
       <SubType>Form</SubType>
@@ -158,6 +170,9 @@
     <EmbeddedResource Include="AddProgram.resx">
       <DependentUpon>AddProgram.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddVolunteer.resx">
+      <DependentUpon>AddVolunteer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicalInfo.resx">
+      <DependentUpon>MedicalInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NeedSpecialActivity.resx">
       <DependentUpon>NeedSpecialActivity.cs</DependentUpon>
