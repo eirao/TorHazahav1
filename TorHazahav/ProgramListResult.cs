@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace TorHazahav
 {
-    public partial class Form4 : Form
+    public partial class ProgramListResult : Form
     {
-        public Form4()
+        public ProgramListResult()
         {
             InitializeComponent();
         }
 
-        private void Form4_Load(object sender, EventArgs e)
+        private void ProgramListResult_Load(object sender, EventArgs e)
         {
 
         }

@@ -38,23 +38,24 @@
             this.עובדיםToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.כליםוניהולמערכתToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label20 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.programNameTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.programNumTxt = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.pStartDatedt = new System.Windows.Forms.MaskedTextBox();
+            this.pEndDatedt = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
@@ -141,22 +142,6 @@
             this.label20.TabIndex = 76;
             this.label20.Text = "מינהל גיל הזהב בעיריית רמת השרון";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(787, 214);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(96, 20);
-            this.dateTimePicker1.TabIndex = 86;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(787, 259);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(96, 20);
-            this.dateTimePicker2.TabIndex = 85;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -177,12 +162,12 @@
             this.label5.TabIndex = 83;
             this.label5.Text = "תאריך התחלה:";
             // 
-            // textBox1
+            // programNameTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(655, 172);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 20);
-            this.textBox1.TabIndex = 82;
+            this.programNameTxt.Location = new System.Drawing.Point(655, 172);
+            this.programNameTxt.Name = "programNameTxt";
+            this.programNameTxt.Size = new System.Drawing.Size(228, 20);
+            this.programNameTxt.TabIndex = 82;
             // 
             // label3
             // 
@@ -213,13 +198,14 @@
             this.label1.Size = new System.Drawing.Size(90, 17);
             this.label1.TabIndex = 88;
             this.label1.Text = "מספר תוכנית:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox2
+            // programNumTxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(655, 136);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(228, 20);
-            this.textBox2.TabIndex = 89;
+            this.programNumTxt.Location = new System.Drawing.Point(655, 136);
+            this.programNumTxt.Name = "programNumTxt";
+            this.programNumTxt.Size = new System.Drawing.Size(228, 20);
+            this.programNumTxt.TabIndex = 89;
             // 
             // button3
             // 
@@ -238,6 +224,25 @@
             this.button2.TabIndex = 94;
             this.button2.Text = "חפש";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pStartDatedt
+            // 
+            this.pStartDatedt.Location = new System.Drawing.Point(780, 210);
+            this.pStartDatedt.Mask = "00/00/0000";
+            this.pStartDatedt.Name = "pStartDatedt";
+            this.pStartDatedt.Size = new System.Drawing.Size(100, 20);
+            this.pStartDatedt.TabIndex = 96;
+            this.pStartDatedt.ValidatingType = typeof(System.DateTime);
+            // 
+            // pEndDatedt
+            // 
+            this.pEndDatedt.Location = new System.Drawing.Point(780, 255);
+            this.pEndDatedt.Mask = "00/00/0000";
+            this.pEndDatedt.Name = "pEndDatedt";
+            this.pEndDatedt.Size = new System.Drawing.Size(100, 20);
+            this.pEndDatedt.TabIndex = 97;
+            this.pEndDatedt.ValidatingType = typeof(System.DateTime);
             // 
             // pictureBox2
             // 
@@ -258,14 +263,15 @@
             this.pictureBox1.TabIndex = 79;
             this.pictureBox1.TabStop = false;
             // 
-            // maskedTextBox1
+            // dataGridView1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(664, 213);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 96;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(275, 118);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(704, 217);
+            this.dataGridView1.TabIndex = 98;
+            this.dataGridView1.Visible = false;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // SearchProgram
             // 
@@ -273,17 +279,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.pEndDatedt);
+            this.Controls.Add(this.pStartDatedt);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.programNumTxt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.programNameTxt);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -293,10 +299,12 @@
             this.Name = "SearchProgram";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "SearchProgram";
+            this.Load += new System.EventHandler(this.SearchProgram_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,17 +323,17 @@
         private System.Windows.Forms.ToolStripMenuItem עובדיםToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem כליםוניהולמערכתToolStripMenuItem;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox programNameTxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox programNumTxt;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox pStartDatedt;
+        private System.Windows.Forms.MaskedTextBox pEndDatedt;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
