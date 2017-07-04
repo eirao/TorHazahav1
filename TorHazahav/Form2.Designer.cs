@@ -64,6 +64,7 @@
             this.entitledDiscfalse = new System.Windows.Forms.RadioButton();
             this.needSpecialActivity = new System.Windows.Forms.Label();
             this.needSpAct_btn = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -74,8 +75,8 @@
             this.מתנדביםToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.עובדיםToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.כליםוניהולמערכתToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -84,7 +85,7 @@
             // foreignWorkerNo
             // 
             this.foreignWorkerNo.AutoSize = true;
-            this.foreignWorkerNo.Location = new System.Drawing.Point(714, 201);
+            this.foreignWorkerNo.Location = new System.Drawing.Point(714, 200);
             this.foreignWorkerNo.Name = "foreignWorkerNo";
             this.foreignWorkerNo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.foreignWorkerNo.Size = new System.Drawing.Size(40, 17);
@@ -110,7 +111,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label28.Location = new System.Drawing.Point(883, 200);
+            this.label28.Location = new System.Drawing.Point(929, 199);
             this.label28.Name = "label28";
             this.label28.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label28.Size = new System.Drawing.Size(53, 17);
@@ -125,7 +126,7 @@
             "בית מלינוב",
             "קתדרה",
             "מגוונים"});
-            this.activeClub.Location = new System.Drawing.Point(705, 496);
+            this.activeClub.Location = new System.Drawing.Point(410, 437);
             this.activeClub.Name = "activeClub";
             this.activeClub.Size = new System.Drawing.Size(121, 21);
             this.activeClub.TabIndex = 80;
@@ -134,7 +135,7 @@
             // 
             this.activeClubTl.AutoSize = true;
             this.activeClubTl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.activeClubTl.Location = new System.Drawing.Point(847, 496);
+            this.activeClubTl.Location = new System.Drawing.Point(549, 441);
             this.activeClubTl.Name = "activeClubTl";
             this.activeClubTl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.activeClubTl.Size = new System.Drawing.Size(87, 17);
@@ -149,7 +150,7 @@
             "תשושי נפש",
             "קבוצת תמיכה אלצהיימר",
             "מועדון חברתי"});
-            this.dayCenter.Location = new System.Drawing.Point(705, 462);
+            this.dayCenter.Location = new System.Drawing.Point(410, 373);
             this.dayCenter.Name = "dayCenter";
             this.dayCenter.Size = new System.Drawing.Size(121, 21);
             this.dayCenter.TabIndex = 78;
@@ -158,7 +159,7 @@
             // 
             this.dayCenterTl.AutoSize = true;
             this.dayCenterTl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dayCenterTl.Location = new System.Drawing.Point(874, 462);
+            this.dayCenterTl.Location = new System.Drawing.Point(576, 377);
             this.dayCenterTl.Name = "dayCenterTl";
             this.dayCenterTl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dayCenterTl.Size = new System.Drawing.Size(60, 17);
@@ -169,7 +170,7 @@
             // 
             this.entitledDiscountTl.AutoSize = true;
             this.entitledDiscountTl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.entitledDiscountTl.Location = new System.Drawing.Point(578, 356);
+            this.entitledDiscountTl.Location = new System.Drawing.Point(258, 200);
             this.entitledDiscountTl.Name = "entitledDiscountTl";
             this.entitledDiscountTl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.entitledDiscountTl.Size = new System.Drawing.Size(89, 17);
@@ -180,7 +181,7 @@
             // 
             this.nurseryLaw.AutoSize = true;
             this.nurseryLaw.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.nurseryLaw.Location = new System.Drawing.Point(598, 496);
+            this.nurseryLaw.Location = new System.Drawing.Point(278, 441);
             this.nurseryLaw.Name = "nurseryLaw";
             this.nurseryLaw.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.nurseryLaw.Size = new System.Drawing.Size(69, 17);
@@ -190,7 +191,7 @@
             // nursLawfalse
             // 
             this.nursLawfalse.AutoSize = true;
-            this.nursLawfalse.Location = new System.Drawing.Point(393, 500);
+            this.nursLawfalse.Location = new System.Drawing.Point(61, 438);
             this.nursLawfalse.Name = "nursLawfalse";
             this.nursLawfalse.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.nursLawfalse.Size = new System.Drawing.Size(40, 17);
@@ -202,7 +203,7 @@
             // nursLawtrue
             // 
             this.nursLawtrue.AutoSize = true;
-            this.nursLawtrue.Location = new System.Drawing.Point(463, 500);
+            this.nursLawtrue.Location = new System.Drawing.Point(143, 438);
             this.nursLawtrue.Name = "nursLawtrue";
             this.nursLawtrue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.nursLawtrue.Size = new System.Drawing.Size(37, 17);
@@ -214,7 +215,7 @@
             // holocSurvfalse
             // 
             this.holocSurvfalse.AutoSize = true;
-            this.holocSurvfalse.Location = new System.Drawing.Point(393, 466);
+            this.holocSurvfalse.Location = new System.Drawing.Point(61, 378);
             this.holocSurvfalse.Name = "holocSurvfalse";
             this.holocSurvfalse.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.holocSurvfalse.Size = new System.Drawing.Size(40, 17);
@@ -226,7 +227,7 @@
             // holocSurvtrue
             // 
             this.holocSurvtrue.AutoSize = true;
-            this.holocSurvtrue.Location = new System.Drawing.Point(463, 466);
+            this.holocSurvtrue.Location = new System.Drawing.Point(143, 378);
             this.holocSurvtrue.Name = "holocSurvtrue";
             this.holocSurvtrue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.holocSurvtrue.Size = new System.Drawing.Size(37, 17);
@@ -239,7 +240,7 @@
             // 
             this.holocaustSurv.AutoSize = true;
             this.holocaustSurv.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.holocaustSurv.Location = new System.Drawing.Point(592, 462);
+            this.holocaustSurv.Location = new System.Drawing.Point(272, 377);
             this.holocaustSurv.Name = "holocaustSurv";
             this.holocaustSurv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.holocaustSurv.Size = new System.Drawing.Size(75, 17);
@@ -253,7 +254,7 @@
             "נוהג ברכב",
             "תחבורה ציבורית",
             "אחר"});
-            this.mobility.Location = new System.Drawing.Point(705, 426);
+            this.mobility.Location = new System.Drawing.Point(410, 313);
             this.mobility.Name = "mobility";
             this.mobility.Size = new System.Drawing.Size(121, 21);
             this.mobility.TabIndex = 68;
@@ -262,7 +263,7 @@
             // 
             this.mobilityTl.AutoSize = true;
             this.mobilityTl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.mobilityTl.Location = new System.Drawing.Point(889, 426);
+            this.mobilityTl.Location = new System.Drawing.Point(591, 317);
             this.mobilityTl.Name = "mobilityTl";
             this.mobilityTl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mobilityTl.Size = new System.Drawing.Size(45, 17);
@@ -272,7 +273,7 @@
             // retiredCheck
             // 
             this.retiredCheck.AutoSize = true;
-            this.retiredCheck.Location = new System.Drawing.Point(705, 392);
+            this.retiredCheck.Location = new System.Drawing.Point(410, 252);
             this.retiredCheck.Name = "retiredCheck";
             this.retiredCheck.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.retiredCheck.Size = new System.Drawing.Size(56, 17);
@@ -284,7 +285,7 @@
             // workCheck
             // 
             this.workCheck.AutoSize = true;
-            this.workCheck.Location = new System.Drawing.Point(775, 392);
+            this.workCheck.Location = new System.Drawing.Point(480, 252);
             this.workCheck.Name = "workCheck";
             this.workCheck.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.workCheck.Size = new System.Drawing.Size(51, 17);
@@ -297,7 +298,7 @@
             // 
             this.professionTl.AutoSize = true;
             this.professionTl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.professionTl.Location = new System.Drawing.Point(885, 391);
+            this.professionTl.Location = new System.Drawing.Point(587, 251);
             this.professionTl.Name = "professionTl";
             this.professionTl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.professionTl.Size = new System.Drawing.Size(49, 17);
@@ -308,7 +309,7 @@
             // 
             this.independencyTl.AutoSize = true;
             this.independencyTl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.independencyTl.Location = new System.Drawing.Point(875, 356);
+            this.independencyTl.Location = new System.Drawing.Point(577, 199);
             this.independencyTl.Name = "independencyTl";
             this.independencyTl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.independencyTl.Size = new System.Drawing.Size(59, 17);
@@ -321,7 +322,7 @@
             this.indepependency.Items.AddRange(new object[] {
             "מרותק לביתו",
             "עצמאי"});
-            this.indepependency.Location = new System.Drawing.Point(705, 352);
+            this.indepependency.Location = new System.Drawing.Point(410, 196);
             this.indepependency.Name = "indepependency";
             this.indepependency.Size = new System.Drawing.Size(121, 21);
             this.indepependency.TabIndex = 62;
@@ -329,22 +330,22 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(821, 316);
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label19.Location = new System.Drawing.Point(525, 135);
             this.label19.Name = "label19";
             this.label19.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label19.Size = new System.Drawing.Size(125, 25);
+            this.label19.Size = new System.Drawing.Size(112, 21);
             this.label19.TabIndex = 61;
             this.label19.Text = "פרטים נוספים";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(855, 160);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(899, 135);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(91, 25);
+            this.label1.Size = new System.Drawing.Size(84, 21);
             this.label1.TabIndex = 84;
             this.label1.Text = "אנשי קשר";
             // 
@@ -352,7 +353,7 @@
             // 
             this.mainCarrier.AutoSize = true;
             this.mainCarrier.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.mainCarrier.Location = new System.Drawing.Point(855, 235);
+            this.mainCarrier.Location = new System.Drawing.Point(901, 251);
             this.mainCarrier.Name = "mainCarrier";
             this.mainCarrier.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mainCarrier.Size = new System.Drawing.Size(81, 17);
@@ -362,9 +363,9 @@
             // 
             // mainCarrier_btn
             // 
-            this.mainCarrier_btn.Location = new System.Drawing.Point(714, 235);
+            this.mainCarrier_btn.Location = new System.Drawing.Point(714, 247);
             this.mainCarrier_btn.Name = "mainCarrier_btn";
-            this.mainCarrier_btn.Size = new System.Drawing.Size(107, 23);
+            this.mainCarrier_btn.Size = new System.Drawing.Size(119, 27);
             this.mainCarrier_btn.TabIndex = 86;
             this.mainCarrier_btn.Text = "לחץ להזנה";
             this.mainCarrier_btn.UseVisualStyleBackColor = true;
@@ -374,7 +375,7 @@
             // 
             this.family.AutoSize = true;
             this.family.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.family.Location = new System.Drawing.Point(879, 266);
+            this.family.Location = new System.Drawing.Point(925, 317);
             this.family.Name = "family";
             this.family.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.family.Size = new System.Drawing.Size(57, 17);
@@ -383,9 +384,9 @@
             // 
             // family_btn
             // 
-            this.family_btn.Location = new System.Drawing.Point(714, 264);
+            this.family_btn.Location = new System.Drawing.Point(714, 313);
             this.family_btn.Name = "family_btn";
-            this.family_btn.Size = new System.Drawing.Size(107, 23);
+            this.family_btn.Size = new System.Drawing.Size(119, 27);
             this.family_btn.TabIndex = 88;
             this.family_btn.Text = "לחץ להזנה";
             this.family_btn.UseVisualStyleBackColor = true;
@@ -393,7 +394,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(29, 122);
+            this.button3.Location = new System.Drawing.Point(12, 98);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(119, 27);
             this.button3.TabIndex = 93;
@@ -402,9 +403,9 @@
             // 
             // healthInfo_btn
             // 
-            this.healthInfo_btn.Location = new System.Drawing.Point(393, 424);
+            this.healthInfo_btn.Location = new System.Drawing.Point(61, 313);
             this.healthInfo_btn.Name = "healthInfo_btn";
-            this.healthInfo_btn.Size = new System.Drawing.Size(107, 23);
+            this.healthInfo_btn.Size = new System.Drawing.Size(119, 27);
             this.healthInfo_btn.TabIndex = 94;
             this.healthInfo_btn.Text = "לחץ להזנה";
             this.healthInfo_btn.UseVisualStyleBackColor = true;
@@ -413,7 +414,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(556, 426);
+            this.label2.Location = new System.Drawing.Point(236, 317);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(111, 17);
@@ -422,7 +423,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(190, 122);
+            this.saveButton.Location = new System.Drawing.Point(137, 98);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(119, 27);
             this.saveButton.TabIndex = 96;
@@ -433,7 +434,7 @@
             // entitledDisctrue
             // 
             this.entitledDisctrue.AutoSize = true;
-            this.entitledDisctrue.Location = new System.Drawing.Point(463, 357);
+            this.entitledDisctrue.Location = new System.Drawing.Point(143, 201);
             this.entitledDisctrue.Name = "entitledDisctrue";
             this.entitledDisctrue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.entitledDisctrue.Size = new System.Drawing.Size(37, 17);
@@ -445,7 +446,7 @@
             // entitledDiscfalse
             // 
             this.entitledDiscfalse.AutoSize = true;
-            this.entitledDiscfalse.Location = new System.Drawing.Point(393, 357);
+            this.entitledDiscfalse.Location = new System.Drawing.Point(61, 199);
             this.entitledDiscfalse.Name = "entitledDiscfalse";
             this.entitledDiscfalse.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.entitledDiscfalse.Size = new System.Drawing.Size(40, 17);
@@ -458,7 +459,7 @@
             // 
             this.needSpecialActivity.AutoSize = true;
             this.needSpecialActivity.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.needSpecialActivity.Location = new System.Drawing.Point(521, 392);
+            this.needSpecialActivity.Location = new System.Drawing.Point(201, 251);
             this.needSpecialActivity.Name = "needSpecialActivity";
             this.needSpecialActivity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.needSpecialActivity.Size = new System.Drawing.Size(146, 17);
@@ -467,13 +468,23 @@
             // 
             // needSpAct_btn
             // 
-            this.needSpAct_btn.Location = new System.Drawing.Point(393, 391);
+            this.needSpAct_btn.Location = new System.Drawing.Point(61, 244);
             this.needSpAct_btn.Name = "needSpAct_btn";
-            this.needSpAct_btn.Size = new System.Drawing.Size(107, 23);
+            this.needSpAct_btn.Size = new System.Drawing.Size(119, 27);
             this.needSpAct_btn.TabIndex = 99;
             this.needSpAct_btn.Text = "לחץ להזנה";
             this.needSpAct_btn.UseVisualStyleBackColor = true;
             this.needSpAct_btn.Click += new System.EventHandler(this.needSpAct_btn_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label21.Location = new System.Drawing.Point(687, 90);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(315, 32);
+            this.label21.TabIndex = 105;
+            this.label21.Text = "הוספת מקבל\\ת שירות חדש";
             // 
             // pictureBox2
             // 
@@ -482,7 +493,7 @@
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(229, 37);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 104;
+            this.pictureBox2.TabIndex = 110;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
@@ -491,7 +502,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(12, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(34, 33);
-            this.pictureBox1.TabIndex = 103;
+            this.pictureBox1.TabIndex = 109;
             this.pictureBox1.TabStop = false;
             // 
             // button4
@@ -499,7 +510,7 @@
             this.button4.Location = new System.Drawing.Point(41, 9);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(85, 33);
-            this.button4.TabIndex = 102;
+            this.button4.TabIndex = 108;
             this.button4.Text = "צא מהמערכת";
             this.button4.UseVisualStyleBackColor = true;
             // 
@@ -522,7 +533,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(164, 9);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(600, 33);
-            this.menuStrip1.TabIndex = 101;
+            this.menuStrip1.TabIndex = 107;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // מקבלישירותToolStripMenuItem
@@ -568,25 +579,24 @@
             this.כליםוניהולמערכתToolStripMenuItem.Size = new System.Drawing.Size(124, 29);
             this.כליםוניהולמערכתToolStripMenuItem.Text = "כלים וניהול מערכת";
             // 
-            // label3
+            // label20
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.Location = new System.Drawing.Point(777, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(214, 17);
-            this.label3.TabIndex = 100;
-            this.label3.Text = "מינהל גיל הזהב בעיריית רמת השרון";
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label20.Location = new System.Drawing.Point(777, 52);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(214, 17);
+            this.label20.TabIndex = 106;
+            this.label20.Text = "מינהל גיל הזהב בעיריית רמת השרון";
             // 
-            // label4
+            // button1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label4.Location = new System.Drawing.Point(648, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(315, 32);
-            this.label4.TabIndex = 105;
-            this.label4.Text = "הוספת מקבל\\ת חדש שירות";
+            this.button1.Location = new System.Drawing.Point(12, 495);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 27);
+            this.button1.TabIndex = 111;
+            this.button1.Text = "חזרה אחורה";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // AddCustomerPage2
             // 
@@ -594,12 +604,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.needSpAct_btn);
             this.Controls.Add(this.entitledDiscfalse);
             this.Controls.Add(this.entitledDisctrue);
@@ -636,6 +647,7 @@
             this.Controls.Add(this.indepependency);
             this.Controls.Add(this.label19);
             this.Name = "AddCustomerPage2";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -684,6 +696,7 @@
         private System.Windows.Forms.RadioButton entitledDiscfalse;
         private System.Windows.Forms.Label needSpecialActivity;
         private System.Windows.Forms.Button needSpAct_btn;
+        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
@@ -694,7 +707,7 @@
         private System.Windows.Forms.ToolStripMenuItem מתנדביםToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem עובדיםToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem כליםוניהולמערכתToolStripMenuItem;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button button1;
     }
 }
