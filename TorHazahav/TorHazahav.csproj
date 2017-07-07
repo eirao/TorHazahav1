@@ -120,12 +120,6 @@
     <Compile Include="ProgramList.Designer.cs">
       <DependentUpon>ProgramList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProgramListResult.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProgramListResult.Designer.cs">
-      <DependentUpon>ProgramListResult.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -204,9 +198,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProgramList.resx">
       <DependentUpon>ProgramList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProgramListResult.resx">
-      <DependentUpon>ProgramListResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
