@@ -12,14 +12,21 @@ namespace TorHazahav
 {
     public partial class AddProgram : Form
     {
+        tzDataContext dc;
         public AddProgram()
         {
             InitializeComponent();
+            dc = connection.getDataContextInstance();
         }
 
         private void AddProgram_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+                           
+       }
     }
 }

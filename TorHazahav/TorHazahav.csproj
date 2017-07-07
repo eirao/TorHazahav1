@@ -164,10 +164,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TOR_HAZAHAVDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TOR_HAZAHAVDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TOR_HAZAHAVDataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="tz.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>tz.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="VolunteersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VolunteersList.Designer.cs">
+      <DependentUpon>VolunteersList.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddFamilyMember.resx">
       <DependentUpon>AddFamilyMember.cs</DependentUpon>
@@ -218,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchProgram.resx">
       <DependentUpon>SearchProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VolunteersList.resx">
+      <DependentUpon>VolunteersList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -271,6 +285,17 @@
     </None>
     <None Include="TOR_HAZAHAVDataSet3.xss">
       <DependentUpon>TOR_HAZAHAVDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="TOR_HAZAHAVDataSet4.xsc">
+      <DependentUpon>TOR_HAZAHAVDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="TOR_HAZAHAVDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TOR_HAZAHAVDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TOR_HAZAHAVDataSet4.xss">
+      <DependentUpon>TOR_HAZAHAVDataSet4.xsd</DependentUpon>
     </None>
     <None Include="tz.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
