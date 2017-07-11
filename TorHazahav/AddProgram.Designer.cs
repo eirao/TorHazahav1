@@ -32,9 +32,9 @@
             this.כליםוניהולמערכתToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.startDatedt = new System.Windows.Forms.DateTimePicker();
+            this.commentsStr = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.מקבלישירותToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.פניותToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,27 +42,27 @@
             this.מתנדביםToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.עובדיםToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label12 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.detailsStr = new System.Windows.Forms.RichTextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.endDatedt = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.frequencyStr = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.progNameTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.programTypeStr = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,31 +92,33 @@
             this.button2.TabIndex = 67;
             this.button2.Text = "שמירה";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // cancelButton
             // 
-            this.button3.Location = new System.Drawing.Point(29, 122);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(119, 27);
-            this.button3.TabIndex = 66;
-            this.button3.Text = "ביטול";
-            this.button3.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(29, 122);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(119, 27);
+            this.cancelButton.TabIndex = 66;
+            this.cancelButton.Text = "ביטול";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
-            // dateTimePicker1
+            // startDatedt
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(757, 217);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(96, 20);
-            this.dateTimePicker1.TabIndex = 65;
+            this.startDatedt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.startDatedt.Location = new System.Drawing.Point(757, 217);
+            this.startDatedt.Name = "startDatedt";
+            this.startDatedt.Size = new System.Drawing.Size(96, 20);
+            this.startDatedt.TabIndex = 65;
             // 
-            // richTextBox2
+            // commentsStr
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(29, 420);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(370, 109);
-            this.richTextBox2.TabIndex = 64;
-            this.richTextBox2.Text = "";
+            this.commentsStr.Location = new System.Drawing.Point(29, 420);
+            this.commentsStr.Name = "commentsStr";
+            this.commentsStr.Size = new System.Drawing.Size(370, 109);
+            this.commentsStr.TabIndex = 64;
+            this.commentsStr.Text = "";
             // 
             // menuStrip1
             // 
@@ -186,13 +188,13 @@
             this.label12.TabIndex = 62;
             this.label12.Text = "הערות:";
             // 
-            // richTextBox1
+            // detailsStr
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(29, 195);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(370, 175);
-            this.richTextBox1.TabIndex = 61;
-            this.richTextBox1.Text = "";
+            this.detailsStr.Location = new System.Drawing.Point(29, 195);
+            this.detailsStr.Name = "detailsStr";
+            this.detailsStr.Size = new System.Drawing.Size(370, 175);
+            this.detailsStr.TabIndex = 61;
+            this.detailsStr.Text = "";
             // 
             // label11
             // 
@@ -204,21 +206,11 @@
             this.label11.TabIndex = 60;
             this.label11.Text = "פירוט התוכנית:";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label10.Location = new System.Drawing.Point(889, 451);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 17);
-            this.label10.TabIndex = 58;
-            this.label10.Text = "מתנדבים:";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label9.Location = new System.Drawing.Point(814, 400);
+            this.label9.Location = new System.Drawing.Point(811, 453);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(140, 17);
             this.label9.TabIndex = 56;
@@ -227,15 +219,15 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(540, 304);
+            this.comboBox3.Location = new System.Drawing.Point(540, 400);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(311, 21);
+            this.comboBox3.Size = new System.Drawing.Size(266, 21);
             this.comboBox3.TabIndex = 55;
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(540, 349);
+            this.comboBox2.Location = new System.Drawing.Point(540, 449);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(266, 21);
             this.comboBox2.TabIndex = 54;
@@ -244,7 +236,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label8.Location = new System.Drawing.Point(857, 304);
+            this.label8.Location = new System.Drawing.Point(857, 345);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 17);
             this.label8.TabIndex = 53;
@@ -254,19 +246,19 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label7.Location = new System.Drawing.Point(812, 349);
+            this.label7.Location = new System.Drawing.Point(811, 400);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(140, 17);
             this.label7.TabIndex = 52;
             this.label7.Text = "אחראי תוכנית במינהל:";
             // 
-            // dateTimePicker2
+            // endDatedt
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(540, 217);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(96, 20);
-            this.dateTimePicker2.TabIndex = 51;
+            this.endDatedt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.endDatedt.Location = new System.Drawing.Point(540, 217);
+            this.endDatedt.Name = "endDatedt";
+            this.endDatedt.Size = new System.Drawing.Size(96, 20);
+            this.endDatedt.TabIndex = 51;
             // 
             // label6
             // 
@@ -288,13 +280,16 @@
             this.label5.TabIndex = 49;
             this.label5.Text = "תאריך התחלה:";
             // 
-            // comboBox1
+            // frequencyStr
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(540, 260);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(353, 21);
-            this.comboBox1.TabIndex = 48;
+            this.frequencyStr.FormattingEnabled = true;
+            this.frequencyStr.Items.AddRange(new object[] {
+            "קבוע",
+            "חוגים"});
+            this.frequencyStr.Location = new System.Drawing.Point(540, 256);
+            this.frequencyStr.Name = "frequencyStr";
+            this.frequencyStr.Size = new System.Drawing.Size(266, 21);
+            this.frequencyStr.TabIndex = 48;
             // 
             // label4
             // 
@@ -306,12 +301,12 @@
             this.label4.TabIndex = 47;
             this.label4.Text = "תדירות:";
             // 
-            // textBox1
+            // progNameTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(540, 175);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(313, 20);
-            this.textBox1.TabIndex = 46;
+            this.progNameTxt.Location = new System.Drawing.Point(540, 175);
+            this.progNameTxt.Name = "progNameTxt";
+            this.progNameTxt.Size = new System.Drawing.Size(313, 20);
+            this.progNameTxt.TabIndex = 46;
             // 
             // label3
             // 
@@ -362,23 +357,34 @@
             this.pictureBox1.TabIndex = 69;
             this.pictureBox1.TabStop = false;
             // 
-            // button5
+            // programTypeStr
             // 
-            this.button5.Location = new System.Drawing.Point(540, 441);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(119, 27);
-            this.button5.TabIndex = 78;
-            this.button5.Text = "הוספה";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.programTypeStr.FormattingEnabled = true;
+            this.programTypeStr.Items.AddRange(new object[] {
+            "מרותקי בית",
+            "קבוצת תמיכה"});
+            this.programTypeStr.Location = new System.Drawing.Point(540, 303);
+            this.programTypeStr.Name = "programTypeStr";
+            this.programTypeStr.Size = new System.Drawing.Size(266, 21);
+            this.programTypeStr.TabIndex = 79;
             // 
-            // comboBox4
+            // label14
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(540, 396);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(266, 21);
-            this.comboBox4.TabIndex = 79;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label14.Location = new System.Drawing.Point(921, 303);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(30, 17);
+            this.label14.TabIndex = 82;
+            this.label14.Text = "סוג:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(540, 349);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(266, 21);
+            this.comboBox1.TabIndex = 83;
             // 
             // AddProgram
             // 
@@ -386,31 +392,31 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.programTypeStr);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.startDatedt);
+            this.Controls.Add(this.commentsStr);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.detailsStr);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.endDatedt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.frequencyStr);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.progNameTxt);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -433,9 +439,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.DateTimePicker startDatedt;
+        private System.Windows.Forms.RichTextBox commentsStr;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem מקבלישירותToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem פניותToolStripMenuItem;
@@ -443,25 +449,25 @@
         private System.Windows.Forms.ToolStripMenuItem מתנדביםToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem עובדיםToolStripMenuItem;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox detailsStr;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker endDatedt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox frequencyStr;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox progNameTxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox programTypeStr;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

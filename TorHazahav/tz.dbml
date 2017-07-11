@@ -120,8 +120,9 @@
     <Type Name="customer_medical_history">
       <Column Name="customer_id" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="desease" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="comments" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="severity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="Customer_customer_medical_history" Member="Customer" ThisKey="customer_id" OtherKey="Id" Type="Customer" IsForeignKey="true" />
-      <Association Name="medical_history_customer_medical_history" Member="medical_history" ThisKey="desease" OtherKey="name" Type="medical_history" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.customer_phone" Member="customer_phones">
@@ -185,14 +186,6 @@
       <Association Name="wh_address_external_contact" Member="wh_address" ThisKey="address_id" OtherKey="ID" Type="wh_address" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.medical_history" Member="medical_histories">
-    <Type Name="medical_history">
-      <Column Name="name" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="comments" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="severity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="medical_history_customer_medical_history" Member="customer_medical_histories" ThisKey="name" OtherKey="desease" Type="customer_medical_history" />
-    </Type>
-  </Table>
   <Table Name="dbo.phone" Member="phones">
     <Type Name="phone">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -218,6 +211,7 @@
       <Column Name="external_contact_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="coordinator" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
       <Association Name="program_customer_program" Member="customer_programs" ThisKey="ID" OtherKey="program_id" Type="customer_program" />
+      <Association Name="program_volunteer" Member="volunteers" ThisKey="ID" OtherKey="program_id" Type="volunteer" />
       <Association Name="program_Volunteer_for_customer" Member="Volunteer_for_customers" ThisKey="ID" OtherKey="program_id" Type="Volunteer_for_customer" />
       <Association Name="employee_program" Member="employee" ThisKey="employee_id" OtherKey="employee_id" Type="employee" IsForeignKey="true" />
       <Association Name="external_contact_program" Member="external_contact" ThisKey="external_contact_id" OtherKey="ID" Type="external_contact" IsForeignKey="true" />
@@ -246,7 +240,9 @@
       <Column Name="comments" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
       <Column Name="start_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="end_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="program_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="volunteer_Volunteer_for_customer" Member="Volunteer_for_customers" ThisKey="ID" OtherKey="volunteer_id" Type="Volunteer_for_customer" />
+      <Association Name="program_volunteer" Member="program" ThisKey="program_id" OtherKey="ID" Type="program" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Volunteer_for_customer" Member="Volunteer_for_customers">

@@ -75,9 +75,6 @@ namespace TorHazahav
     partial void Insertexternal_contact(external_contact instance);
     partial void Updateexternal_contact(external_contact instance);
     partial void Deleteexternal_contact(external_contact instance);
-    partial void Insertmedical_history(medical_history instance);
-    partial void Updatemedical_history(medical_history instance);
-    partial void Deletemedical_history(medical_history instance);
     partial void Insertphone(phone instance);
     partial void Updatephone(phone instance);
     partial void Deletephone(phone instance);
@@ -242,14 +239,6 @@ namespace TorHazahav
 			get
 			{
 				return this.GetTable<external_contact>();
-			}
-		}
-		
-		public System.Data.Linq.Table<medical_history> medical_histories
-		{
-			get
-			{
-				return this.GetTable<medical_history>();
 			}
 		}
 		
@@ -2804,9 +2793,11 @@ namespace TorHazahav
 		
 		private string _desease;
 		
-		private EntityRef<Customer> _Customer;
+		private string _comments;
 		
-		private EntityRef<medical_history> _medical_history;
+		private string _severity;
+		
+		private EntityRef<Customer> _Customer;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2816,12 +2807,15 @@ namespace TorHazahav
     partial void Oncustomer_idChanged();
     partial void OndeseaseChanging(string value);
     partial void OndeseaseChanged();
+    partial void OncommentsChanging(string value);
+    partial void OncommentsChanged();
+    partial void OnseverityChanging(string value);
+    partial void OnseverityChanged();
     #endregion
 		
 		public customer_medical_history()
 		{
 			this._Customer = default(EntityRef<Customer>);
-			this._medical_history = default(EntityRef<medical_history>);
 			OnCreated();
 		}
 		
@@ -2860,15 +2854,51 @@ namespace TorHazahav
 			{
 				if ((this._desease != value))
 				{
-					if (this._medical_history.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OndeseaseChanging(value);
 					this.SendPropertyChanging();
 					this._desease = value;
 					this.SendPropertyChanged("desease");
 					this.OndeseaseChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_comments", DbType="NVarChar(250)")]
+		public string comments
+		{
+			get
+			{
+				return this._comments;
+			}
+			set
+			{
+				if ((this._comments != value))
+				{
+					this.OncommentsChanging(value);
+					this.SendPropertyChanging();
+					this._comments = value;
+					this.SendPropertyChanged("comments");
+					this.OncommentsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_severity", DbType="NVarChar(50)")]
+		public string severity
+		{
+			get
+			{
+				return this._severity;
+			}
+			set
+			{
+				if ((this._severity != value))
+				{
+					this.OnseverityChanging(value);
+					this.SendPropertyChanging();
+					this._severity = value;
+					this.SendPropertyChanged("severity");
+					this.OnseverityChanged();
 				}
 			}
 		}
@@ -2903,40 +2933,6 @@ namespace TorHazahav
 						this._customer_id = default(string);
 					}
 					this.SendPropertyChanged("Customer");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="medical_history_customer_medical_history", Storage="_medical_history", ThisKey="desease", OtherKey="name", IsForeignKey=true)]
-		public medical_history medical_history
-		{
-			get
-			{
-				return this._medical_history.Entity;
-			}
-			set
-			{
-				medical_history previousValue = this._medical_history.Entity;
-				if (((previousValue != value) 
-							|| (this._medical_history.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._medical_history.Entity = null;
-						previousValue.customer_medical_histories.Remove(this);
-					}
-					this._medical_history.Entity = value;
-					if ((value != null))
-					{
-						value.customer_medical_histories.Add(this);
-						this._desease = value.name;
-					}
-					else
-					{
-						this._desease = default(string);
-					}
-					this.SendPropertyChanged("medical_history");
 				}
 			}
 		}
@@ -4284,144 +4280,6 @@ namespace TorHazahav
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.medical_history")]
-	public partial class medical_history : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _name;
-		
-		private string _comments;
-		
-		private string _severity;
-		
-		private EntitySet<customer_medical_history> _customer_medical_histories;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    partial void OncommentsChanging(string value);
-    partial void OncommentsChanged();
-    partial void OnseverityChanging(string value);
-    partial void OnseverityChanged();
-    #endregion
-		
-		public medical_history()
-		{
-			this._customer_medical_histories = new EntitySet<customer_medical_history>(new Action<customer_medical_history>(this.attach_customer_medical_histories), new Action<customer_medical_history>(this.detach_customer_medical_histories));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string name
-		{
-			get
-			{
-				return this._name;
-			}
-			set
-			{
-				if ((this._name != value))
-				{
-					this.OnnameChanging(value);
-					this.SendPropertyChanging();
-					this._name = value;
-					this.SendPropertyChanged("name");
-					this.OnnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_comments", DbType="NVarChar(250)")]
-		public string comments
-		{
-			get
-			{
-				return this._comments;
-			}
-			set
-			{
-				if ((this._comments != value))
-				{
-					this.OncommentsChanging(value);
-					this.SendPropertyChanging();
-					this._comments = value;
-					this.SendPropertyChanged("comments");
-					this.OncommentsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_severity", DbType="NVarChar(50)")]
-		public string severity
-		{
-			get
-			{
-				return this._severity;
-			}
-			set
-			{
-				if ((this._severity != value))
-				{
-					this.OnseverityChanging(value);
-					this.SendPropertyChanging();
-					this._severity = value;
-					this.SendPropertyChanged("severity");
-					this.OnseverityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="medical_history_customer_medical_history", Storage="_customer_medical_histories", ThisKey="name", OtherKey="desease")]
-		public EntitySet<customer_medical_history> customer_medical_histories
-		{
-			get
-			{
-				return this._customer_medical_histories;
-			}
-			set
-			{
-				this._customer_medical_histories.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_customer_medical_histories(customer_medical_history entity)
-		{
-			this.SendPropertyChanging();
-			entity.medical_history = this;
-		}
-		
-		private void detach_customer_medical_histories(customer_medical_history entity)
-		{
-			this.SendPropertyChanging();
-			entity.medical_history = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.phone")]
 	public partial class phone : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -4670,6 +4528,8 @@ namespace TorHazahav
 		
 		private EntitySet<customer_program> _customer_programs;
 		
+		private EntitySet<volunteer> _volunteers;
+		
 		private EntitySet<Volunteer_for_customer> _Volunteer_for_customers;
 		
 		private EntityRef<employee> _employee;
@@ -4707,6 +4567,7 @@ namespace TorHazahav
 		public program()
 		{
 			this._customer_programs = new EntitySet<customer_program>(new Action<customer_program>(this.attach_customer_programs), new Action<customer_program>(this.detach_customer_programs));
+			this._volunteers = new EntitySet<volunteer>(new Action<volunteer>(this.attach_volunteers), new Action<volunteer>(this.detach_volunteers));
 			this._Volunteer_for_customers = new EntitySet<Volunteer_for_customer>(new Action<Volunteer_for_customer>(this.attach_Volunteer_for_customers), new Action<Volunteer_for_customer>(this.detach_Volunteer_for_customers));
 			this._employee = default(EntityRef<employee>);
 			this._external_contact = default(EntityRef<external_contact>);
@@ -4954,6 +4815,19 @@ namespace TorHazahav
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="program_volunteer", Storage="_volunteers", ThisKey="ID", OtherKey="program_id")]
+		public EntitySet<volunteer> volunteers
+		{
+			get
+			{
+				return this._volunteers;
+			}
+			set
+			{
+				this._volunteers.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="program_Volunteer_for_customer", Storage="_Volunteer_for_customers", ThisKey="ID", OtherKey="program_id")]
 		public EntitySet<Volunteer_for_customer> Volunteer_for_customers
 		{
@@ -5062,6 +4936,18 @@ namespace TorHazahav
 		}
 		
 		private void detach_customer_programs(customer_program entity)
+		{
+			this.SendPropertyChanging();
+			entity.program = null;
+		}
+		
+		private void attach_volunteers(volunteer entity)
+		{
+			this.SendPropertyChanging();
+			entity.program = this;
+		}
+		
+		private void detach_volunteers(volunteer entity)
 		{
 			this.SendPropertyChanging();
 			entity.program = null;
@@ -5412,7 +5298,11 @@ namespace TorHazahav
 		
 		private System.Nullable<System.DateTime> _end_date;
 		
+		private System.Nullable<int> _program_id;
+		
 		private EntitySet<Volunteer_for_customer> _Volunteer_for_customers;
+		
+		private EntityRef<program> _program;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5432,11 +5322,14 @@ namespace TorHazahav
     partial void Onstart_dateChanged();
     partial void Onend_dateChanging(System.Nullable<System.DateTime> value);
     partial void Onend_dateChanged();
+    partial void Onprogram_idChanging(System.Nullable<int> value);
+    partial void Onprogram_idChanged();
     #endregion
 		
 		public volunteer()
 		{
 			this._Volunteer_for_customers = new EntitySet<Volunteer_for_customer>(new Action<Volunteer_for_customer>(this.attach_Volunteer_for_customers), new Action<Volunteer_for_customer>(this.detach_Volunteer_for_customers));
+			this._program = default(EntityRef<program>);
 			OnCreated();
 		}
 		
@@ -5580,6 +5473,30 @@ namespace TorHazahav
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_program_id", DbType="Int")]
+		public System.Nullable<int> program_id
+		{
+			get
+			{
+				return this._program_id;
+			}
+			set
+			{
+				if ((this._program_id != value))
+				{
+					if (this._program.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onprogram_idChanging(value);
+					this.SendPropertyChanging();
+					this._program_id = value;
+					this.SendPropertyChanged("program_id");
+					this.Onprogram_idChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="volunteer_Volunteer_for_customer", Storage="_Volunteer_for_customers", ThisKey="ID", OtherKey="volunteer_id")]
 		public EntitySet<Volunteer_for_customer> Volunteer_for_customers
 		{
@@ -5590,6 +5507,40 @@ namespace TorHazahav
 			set
 			{
 				this._Volunteer_for_customers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="program_volunteer", Storage="_program", ThisKey="program_id", OtherKey="ID", IsForeignKey=true)]
+		public program program
+		{
+			get
+			{
+				return this._program.Entity;
+			}
+			set
+			{
+				program previousValue = this._program.Entity;
+				if (((previousValue != value) 
+							|| (this._program.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._program.Entity = null;
+						previousValue.volunteers.Remove(this);
+					}
+					this._program.Entity = value;
+					if ((value != null))
+					{
+						value.volunteers.Add(this);
+						this._program_id = value.ID;
+					}
+					else
+					{
+						this._program_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("program");
+				}
 			}
 		}
 		

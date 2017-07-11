@@ -159,6 +159,7 @@
             this.Name = "AddVolunteer";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "AddVolunteer";
+            this.Load += new System.EventHandler(this.AddVolunteer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

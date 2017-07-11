@@ -16,5 +16,10 @@ namespace TorHazahav
         {
             InitializeComponent();
         }
+
+        private void AddVolunteer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

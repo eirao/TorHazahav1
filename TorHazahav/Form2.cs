@@ -66,23 +66,15 @@ namespace TorHazahav
 
             }
 
-
-
-
-
-
-
-
-
-
-
         }
 
 
 
         private void needSpAct_btn_Click(object sender, EventArgs e)
         {
-
+            NeedSpecialActivity f = new NeedSpecialActivity();
+            f.Show();
+            this.Enabled = false;
         }
 
         private void mainCarrier_btn_Click(object sender, EventArgs e)
@@ -107,6 +99,13 @@ namespace TorHazahav
                 a.Show();
                 this.Enabled = false;
             }
+        }
+
+        private void healthInfo_btn_Click(object sender, EventArgs e)
+        {
+            MedicalInfo a = new MedicalInfo();
+            a.Show();
+            this.Enabled = false;
         }
     }
 }

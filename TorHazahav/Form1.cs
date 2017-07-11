@@ -177,5 +177,12 @@ namespace TorHazahav
         {
 
         }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            AddCustomerPage1 f = new AddCustomerPage1();
+            f.Show();
+            this.Hide();
+        }
     }
 }

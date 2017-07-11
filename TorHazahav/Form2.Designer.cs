@@ -77,6 +77,7 @@
             this.כליםוניהולמערכתToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label20 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.AddProgramToCustomerbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -409,6 +410,7 @@
             this.healthInfo_btn.TabIndex = 94;
             this.healthInfo_btn.Text = "לחץ להזנה";
             this.healthInfo_btn.UseVisualStyleBackColor = true;
+            this.healthInfo_btn.Click += new System.EventHandler(this.healthInfo_btn_Click);
             // 
             // label2
             // 
@@ -598,12 +600,22 @@
             this.button1.Text = "חזרה אחורה";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // AddProgramToCustomerbtn
+            // 
+            this.AddProgramToCustomerbtn.Location = new System.Drawing.Point(714, 373);
+            this.AddProgramToCustomerbtn.Name = "AddProgramToCustomerbtn";
+            this.AddProgramToCustomerbtn.Size = new System.Drawing.Size(119, 27);
+            this.AddProgramToCustomerbtn.TabIndex = 112;
+            this.AddProgramToCustomerbtn.Text = "הוסף תוכניות";
+            this.AddProgramToCustomerbtn.UseVisualStyleBackColor = true;
+            // 
             // AddCustomerPage2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.Controls.Add(this.AddProgramToCustomerbtn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -709,5 +721,6 @@
         private System.Windows.Forms.ToolStripMenuItem כליםוניהולמערכתToolStripMenuItem;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddProgramToCustomerbtn;
     }
 }
