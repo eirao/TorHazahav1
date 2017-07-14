@@ -61,6 +61,11 @@ namespace TorHazahav
             f.Show();
             this.Hide();
         }
+
+        private void programTypeStr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

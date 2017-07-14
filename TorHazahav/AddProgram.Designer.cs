@@ -367,6 +367,7 @@
             this.programTypeStr.Name = "programTypeStr";
             this.programTypeStr.Size = new System.Drawing.Size(266, 21);
             this.programTypeStr.TabIndex = 79;
+            this.programTypeStr.SelectedIndexChanged += new System.EventHandler(this.programTypeStr_SelectedIndexChanged);
             // 
             // label14
             // 

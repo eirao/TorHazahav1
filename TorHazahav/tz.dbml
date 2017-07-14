@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TOR_HAZAHAV" Class="tzDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-805B3L5\SQLEXPRESS;Initial Catalog=TOR_HAZAHAV;Integrated Security=True" SettingsObjectName="TorHazahav.Properties.Settings" SettingsPropertyName="TOR_HAZAHAVConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.activity" Member="activities">
-    <Type Name="activity">
+  <Table Name="dbo.contact" Member="contacts">
+    <Type Name="contact">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="activity_type" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="activity_details" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="qualification" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="activity_customer_activity" Member="customer_activities" ThisKey="ID" OtherKey="activity_id" Type="customer_activity" />
+      <Column Name="first_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="last_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email_address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="job" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="contact_contact_address" Member="contact_addresses" ThisKey="ID" OtherKey="contact_id" Type="contact_address" />
+      <Association Name="contact_customer_contact" Member="customer_contacts" ThisKey="ID" OtherKey="contact_id" Type="customer_contact" />
+      <Association Name="contact_ext_contact_address" Member="ext_contact_addresses" ThisKey="ID" OtherKey="contact_id" Type="ext_contact_address" />
+      <Association Name="contact_request" Member="requests" ThisKey="ID" OtherKey="contact_id" Type="request" />
     </Type>
   </Table>
   <Table Name="dbo.wh_address" Member="wh_addresses">
@@ -23,19 +26,6 @@
       <Association Name="wh_address_customer_address" Member="customer_addresses" ThisKey="ID" OtherKey="address_id" Type="customer_address" />
       <Association Name="wh_address_ext_contact_address" Member="ext_contact_addresses" ThisKey="ID" OtherKey="address_id" Type="ext_contact_address" />
       <Association Name="wh_address_external_contact" Member="external_contacts" ThisKey="ID" OtherKey="address_id" Type="external_contact" />
-    </Type>
-  </Table>
-  <Table Name="dbo.contact" Member="contacts">
-    <Type Name="contact">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="first_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="last_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="email_address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="job" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="contact_contact_address" Member="contact_addresses" ThisKey="ID" OtherKey="contact_id" Type="contact_address" />
-      <Association Name="contact_customer_contact" Member="customer_contacts" ThisKey="ID" OtherKey="contact_id" Type="customer_contact" />
-      <Association Name="contact_ext_contact_address" Member="ext_contact_addresses" ThisKey="ID" OtherKey="contact_id" Type="ext_contact_address" />
-      <Association Name="contact_request" Member="requests" ThisKey="ID" OtherKey="contact_id" Type="request" />
     </Type>
   </Table>
   <Table Name="dbo.contact_address" Member="contact_addresses">
@@ -79,22 +69,13 @@
       <Column Name="nursing_law" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="status_cd" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Association Name="Customer_contact_phone" Member="contact_phones" ThisKey="Id" OtherKey="contact_id" Type="contact_phone" />
-      <Association Name="Customer_customer_activity" Member="customer_activities" ThisKey="Id" OtherKey="customer_id" Type="customer_activity" />
       <Association Name="Customer_customer_address" Member="customer_addresses" ThisKey="Id" OtherKey="customer_id" Type="customer_address" />
       <Association Name="Customer_customer_contact" Member="customer_contacts" ThisKey="Id" OtherKey="customer_id" Type="customer_contact" />
       <Association Name="Customer_customer_medical_history" Member="customer_medical_histories" ThisKey="Id" OtherKey="customer_id" Type="customer_medical_history" />
       <Association Name="Customer_customer_phone" Member="customer_phones" ThisKey="Id" OtherKey="customer_id" Type="customer_phone" />
       <Association Name="Customer_customer_program" Member="customer_programs" ThisKey="Id" OtherKey="customer_id" Type="customer_program" />
+      <Association Name="Customer_customer_sp_act" Member="customer_sp_acts" ThisKey="Id" OtherKey="customer_id" Type="customer_sp_act" />
       <Association Name="Customer_Volunteer_for_customer" Member="Volunteer_for_customers" ThisKey="Id" OtherKey="customer_id" Type="Volunteer_for_customer" />
-    </Type>
-  </Table>
-  <Table Name="dbo.customer_activity" Member="customer_activities">
-    <Type Name="customer_activity">
-      <Column Name="customer_id" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="activity_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Association Name="activity_customer_activity" Member="activity" ThisKey="activity_id" OtherKey="ID" Type="activity" IsForeignKey="true" />
-      <Association Name="Customer_customer_activity" Member="Customer" ThisKey="customer_id" OtherKey="Id" Type="Customer" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.customer_address" Member="customer_addresses">
@@ -143,6 +124,17 @@
       <Column Name="end_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="Customer_customer_program" Member="Customer" ThisKey="customer_id" OtherKey="Id" Type="Customer" IsForeignKey="true" />
       <Association Name="program_customer_program" Member="program" ThisKey="program_id" OtherKey="ID" Type="program" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.customer_sp_act" Member="customer_sp_acts">
+    <Type Name="customer_sp_act">
+      <Column Name="customer_id" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="activity_name" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="activity_type" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="activity_details" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="qualification" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="activity_status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="Customer_customer_sp_act" Member="Customer" ThisKey="customer_id" OtherKey="Id" Type="Customer" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.employee" Member="employees">

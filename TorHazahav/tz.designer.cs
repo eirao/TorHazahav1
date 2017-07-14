@@ -30,15 +30,12 @@ namespace TorHazahav
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void Insertactivity(activity instance);
-    partial void Updateactivity(activity instance);
-    partial void Deleteactivity(activity instance);
-    partial void Insertwh_address(wh_address instance);
-    partial void Updatewh_address(wh_address instance);
-    partial void Deletewh_address(wh_address instance);
     partial void Insertcontact(contact instance);
     partial void Updatecontact(contact instance);
     partial void Deletecontact(contact instance);
+    partial void Insertwh_address(wh_address instance);
+    partial void Updatewh_address(wh_address instance);
+    partial void Deletewh_address(wh_address instance);
     partial void Insertcontact_address(contact_address instance);
     partial void Updatecontact_address(contact_address instance);
     partial void Deletecontact_address(contact_address instance);
@@ -48,9 +45,6 @@ namespace TorHazahav
     partial void InsertCustomer(Customer instance);
     partial void UpdateCustomer(Customer instance);
     partial void DeleteCustomer(Customer instance);
-    partial void Insertcustomer_activity(customer_activity instance);
-    partial void Updatecustomer_activity(customer_activity instance);
-    partial void Deletecustomer_activity(customer_activity instance);
     partial void Insertcustomer_address(customer_address instance);
     partial void Updatecustomer_address(customer_address instance);
     partial void Deletecustomer_address(customer_address instance);
@@ -66,6 +60,9 @@ namespace TorHazahav
     partial void Insertcustomer_program(customer_program instance);
     partial void Updatecustomer_program(customer_program instance);
     partial void Deletecustomer_program(customer_program instance);
+    partial void Insertcustomer_sp_act(customer_sp_act instance);
+    partial void Updatecustomer_sp_act(customer_sp_act instance);
+    partial void Deletecustomer_sp_act(customer_sp_act instance);
     partial void Insertemployee(employee instance);
     partial void Updateemployee(employee instance);
     partial void Deleteemployee(employee instance);
@@ -122,11 +119,11 @@ namespace TorHazahav
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<activity> activities
+		public System.Data.Linq.Table<contact> contacts
 		{
 			get
 			{
-				return this.GetTable<activity>();
+				return this.GetTable<contact>();
 			}
 		}
 		
@@ -135,14 +132,6 @@ namespace TorHazahav
 			get
 			{
 				return this.GetTable<wh_address>();
-			}
-		}
-		
-		public System.Data.Linq.Table<contact> contacts
-		{
-			get
-			{
-				return this.GetTable<contact>();
 			}
 		}
 		
@@ -167,14 +156,6 @@ namespace TorHazahav
 			get
 			{
 				return this.GetTable<Customer>();
-			}
-		}
-		
-		public System.Data.Linq.Table<customer_activity> customer_activities
-		{
-			get
-			{
-				return this.GetTable<customer_activity>();
 			}
 		}
 		
@@ -215,6 +196,14 @@ namespace TorHazahav
 			get
 			{
 				return this.GetTable<customer_program>();
+			}
+		}
+		
+		public System.Data.Linq.Table<customer_sp_act> customer_sp_acts
+		{
+			get
+			{
+				return this.GetTable<customer_sp_act>();
 			}
 		}
 		
@@ -283,23 +272,29 @@ namespace TorHazahav
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.activity")]
-	public partial class activity : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.contact")]
+	public partial class contact : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private string _name;
+		private string _first_name;
 		
-		private string _activity_type;
+		private string _last_name;
 		
-		private string _activity_details;
+		private string _email_address;
 		
-		private System.Nullable<bool> _qualification;
+		private string _job;
 		
-		private EntitySet<customer_activity> _customer_activities;
+		private EntitySet<contact_address> _contact_addresses;
+		
+		private EntitySet<customer_contact> _customer_contacts;
+		
+		private EntitySet<ext_contact_address> _ext_contact_addresses;
+		
+		private EntitySet<request> _requests;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -307,19 +302,22 @@ namespace TorHazahav
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    partial void Onactivity_typeChanging(string value);
-    partial void Onactivity_typeChanged();
-    partial void Onactivity_detailsChanging(string value);
-    partial void Onactivity_detailsChanged();
-    partial void OnqualificationChanging(System.Nullable<bool> value);
-    partial void OnqualificationChanged();
+    partial void Onfirst_nameChanging(string value);
+    partial void Onfirst_nameChanged();
+    partial void Onlast_nameChanging(string value);
+    partial void Onlast_nameChanged();
+    partial void Onemail_addressChanging(string value);
+    partial void Onemail_addressChanged();
+    partial void OnjobChanging(string value);
+    partial void OnjobChanged();
     #endregion
 		
-		public activity()
+		public contact()
 		{
-			this._customer_activities = new EntitySet<customer_activity>(new Action<customer_activity>(this.attach_customer_activities), new Action<customer_activity>(this.detach_customer_activities));
+			this._contact_addresses = new EntitySet<contact_address>(new Action<contact_address>(this.attach_contact_addresses), new Action<contact_address>(this.detach_contact_addresses));
+			this._customer_contacts = new EntitySet<customer_contact>(new Action<customer_contact>(this.attach_customer_contacts), new Action<customer_contact>(this.detach_customer_contacts));
+			this._ext_contact_addresses = new EntitySet<ext_contact_address>(new Action<ext_contact_address>(this.attach_ext_contact_addresses), new Action<ext_contact_address>(this.detach_ext_contact_addresses));
+			this._requests = new EntitySet<request>(new Action<request>(this.attach_requests), new Action<request>(this.detach_requests));
 			OnCreated();
 		}
 		
@@ -343,96 +341,135 @@ namespace TorHazahav
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_first_name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string first_name
 		{
 			get
 			{
-				return this._name;
+				return this._first_name;
 			}
 			set
 			{
-				if ((this._name != value))
+				if ((this._first_name != value))
 				{
-					this.OnnameChanging(value);
+					this.Onfirst_nameChanging(value);
 					this.SendPropertyChanging();
-					this._name = value;
-					this.SendPropertyChanged("name");
-					this.OnnameChanged();
+					this._first_name = value;
+					this.SendPropertyChanged("first_name");
+					this.Onfirst_nameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_activity_type", DbType="NVarChar(30)")]
-		public string activity_type
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_last_name", DbType="NVarChar(50)")]
+		public string last_name
 		{
 			get
 			{
-				return this._activity_type;
+				return this._last_name;
 			}
 			set
 			{
-				if ((this._activity_type != value))
+				if ((this._last_name != value))
 				{
-					this.Onactivity_typeChanging(value);
+					this.Onlast_nameChanging(value);
 					this.SendPropertyChanging();
-					this._activity_type = value;
-					this.SendPropertyChanged("activity_type");
-					this.Onactivity_typeChanged();
+					this._last_name = value;
+					this.SendPropertyChanged("last_name");
+					this.Onlast_nameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_activity_details", DbType="NVarChar(250)")]
-		public string activity_details
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email_address", DbType="VarChar(100)")]
+		public string email_address
 		{
 			get
 			{
-				return this._activity_details;
+				return this._email_address;
 			}
 			set
 			{
-				if ((this._activity_details != value))
+				if ((this._email_address != value))
 				{
-					this.Onactivity_detailsChanging(value);
+					this.Onemail_addressChanging(value);
 					this.SendPropertyChanging();
-					this._activity_details = value;
-					this.SendPropertyChanged("activity_details");
-					this.Onactivity_detailsChanged();
+					this._email_address = value;
+					this.SendPropertyChanged("email_address");
+					this.Onemail_addressChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_qualification", DbType="Bit")]
-		public System.Nullable<bool> qualification
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_job", DbType="NVarChar(50)")]
+		public string job
 		{
 			get
 			{
-				return this._qualification;
+				return this._job;
 			}
 			set
 			{
-				if ((this._qualification != value))
+				if ((this._job != value))
 				{
-					this.OnqualificationChanging(value);
+					this.OnjobChanging(value);
 					this.SendPropertyChanging();
-					this._qualification = value;
-					this.SendPropertyChanged("qualification");
-					this.OnqualificationChanged();
+					this._job = value;
+					this.SendPropertyChanged("job");
+					this.OnjobChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="activity_customer_activity", Storage="_customer_activities", ThisKey="ID", OtherKey="activity_id")]
-		public EntitySet<customer_activity> customer_activities
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="contact_contact_address", Storage="_contact_addresses", ThisKey="ID", OtherKey="contact_id")]
+		public EntitySet<contact_address> contact_addresses
 		{
 			get
 			{
-				return this._customer_activities;
+				return this._contact_addresses;
 			}
 			set
 			{
-				this._customer_activities.Assign(value);
+				this._contact_addresses.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="contact_customer_contact", Storage="_customer_contacts", ThisKey="ID", OtherKey="contact_id")]
+		public EntitySet<customer_contact> customer_contacts
+		{
+			get
+			{
+				return this._customer_contacts;
+			}
+			set
+			{
+				this._customer_contacts.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="contact_ext_contact_address", Storage="_ext_contact_addresses", ThisKey="ID", OtherKey="contact_id")]
+		public EntitySet<ext_contact_address> ext_contact_addresses
+		{
+			get
+			{
+				return this._ext_contact_addresses;
+			}
+			set
+			{
+				this._ext_contact_addresses.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="contact_request", Storage="_requests", ThisKey="ID", OtherKey="contact_id")]
+		public EntitySet<request> requests
+		{
+			get
+			{
+				return this._requests;
+			}
+			set
+			{
+				this._requests.Assign(value);
 			}
 		}
 		
@@ -456,16 +493,52 @@ namespace TorHazahav
 			}
 		}
 		
-		private void attach_customer_activities(customer_activity entity)
+		private void attach_contact_addresses(contact_address entity)
 		{
 			this.SendPropertyChanging();
-			entity.activity = this;
+			entity.contact = this;
 		}
 		
-		private void detach_customer_activities(customer_activity entity)
+		private void detach_contact_addresses(contact_address entity)
 		{
 			this.SendPropertyChanging();
-			entity.activity = null;
+			entity.contact = null;
+		}
+		
+		private void attach_customer_contacts(customer_contact entity)
+		{
+			this.SendPropertyChanging();
+			entity.contact = this;
+		}
+		
+		private void detach_customer_contacts(customer_contact entity)
+		{
+			this.SendPropertyChanging();
+			entity.contact = null;
+		}
+		
+		private void attach_ext_contact_addresses(ext_contact_address entity)
+		{
+			this.SendPropertyChanging();
+			entity.contact = this;
+		}
+		
+		private void detach_ext_contact_addresses(ext_contact_address entity)
+		{
+			this.SendPropertyChanging();
+			entity.contact = null;
+		}
+		
+		private void attach_requests(request entity)
+		{
+			this.SendPropertyChanging();
+			entity.contact = this;
+		}
+		
+		private void detach_requests(request entity)
+		{
+			this.SendPropertyChanging();
+			entity.contact = null;
 		}
 	}
 	
@@ -784,276 +857,6 @@ namespace TorHazahav
 		{
 			this.SendPropertyChanging();
 			entity.wh_address = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.contact")]
-	public partial class contact : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _first_name;
-		
-		private string _last_name;
-		
-		private string _email_address;
-		
-		private string _job;
-		
-		private EntitySet<contact_address> _contact_addresses;
-		
-		private EntitySet<customer_contact> _customer_contacts;
-		
-		private EntitySet<ext_contact_address> _ext_contact_addresses;
-		
-		private EntitySet<request> _requests;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void Onfirst_nameChanging(string value);
-    partial void Onfirst_nameChanged();
-    partial void Onlast_nameChanging(string value);
-    partial void Onlast_nameChanged();
-    partial void Onemail_addressChanging(string value);
-    partial void Onemail_addressChanged();
-    partial void OnjobChanging(string value);
-    partial void OnjobChanged();
-    #endregion
-		
-		public contact()
-		{
-			this._contact_addresses = new EntitySet<contact_address>(new Action<contact_address>(this.attach_contact_addresses), new Action<contact_address>(this.detach_contact_addresses));
-			this._customer_contacts = new EntitySet<customer_contact>(new Action<customer_contact>(this.attach_customer_contacts), new Action<customer_contact>(this.detach_customer_contacts));
-			this._ext_contact_addresses = new EntitySet<ext_contact_address>(new Action<ext_contact_address>(this.attach_ext_contact_addresses), new Action<ext_contact_address>(this.detach_ext_contact_addresses));
-			this._requests = new EntitySet<request>(new Action<request>(this.attach_requests), new Action<request>(this.detach_requests));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_first_name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string first_name
-		{
-			get
-			{
-				return this._first_name;
-			}
-			set
-			{
-				if ((this._first_name != value))
-				{
-					this.Onfirst_nameChanging(value);
-					this.SendPropertyChanging();
-					this._first_name = value;
-					this.SendPropertyChanged("first_name");
-					this.Onfirst_nameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_last_name", DbType="NVarChar(50)")]
-		public string last_name
-		{
-			get
-			{
-				return this._last_name;
-			}
-			set
-			{
-				if ((this._last_name != value))
-				{
-					this.Onlast_nameChanging(value);
-					this.SendPropertyChanging();
-					this._last_name = value;
-					this.SendPropertyChanged("last_name");
-					this.Onlast_nameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email_address", DbType="VarChar(100)")]
-		public string email_address
-		{
-			get
-			{
-				return this._email_address;
-			}
-			set
-			{
-				if ((this._email_address != value))
-				{
-					this.Onemail_addressChanging(value);
-					this.SendPropertyChanging();
-					this._email_address = value;
-					this.SendPropertyChanged("email_address");
-					this.Onemail_addressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_job", DbType="NVarChar(50)")]
-		public string job
-		{
-			get
-			{
-				return this._job;
-			}
-			set
-			{
-				if ((this._job != value))
-				{
-					this.OnjobChanging(value);
-					this.SendPropertyChanging();
-					this._job = value;
-					this.SendPropertyChanged("job");
-					this.OnjobChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="contact_contact_address", Storage="_contact_addresses", ThisKey="ID", OtherKey="contact_id")]
-		public EntitySet<contact_address> contact_addresses
-		{
-			get
-			{
-				return this._contact_addresses;
-			}
-			set
-			{
-				this._contact_addresses.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="contact_customer_contact", Storage="_customer_contacts", ThisKey="ID", OtherKey="contact_id")]
-		public EntitySet<customer_contact> customer_contacts
-		{
-			get
-			{
-				return this._customer_contacts;
-			}
-			set
-			{
-				this._customer_contacts.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="contact_ext_contact_address", Storage="_ext_contact_addresses", ThisKey="ID", OtherKey="contact_id")]
-		public EntitySet<ext_contact_address> ext_contact_addresses
-		{
-			get
-			{
-				return this._ext_contact_addresses;
-			}
-			set
-			{
-				this._ext_contact_addresses.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="contact_request", Storage="_requests", ThisKey="ID", OtherKey="contact_id")]
-		public EntitySet<request> requests
-		{
-			get
-			{
-				return this._requests;
-			}
-			set
-			{
-				this._requests.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_contact_addresses(contact_address entity)
-		{
-			this.SendPropertyChanging();
-			entity.contact = this;
-		}
-		
-		private void detach_contact_addresses(contact_address entity)
-		{
-			this.SendPropertyChanging();
-			entity.contact = null;
-		}
-		
-		private void attach_customer_contacts(customer_contact entity)
-		{
-			this.SendPropertyChanging();
-			entity.contact = this;
-		}
-		
-		private void detach_customer_contacts(customer_contact entity)
-		{
-			this.SendPropertyChanging();
-			entity.contact = null;
-		}
-		
-		private void attach_ext_contact_addresses(ext_contact_address entity)
-		{
-			this.SendPropertyChanging();
-			entity.contact = this;
-		}
-		
-		private void detach_ext_contact_addresses(ext_contact_address entity)
-		{
-			this.SendPropertyChanging();
-			entity.contact = null;
-		}
-		
-		private void attach_requests(request entity)
-		{
-			this.SendPropertyChanging();
-			entity.contact = this;
-		}
-		
-		private void detach_requests(request entity)
-		{
-			this.SendPropertyChanging();
-			entity.contact = null;
 		}
 	}
 	
@@ -1533,8 +1336,6 @@ namespace TorHazahav
 		
 		private EntitySet<contact_phone> _contact_phones;
 		
-		private EntitySet<customer_activity> _customer_activities;
-		
 		private EntitySet<customer_address> _customer_addresses;
 		
 		private EntitySet<customer_contact> _customer_contacts;
@@ -1544,6 +1345,8 @@ namespace TorHazahav
 		private EntitySet<customer_phone> _customer_phones;
 		
 		private EntitySet<customer_program> _customer_programs;
+		
+		private EntitySet<customer_sp_act> _customer_sp_acts;
 		
 		private EntitySet<Volunteer_for_customer> _Volunteer_for_customers;
 		
@@ -1592,12 +1395,12 @@ namespace TorHazahav
 		public Customer()
 		{
 			this._contact_phones = new EntitySet<contact_phone>(new Action<contact_phone>(this.attach_contact_phones), new Action<contact_phone>(this.detach_contact_phones));
-			this._customer_activities = new EntitySet<customer_activity>(new Action<customer_activity>(this.attach_customer_activities), new Action<customer_activity>(this.detach_customer_activities));
 			this._customer_addresses = new EntitySet<customer_address>(new Action<customer_address>(this.attach_customer_addresses), new Action<customer_address>(this.detach_customer_addresses));
 			this._customer_contacts = new EntitySet<customer_contact>(new Action<customer_contact>(this.attach_customer_contacts), new Action<customer_contact>(this.detach_customer_contacts));
 			this._customer_medical_histories = new EntitySet<customer_medical_history>(new Action<customer_medical_history>(this.attach_customer_medical_histories), new Action<customer_medical_history>(this.detach_customer_medical_histories));
 			this._customer_phones = new EntitySet<customer_phone>(new Action<customer_phone>(this.attach_customer_phones), new Action<customer_phone>(this.detach_customer_phones));
 			this._customer_programs = new EntitySet<customer_program>(new Action<customer_program>(this.attach_customer_programs), new Action<customer_program>(this.detach_customer_programs));
+			this._customer_sp_acts = new EntitySet<customer_sp_act>(new Action<customer_sp_act>(this.attach_customer_sp_acts), new Action<customer_sp_act>(this.detach_customer_sp_acts));
 			this._Volunteer_for_customers = new EntitySet<Volunteer_for_customer>(new Action<Volunteer_for_customer>(this.attach_Volunteer_for_customers), new Action<Volunteer_for_customer>(this.detach_Volunteer_for_customers));
 			OnCreated();
 		}
@@ -1975,19 +1778,6 @@ namespace TorHazahav
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_customer_activity", Storage="_customer_activities", ThisKey="Id", OtherKey="customer_id")]
-		public EntitySet<customer_activity> customer_activities
-		{
-			get
-			{
-				return this._customer_activities;
-			}
-			set
-			{
-				this._customer_activities.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_customer_address", Storage="_customer_addresses", ThisKey="Id", OtherKey="customer_id")]
 		public EntitySet<customer_address> customer_addresses
 		{
@@ -2053,6 +1843,19 @@ namespace TorHazahav
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_customer_sp_act", Storage="_customer_sp_acts", ThisKey="Id", OtherKey="customer_id")]
+		public EntitySet<customer_sp_act> customer_sp_acts
+		{
+			get
+			{
+				return this._customer_sp_acts;
+			}
+			set
+			{
+				this._customer_sp_acts.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Volunteer_for_customer", Storage="_Volunteer_for_customers", ThisKey="Id", OtherKey="customer_id")]
 		public EntitySet<Volunteer_for_customer> Volunteer_for_customers
 		{
@@ -2093,18 +1896,6 @@ namespace TorHazahav
 		}
 		
 		private void detach_contact_phones(contact_phone entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = null;
-		}
-		
-		private void attach_customer_activities(customer_activity entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = this;
-		}
-		
-		private void detach_customer_activities(customer_activity entity)
 		{
 			this.SendPropertyChanging();
 			entity.Customer = null;
@@ -2170,6 +1961,18 @@ namespace TorHazahav
 			entity.Customer = null;
 		}
 		
+		private void attach_customer_sp_acts(customer_sp_act entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer = this;
+		}
+		
+		private void detach_customer_sp_acts(customer_sp_act entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer = null;
+		}
+		
 		private void attach_Volunteer_for_customers(Volunteer_for_customer entity)
 		{
 			this.SendPropertyChanging();
@@ -2180,198 +1983,6 @@ namespace TorHazahav
 		{
 			this.SendPropertyChanging();
 			entity.Customer = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.customer_activity")]
-	public partial class customer_activity : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _customer_id;
-		
-		private int _activity_id;
-		
-		private string _status;
-		
-		private EntityRef<activity> _activity;
-		
-		private EntityRef<Customer> _Customer;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Oncustomer_idChanging(string value);
-    partial void Oncustomer_idChanged();
-    partial void Onactivity_idChanging(int value);
-    partial void Onactivity_idChanged();
-    partial void OnstatusChanging(string value);
-    partial void OnstatusChanged();
-    #endregion
-		
-		public customer_activity()
-		{
-			this._activity = default(EntityRef<activity>);
-			this._Customer = default(EntityRef<Customer>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", DbType="VarChar(9) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string customer_id
-		{
-			get
-			{
-				return this._customer_id;
-			}
-			set
-			{
-				if ((this._customer_id != value))
-				{
-					if (this._Customer.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncustomer_idChanging(value);
-					this.SendPropertyChanging();
-					this._customer_id = value;
-					this.SendPropertyChanged("customer_id");
-					this.Oncustomer_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_activity_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int activity_id
-		{
-			get
-			{
-				return this._activity_id;
-			}
-			set
-			{
-				if ((this._activity_id != value))
-				{
-					if (this._activity.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onactivity_idChanging(value);
-					this.SendPropertyChanging();
-					this._activity_id = value;
-					this.SendPropertyChanged("activity_id");
-					this.Onactivity_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="NVarChar(30)")]
-		public string status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this.OnstatusChanging(value);
-					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="activity_customer_activity", Storage="_activity", ThisKey="activity_id", OtherKey="ID", IsForeignKey=true)]
-		public activity activity
-		{
-			get
-			{
-				return this._activity.Entity;
-			}
-			set
-			{
-				activity previousValue = this._activity.Entity;
-				if (((previousValue != value) 
-							|| (this._activity.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._activity.Entity = null;
-						previousValue.customer_activities.Remove(this);
-					}
-					this._activity.Entity = value;
-					if ((value != null))
-					{
-						value.customer_activities.Add(this);
-						this._activity_id = value.ID;
-					}
-					else
-					{
-						this._activity_id = default(int);
-					}
-					this.SendPropertyChanged("activity");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_customer_activity", Storage="_Customer", ThisKey="customer_id", OtherKey="Id", IsForeignKey=true)]
-		public Customer Customer
-		{
-			get
-			{
-				return this._Customer.Entity;
-			}
-			set
-			{
-				Customer previousValue = this._Customer.Entity;
-				if (((previousValue != value) 
-							|| (this._Customer.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Customer.Entity = null;
-						previousValue.customer_activities.Remove(this);
-					}
-					this._Customer.Entity = value;
-					if ((value != null))
-					{
-						value.customer_activities.Add(this);
-						this._customer_id = value.Id;
-					}
-					else
-					{
-						this._customer_id = default(string);
-					}
-					this.SendPropertyChanged("Customer");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -3365,6 +2976,229 @@ namespace TorHazahav
 						this._program_id = default(int);
 					}
 					this.SendPropertyChanged("program");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.customer_sp_act")]
+	public partial class customer_sp_act : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _customer_id;
+		
+		private string _activity_name;
+		
+		private string _activity_type;
+		
+		private string _activity_details;
+		
+		private System.Nullable<bool> _qualification;
+		
+		private string _activity_status;
+		
+		private EntityRef<Customer> _Customer;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Oncustomer_idChanging(string value);
+    partial void Oncustomer_idChanged();
+    partial void Onactivity_nameChanging(string value);
+    partial void Onactivity_nameChanged();
+    partial void Onactivity_typeChanging(string value);
+    partial void Onactivity_typeChanged();
+    partial void Onactivity_detailsChanging(string value);
+    partial void Onactivity_detailsChanged();
+    partial void OnqualificationChanging(System.Nullable<bool> value);
+    partial void OnqualificationChanged();
+    partial void Onactivity_statusChanging(string value);
+    partial void Onactivity_statusChanged();
+    #endregion
+		
+		public customer_sp_act()
+		{
+			this._Customer = default(EntityRef<Customer>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", DbType="VarChar(9) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string customer_id
+		{
+			get
+			{
+				return this._customer_id;
+			}
+			set
+			{
+				if ((this._customer_id != value))
+				{
+					if (this._Customer.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Oncustomer_idChanging(value);
+					this.SendPropertyChanging();
+					this._customer_id = value;
+					this.SendPropertyChanged("customer_id");
+					this.Oncustomer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_activity_name", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string activity_name
+		{
+			get
+			{
+				return this._activity_name;
+			}
+			set
+			{
+				if ((this._activity_name != value))
+				{
+					this.Onactivity_nameChanging(value);
+					this.SendPropertyChanging();
+					this._activity_name = value;
+					this.SendPropertyChanged("activity_name");
+					this.Onactivity_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_activity_type", DbType="NVarChar(30)")]
+		public string activity_type
+		{
+			get
+			{
+				return this._activity_type;
+			}
+			set
+			{
+				if ((this._activity_type != value))
+				{
+					this.Onactivity_typeChanging(value);
+					this.SendPropertyChanging();
+					this._activity_type = value;
+					this.SendPropertyChanged("activity_type");
+					this.Onactivity_typeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_activity_details", DbType="NVarChar(250)")]
+		public string activity_details
+		{
+			get
+			{
+				return this._activity_details;
+			}
+			set
+			{
+				if ((this._activity_details != value))
+				{
+					this.Onactivity_detailsChanging(value);
+					this.SendPropertyChanging();
+					this._activity_details = value;
+					this.SendPropertyChanged("activity_details");
+					this.Onactivity_detailsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_qualification", DbType="Bit")]
+		public System.Nullable<bool> qualification
+		{
+			get
+			{
+				return this._qualification;
+			}
+			set
+			{
+				if ((this._qualification != value))
+				{
+					this.OnqualificationChanging(value);
+					this.SendPropertyChanging();
+					this._qualification = value;
+					this.SendPropertyChanged("qualification");
+					this.OnqualificationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_activity_status", DbType="NVarChar(30)")]
+		public string activity_status
+		{
+			get
+			{
+				return this._activity_status;
+			}
+			set
+			{
+				if ((this._activity_status != value))
+				{
+					this.Onactivity_statusChanging(value);
+					this.SendPropertyChanging();
+					this._activity_status = value;
+					this.SendPropertyChanged("activity_status");
+					this.Onactivity_statusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_customer_sp_act", Storage="_Customer", ThisKey="customer_id", OtherKey="Id", IsForeignKey=true)]
+		public Customer Customer
+		{
+			get
+			{
+				return this._Customer.Entity;
+			}
+			set
+			{
+				Customer previousValue = this._Customer.Entity;
+				if (((previousValue != value) 
+							|| (this._Customer.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Customer.Entity = null;
+						previousValue.customer_sp_acts.Remove(this);
+					}
+					this._Customer.Entity = value;
+					if ((value != null))
+					{
+						value.customer_sp_acts.Add(this);
+						this._customer_id = value.Id;
+					}
+					else
+					{
+						this._customer_id = default(string);
+					}
+					this.SendPropertyChanged("Customer");
 				}
 			}
 		}

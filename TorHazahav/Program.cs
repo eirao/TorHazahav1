@@ -8,7 +8,7 @@ namespace TorHazahav
 {
     static class Program
     {
-        public static string custId = "318036217";
+        public static string custId = "33345452";
         public static int programNum = -1;
         public static string programName;
         public static DateTime pStartDate = new DateTime(1900,01,01);
@@ -27,7 +27,7 @@ namespace TorHazahav
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddCustomerPage2());
+            Application.Run(new NeedSpecialActivity());
         }
     }
 }
