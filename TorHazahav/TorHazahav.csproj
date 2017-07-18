@@ -175,6 +175,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TOR_HAZAHAVDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TOR_HAZAHAVDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TOR_HAZAHAVDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="tz.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -305,6 +310,17 @@
     </None>
     <None Include="TOR_HAZAHAVDataSet4.xss">
       <DependentUpon>TOR_HAZAHAVDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="TOR_HAZAHAVDataSet5.xsc">
+      <DependentUpon>TOR_HAZAHAVDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="TOR_HAZAHAVDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TOR_HAZAHAVDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TOR_HAZAHAVDataSet5.xss">
+      <DependentUpon>TOR_HAZAHAVDataSet5.xsd</DependentUpon>
     </None>
     <None Include="tz.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>

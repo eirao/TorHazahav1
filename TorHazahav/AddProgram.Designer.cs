@@ -362,7 +362,8 @@
             this.programTypeStr.FormattingEnabled = true;
             this.programTypeStr.Items.AddRange(new object[] {
             "מרותקי בית",
-            "קבוצת תמיכה"});
+            "קבוצת תמיכה",
+            "פעילות חוץ"});
             this.programTypeStr.Location = new System.Drawing.Point(540, 303);
             this.programTypeStr.Name = "programTypeStr";
             this.programTypeStr.Size = new System.Drawing.Size(266, 21);

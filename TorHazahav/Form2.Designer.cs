@@ -608,6 +608,7 @@
             this.AddProgramToCustomerbtn.TabIndex = 112;
             this.AddProgramToCustomerbtn.Text = "הוסף תוכניות";
             this.AddProgramToCustomerbtn.UseVisualStyleBackColor = true;
+            this.AddProgramToCustomerbtn.Click += new System.EventHandler(this.AddProgramToCustomerbtn_Click);
             // 
             // AddCustomerPage2
             // 
