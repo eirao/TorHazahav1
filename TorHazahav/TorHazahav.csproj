@@ -138,6 +138,18 @@
     <Compile Include="SearchProgram.Designer.cs">
       <DependentUpon>SearchProgram.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchResultsCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchResultsCustomer.Designer.cs">
+      <DependentUpon>SearchResultsCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResultsProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchResultsProgram.Designer.cs">
+      <DependentUpon>SearchResultsProgram.cs</DependentUpon>
+    </Compile>
     <Compile Include="TOR_HAZAHAVDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -220,6 +232,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchProgram.resx">
       <DependentUpon>SearchProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchResultsCustomer.resx">
+      <DependentUpon>SearchResultsCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchResultsProgram.resx">
+      <DependentUpon>SearchResultsProgram.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VolunteersList.resx">
       <DependentUpon>VolunteersList.cs</DependentUpon>
