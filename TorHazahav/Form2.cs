@@ -107,5 +107,12 @@ namespace TorHazahav
             a.Show();
             this.Enabled = false;
         }
+
+        private void AddProgramToCustomerbtn_Click(object sender, EventArgs e)
+        {
+            ProgramList a = new ProgramList();
+            a.Show();
+            this.Enabled = false;
+        }
     }
 }

@@ -43,6 +43,10 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tOR_HAZAHAVDataSet2 = new TorHazahav.TOR_HAZAHAVDataSet2();
+            this.programTableAdapter = new TorHazahav.TOR_HAZAHAVDataSet2TableAdapters.programTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.programtypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,16 +56,18 @@
             this.frequencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coordinatorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MoreInfo = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tOR_HAZAHAVDataSet2 = new TorHazahav.TOR_HAZAHAVDataSet2();
-            this.programTableAdapter = new TorHazahav.TOR_HAZAHAVDataSet2TableAdapters.programTableAdapter();
-            this.button2 = new System.Windows.Forms.Button();
+            this.AddProgram = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tOR_HAZAHAVDataSet5 = new TorHazahav.TOR_HAZAHAVDataSet5();
+            this.programBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.programTableAdapter1 = new TorHazahav.TOR_HAZAHAVDataSet5TableAdapters.programTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tOR_HAZAHAVDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tOR_HAZAHAVDataSet5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -190,13 +196,38 @@
             this.enddateDataGridViewTextBoxColumn,
             this.frequencyDataGridViewTextBoxColumn,
             this.coordinatorDataGridViewTextBoxColumn,
-            this.MoreInfo});
-            this.dataGridView1.DataSource = this.programBindingSource;
+            this.MoreInfo,
+            this.AddProgram});
+            this.dataGridView1.DataSource = this.programBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(7, 122);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(981, 368);
             this.dataGridView1.TabIndex = 84;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // programBindingSource
+            // 
+            this.programBindingSource.DataMember = "program";
+            this.programBindingSource.DataSource = this.tOR_HAZAHAVDataSet2;
+            // 
+            // tOR_HAZAHAVDataSet2
+            // 
+            this.tOR_HAZAHAVDataSet2.DataSetName = "TOR_HAZAHAVDataSet2";
+            this.tOR_HAZAHAVDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // programTableAdapter
+            // 
+            this.programTableAdapter.ClearBeforeFill = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(7, 83);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(119, 27);
+            this.button2.TabIndex = 85;
+            this.button2.Text = "חיפוש";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -254,28 +285,26 @@
             this.MoreInfo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.MoreInfo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // programBindingSource
+            // AddProgram
             // 
-            this.programBindingSource.DataMember = "program";
-            this.programBindingSource.DataSource = this.tOR_HAZAHAVDataSet2;
+            this.AddProgram.HeaderText = "הוסף תוכנית";
+            this.AddProgram.Name = "AddProgram";
+            this.AddProgram.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AddProgram.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // tOR_HAZAHAVDataSet2
+            // tOR_HAZAHAVDataSet5
             // 
-            this.tOR_HAZAHAVDataSet2.DataSetName = "TOR_HAZAHAVDataSet2";
-            this.tOR_HAZAHAVDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tOR_HAZAHAVDataSet5.DataSetName = "TOR_HAZAHAVDataSet5";
+            this.tOR_HAZAHAVDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // programTableAdapter
+            // programBindingSource1
             // 
-            this.programTableAdapter.ClearBeforeFill = true;
+            this.programBindingSource1.DataMember = "program";
+            this.programBindingSource1.DataSource = this.tOR_HAZAHAVDataSet5;
             // 
-            // button2
+            // programTableAdapter1
             // 
-            this.button2.Location = new System.Drawing.Point(7, 83);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 27);
-            this.button2.TabIndex = 85;
-            this.button2.Text = "חיפוש";
-            this.button2.UseVisualStyleBackColor = true;
+            this.programTableAdapter1.ClearBeforeFill = true;
             // 
             // ProgramList
             // 
@@ -302,6 +331,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tOR_HAZAHAVDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tOR_HAZAHAVDataSet5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,5 +366,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn frequencyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn coordinatorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn MoreInfo;
+        private System.Windows.Forms.DataGridViewButtonColumn AddProgram;
+        private TOR_HAZAHAVDataSet5 tOR_HAZAHAVDataSet5;
+        private System.Windows.Forms.BindingSource programBindingSource1;
+        private TOR_HAZAHAVDataSet5TableAdapters.programTableAdapter programTableAdapter1;
     }
 }
