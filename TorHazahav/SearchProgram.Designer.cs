@@ -52,6 +52,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MoreDetails = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -266,12 +267,19 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MoreDetails});
             this.dataGridView1.Location = new System.Drawing.Point(284, 72);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(704, 217);
             this.dataGridView1.TabIndex = 98;
             this.dataGridView1.Visible = false;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // MoreDetails
+            // 
+            this.MoreDetails.HeaderText = "פרטים נוספים";
+            this.MoreDetails.Name = "MoreDetails";
             // 
             // SearchProgram
             // 
@@ -335,5 +343,6 @@
         private System.Windows.Forms.MaskedTextBox pStartDatedt;
         private System.Windows.Forms.MaskedTextBox pEndDatedt;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewButtonColumn MoreDetails;
     }
 }

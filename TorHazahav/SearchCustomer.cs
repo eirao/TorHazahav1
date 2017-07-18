@@ -72,5 +72,12 @@ namespace TorHazahav
 
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SearchResultsCustomer f = new SearchResultsCustomer();
+            f.Show();
+            this.Hide();
+        }
     }
 }
