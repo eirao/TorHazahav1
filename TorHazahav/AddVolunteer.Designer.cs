@@ -39,6 +39,8 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label2
@@ -65,7 +67,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(273, 109);
+            this.label1.Location = new System.Drawing.Point(273, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 74;
@@ -73,22 +75,22 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(40, 77);
+            this.textBox1.Location = new System.Drawing.Point(130, 77);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 20);
+            this.textBox1.Size = new System.Drawing.Size(140, 20);
             this.textBox1.TabIndex = 81;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(40, 109);
+            this.textBox2.Location = new System.Drawing.Point(130, 112);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(230, 20);
+            this.textBox2.Size = new System.Drawing.Size(140, 20);
             this.textBox2.TabIndex = 82;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(40, 142);
+            this.dateTimePicker1.Location = new System.Drawing.Point(130, 145);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(96, 20);
             this.dateTimePicker1.TabIndex = 83;
@@ -97,7 +99,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label5.Location = new System.Drawing.Point(232, 142);
+            this.label5.Location = new System.Drawing.Point(232, 145);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 17);
             this.label5.TabIndex = 84;
@@ -107,7 +109,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label4.Location = new System.Drawing.Point(278, 177);
+            this.label4.Location = new System.Drawing.Point(278, 217);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 17);
             this.label4.TabIndex = 85;
@@ -116,14 +118,14 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(40, 177);
+            this.comboBox2.Location = new System.Drawing.Point(48, 217);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(227, 21);
+            this.comboBox2.Size = new System.Drawing.Size(224, 21);
             this.comboBox2.TabIndex = 86;
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(40, 216);
+            this.richTextBox2.Location = new System.Drawing.Point(48, 256);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(227, 68);
             this.richTextBox2.TabIndex = 87;
@@ -133,11 +135,29 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label6.Location = new System.Drawing.Point(304, 216);
+            this.label6.Location = new System.Drawing.Point(304, 256);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 17);
             this.label6.TabIndex = 88;
             this.label6.Text = "הערות:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label7.Location = new System.Drawing.Point(246, 179);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 17);
+            this.label7.TabIndex = 90;
+            this.label7.Text = "ת.סיום התנדבות:";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(130, 179);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(96, 20);
+            this.dateTimePicker2.TabIndex = 89;
             // 
             // AddVolunteer
             // 
@@ -145,6 +165,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(404, 381);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.comboBox2);
@@ -178,5 +200,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

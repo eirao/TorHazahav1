@@ -51,6 +51,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.emailAdd = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button2
@@ -74,7 +76,7 @@
             // postCode
             // 
             this.postCode.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.postCode.Location = new System.Drawing.Point(176, 297);
+            this.postCode.Location = new System.Drawing.Point(23, 295);
             this.postCode.MaxLength = 8;
             this.postCode.Multiline = true;
             this.postCode.Name = "postCode";
@@ -84,7 +86,7 @@
             // apartNum
             // 
             this.apartNum.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.apartNum.Location = new System.Drawing.Point(37, 266);
+            this.apartNum.Location = new System.Drawing.Point(172, 295);
             this.apartNum.Multiline = true;
             this.apartNum.Name = "apartNum";
             this.apartNum.Size = new System.Drawing.Size(53, 20);
@@ -93,7 +95,7 @@
             // houseNum
             // 
             this.houseNum.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.houseNum.Location = new System.Drawing.Point(214, 266);
+            this.houseNum.Location = new System.Drawing.Point(275, 295);
             this.houseNum.Multiline = true;
             this.houseNum.Name = "houseNum";
             this.houseNum.Size = new System.Drawing.Size(53, 20);
@@ -102,17 +104,17 @@
             // streetName
             // 
             this.streetName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.streetName.Location = new System.Drawing.Point(37, 229);
+            this.streetName.Location = new System.Drawing.Point(23, 258);
             this.streetName.Multiline = true;
             this.streetName.Name = "streetName";
-            this.streetName.Size = new System.Drawing.Size(230, 20);
+            this.streetName.Size = new System.Drawing.Size(324, 20);
             this.streetName.TabIndex = 90;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(309, 297);
+            this.label18.Location = new System.Drawing.Point(120, 298);
             this.label18.Name = "label18";
             this.label18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label18.Size = new System.Drawing.Size(44, 17);
@@ -123,7 +125,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(103, 266);
+            this.label17.Location = new System.Drawing.Point(231, 298);
             this.label17.Name = "label17";
             this.label17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label17.Size = new System.Drawing.Size(38, 17);
@@ -134,7 +136,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(295, 266);
+            this.label16.Location = new System.Drawing.Point(334, 298);
             this.label16.Name = "label16";
             this.label16.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label16.Size = new System.Drawing.Size(58, 17);
@@ -145,7 +147,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(314, 229);
+            this.label15.Location = new System.Drawing.Point(353, 261);
             this.label15.Name = "label15";
             this.label15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label15.Size = new System.Drawing.Size(39, 17);
@@ -160,16 +162,16 @@
             this.cityName.ItemHeight = 14;
             this.cityName.Items.AddRange(new object[] {
             "רמת השרון"});
-            this.cityName.Location = new System.Drawing.Point(37, 195);
+            this.cityName.Location = new System.Drawing.Point(250, 224);
             this.cityName.Name = "cityName";
-            this.cityName.Size = new System.Drawing.Size(230, 20);
+            this.cityName.Size = new System.Drawing.Size(97, 20);
             this.cityName.TabIndex = 83;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(323, 198);
+            this.label7.Location = new System.Drawing.Point(362, 227);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(30, 17);
@@ -178,16 +180,16 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(37, 94);
+            this.textBox2.Location = new System.Drawing.Point(144, 94);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(230, 20);
+            this.textBox2.Size = new System.Drawing.Size(164, 20);
             this.textBox2.TabIndex = 81;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(37, 58);
+            this.textBox1.Location = new System.Drawing.Point(144, 61);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 20);
+            this.textBox1.Size = new System.Drawing.Size(164, 20);
             this.textBox1.TabIndex = 80;
             // 
             // areaCodeM
@@ -206,7 +208,7 @@
             "055",
             "056",
             "058"});
-            this.areaCodeM.Location = new System.Drawing.Point(103, 126);
+            this.areaCodeM.Location = new System.Drawing.Point(144, 126);
             this.areaCodeM.Name = "areaCodeM";
             this.areaCodeM.Size = new System.Drawing.Size(53, 20);
             this.areaCodeM.TabIndex = 79;
@@ -231,7 +233,7 @@
             "",
             "",
             ""});
-            this.areaCodeH.Location = new System.Drawing.Point(103, 159);
+            this.areaCodeH.Location = new System.Drawing.Point(144, 159);
             this.areaCodeH.Name = "areaCodeH";
             this.areaCodeH.Size = new System.Drawing.Size(53, 20);
             this.areaCodeH.TabIndex = 78;
@@ -239,7 +241,7 @@
             // phoneNumM
             // 
             this.phoneNumM.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.phoneNumM.Location = new System.Drawing.Point(162, 126);
+            this.phoneNumM.Location = new System.Drawing.Point(203, 126);
             this.phoneNumM.MaxLength = 8;
             this.phoneNumM.Multiline = true;
             this.phoneNumM.Name = "phoneNumM";
@@ -250,7 +252,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(285, 126);
+            this.label9.Location = new System.Drawing.Point(324, 126);
             this.label9.Name = "label9";
             this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label9.Size = new System.Drawing.Size(68, 17);
@@ -261,7 +263,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(275, 159);
+            this.label8.Location = new System.Drawing.Point(314, 159);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label8.Size = new System.Drawing.Size(78, 17);
@@ -271,7 +273,7 @@
             // phoneNumH
             // 
             this.phoneNumH.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.phoneNumH.Location = new System.Drawing.Point(162, 159);
+            this.phoneNumH.Location = new System.Drawing.Point(203, 159);
             this.phoneNumH.MaxLength = 8;
             this.phoneNumH.Multiline = true;
             this.phoneNumH.Name = "phoneNumH";
@@ -282,7 +284,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(273, 94);
+            this.label1.Location = new System.Drawing.Point(312, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 73;
@@ -292,7 +294,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.Location = new System.Drawing.Point(290, 61);
+            this.label3.Location = new System.Drawing.Point(329, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 72;
@@ -308,12 +310,34 @@
             this.label2.TabIndex = 71;
             this.label2.Text = "הוספת בן\\בת משפחה";
             // 
+            // emailAdd
+            // 
+            this.emailAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.emailAdd.Location = new System.Drawing.Point(23, 190);
+            this.emailAdd.Multiline = true;
+            this.emailAdd.Name = "emailAdd";
+            this.emailAdd.Size = new System.Drawing.Size(267, 20);
+            this.emailAdd.TabIndex = 97;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(296, 193);
+            this.label6.Name = "label6";
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label6.Size = new System.Drawing.Size(96, 17);
+            this.label6.TabIndex = 96;
+            this.label6.Text = "דואר אלקטרוני:";
+            // 
             // AddFamilyMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(404, 381);
+            this.Controls.Add(this.emailAdd);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.postCode);
@@ -370,5 +394,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox emailAdd;
+        private System.Windows.Forms.Label label6;
     }
 }
