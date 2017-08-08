@@ -140,12 +140,12 @@ namespace TorHazahav
 
                     wh_address adr = new wh_address(); // new address record
 
-                    adr.city_name = areaCodeH.Text;
+                    adr.city_name = cityName.Text;
                     if (streetName.Text != "") adr.street_name = streetName.Text;
                     if (houseNum.Text != "") adr.house_num = int.Parse(houseNum.Text);
                     if (apartNum.Text != "") adr.appartment_num = int.Parse(apartNum.Text);
                     if (neighbName.Text != "") adr.neighborhood = neighbName.Text;
-                    if (neighbName.Text != "") adr.zip_code = postCode.Text;
+                    if (postCode.Text != "") adr.zip_code = postCode.Text;
                     dc.wh_addresses.InsertOnSubmit(adr);
                     dc.SubmitChanges();
 

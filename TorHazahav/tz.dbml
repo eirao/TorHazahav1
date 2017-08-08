@@ -8,6 +8,7 @@
       <Column Name="email_address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="job" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="contact_contact_address" Member="contact_addresses" ThisKey="ID" OtherKey="contact_id" Type="contact_address" />
+      <Association Name="contact_contact_phone" Member="contact_phones" ThisKey="ID" OtherKey="contact_id" Type="contact_phone" />
       <Association Name="contact_customer_contact" Member="customer_contacts" ThisKey="ID" OtherKey="contact_id" Type="customer_contact" />
       <Association Name="contact_ext_contact_address" Member="ext_contact_addresses" ThisKey="ID" OtherKey="contact_id" Type="ext_contact_address" />
       <Association Name="contact_request" Member="requests" ThisKey="ID" OtherKey="contact_id" Type="request" />
@@ -40,11 +41,11 @@
   </Table>
   <Table Name="dbo.contact_phone" Member="contact_phones">
     <Type Name="contact_phone">
-      <Column Name="contact_id" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="contact_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="phone_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="type" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Association Name="Customer_contact_phone" Member="Customer" ThisKey="contact_id" OtherKey="Id" Type="Customer" IsForeignKey="true" />
+      <Association Name="contact_contact_phone" Member="contact" ThisKey="contact_id" OtherKey="ID" Type="contact" IsForeignKey="true" />
       <Association Name="phone_contact_phone" Member="phone" ThisKey="phone_id" OtherKey="ID" Type="phone" IsForeignKey="true" />
     </Type>
   </Table>
@@ -68,7 +69,6 @@
       <Column Name="foreign_worker" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="nursing_law" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="status_cd" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Association Name="Customer_contact_phone" Member="contact_phones" ThisKey="Id" OtherKey="contact_id" Type="contact_phone" />
       <Association Name="Customer_customer_address" Member="customer_addresses" ThisKey="Id" OtherKey="customer_id" Type="customer_address" />
       <Association Name="Customer_customer_contact" Member="customer_contacts" ThisKey="Id" OtherKey="customer_id" Type="customer_contact" />
       <Association Name="Customer_customer_medical_history" Member="customer_medical_histories" ThisKey="Id" OtherKey="customer_id" Type="customer_medical_history" />

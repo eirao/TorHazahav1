@@ -40,19 +40,18 @@
             this.label15 = new System.Windows.Forms.Label();
             this.cityName = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.strLName = new System.Windows.Forms.TextBox();
+            this.strFName = new System.Windows.Forms.TextBox();
             this.areaCodeM = new System.Windows.Forms.ComboBox();
-            this.areaCodeH = new System.Windows.Forms.ComboBox();
             this.phoneNumM = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.phoneNumH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.emailAdd = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.strFamilyType = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button2
@@ -63,6 +62,7 @@
             this.button2.TabIndex = 95;
             this.button2.Text = "שמירה";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -178,19 +178,19 @@
             this.label7.TabIndex = 82;
             this.label7.Text = "עיר:";
             // 
-            // textBox2
+            // strLName
             // 
-            this.textBox2.Location = new System.Drawing.Point(144, 94);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 20);
-            this.textBox2.TabIndex = 81;
+            this.strLName.Location = new System.Drawing.Point(144, 94);
+            this.strLName.Name = "strLName";
+            this.strLName.Size = new System.Drawing.Size(164, 20);
+            this.strLName.TabIndex = 81;
             // 
-            // textBox1
+            // strFName
             // 
-            this.textBox1.Location = new System.Drawing.Point(144, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 20);
-            this.textBox1.TabIndex = 80;
+            this.strFName.Location = new System.Drawing.Point(144, 61);
+            this.strFName.Name = "strFName";
+            this.strFName.Size = new System.Drawing.Size(164, 20);
+            this.strFName.TabIndex = 80;
             // 
             // areaCodeM
             // 
@@ -213,31 +213,6 @@
             this.areaCodeM.Size = new System.Drawing.Size(53, 20);
             this.areaCodeM.TabIndex = 79;
             // 
-            // areaCodeH
-            // 
-            this.areaCodeH.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.areaCodeH.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.areaCodeH.FormattingEnabled = true;
-            this.areaCodeH.ItemHeight = 14;
-            this.areaCodeH.Items.AddRange(new object[] {
-            "03",
-            "071",
-            "072",
-            "073",
-            "074",
-            "075",
-            "076",
-            "077",
-            "078",
-            "079",
-            "",
-            "",
-            ""});
-            this.areaCodeH.Location = new System.Drawing.Point(144, 159);
-            this.areaCodeH.Name = "areaCodeH";
-            this.areaCodeH.Size = new System.Drawing.Size(53, 20);
-            this.areaCodeH.TabIndex = 78;
-            // 
             // phoneNumM
             // 
             this.phoneNumM.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -258,27 +233,6 @@
             this.label9.Size = new System.Drawing.Size(68, 17);
             this.label9.TabIndex = 76;
             this.label9.Text = "טלפון נייד:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(314, 159);
-            this.label8.Name = "label8";
-            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label8.Size = new System.Drawing.Size(78, 17);
-            this.label8.TabIndex = 75;
-            this.label8.Text = "טלפון בבית:";
-            // 
-            // phoneNumH
-            // 
-            this.phoneNumH.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.phoneNumH.Location = new System.Drawing.Point(203, 159);
-            this.phoneNumH.MaxLength = 8;
-            this.phoneNumH.Multiline = true;
-            this.phoneNumH.Name = "phoneNumH";
-            this.phoneNumH.Size = new System.Drawing.Size(105, 20);
-            this.phoneNumH.TabIndex = 74;
             // 
             // label1
             // 
@@ -330,12 +284,33 @@
             this.label6.TabIndex = 96;
             this.label6.Text = "דואר אלקטרוני:";
             // 
+            // strFamilyType
+            // 
+            this.strFamilyType.FormattingEnabled = true;
+            this.strFamilyType.Location = new System.Drawing.Point(187, 159);
+            this.strFamilyType.Name = "strFamilyType";
+            this.strFamilyType.Size = new System.Drawing.Size(121, 21);
+            this.strFamilyType.TabIndex = 98;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(332, 163);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.Size = new System.Drawing.Size(60, 17);
+            this.label5.TabIndex = 100;
+            this.label5.Text = "סוג קשר:";
+            // 
             // AddFamilyMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(404, 381);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.strFamilyType);
             this.Controls.Add(this.emailAdd);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
@@ -350,20 +325,18 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.cityName);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.strLName);
+            this.Controls.Add(this.strFName);
             this.Controls.Add(this.areaCodeM);
-            this.Controls.Add(this.areaCodeH);
             this.Controls.Add(this.phoneNumM);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.phoneNumH);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "AddFamilyMember";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "AddFamilyMember";
+            this.Load += new System.EventHandler(this.AddFamilyMember_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,18 +356,17 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cityName;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox strLName;
+        private System.Windows.Forms.TextBox strFName;
         private System.Windows.Forms.ComboBox areaCodeM;
-        private System.Windows.Forms.ComboBox areaCodeH;
         private System.Windows.Forms.TextBox phoneNumM;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox phoneNumH;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox emailAdd;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox strFamilyType;
+        private System.Windows.Forms.Label label5;
     }
 }

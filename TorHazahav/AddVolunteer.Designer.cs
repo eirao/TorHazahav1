@@ -31,23 +31,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.strFName = new System.Windows.Forms.TextBox();
+            this.strLName = new System.Windows.Forms.TextBox();
+            this.startDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.strComments = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.endDate = new System.Windows.Forms.DateTimePicker();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.emailAdd = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label2.Location = new System.Drawing.Point(116, 28);
+            this.label2.Location = new System.Drawing.Point(194, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 25);
             this.label2.TabIndex = 72;
@@ -57,7 +61,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.Location = new System.Drawing.Point(290, 77);
+            this.label3.Location = new System.Drawing.Point(368, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 73;
@@ -67,39 +71,39 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(273, 112);
+            this.label1.Location = new System.Drawing.Point(355, 99);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 74;
             this.label1.Text = "שם משפחה:";
             // 
-            // textBox1
+            // strFName
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 20);
-            this.textBox1.TabIndex = 81;
+            this.strFName.Location = new System.Drawing.Point(208, 65);
+            this.strFName.Name = "strFName";
+            this.strFName.Size = new System.Drawing.Size(140, 20);
+            this.strFName.TabIndex = 81;
             // 
-            // textBox2
+            // strLName
             // 
-            this.textBox2.Location = new System.Drawing.Point(130, 112);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 20);
-            this.textBox2.TabIndex = 82;
+            this.strLName.Location = new System.Drawing.Point(207, 97);
+            this.strLName.Name = "strLName";
+            this.strLName.Size = new System.Drawing.Size(140, 20);
+            this.strLName.TabIndex = 82;
             // 
-            // dateTimePicker1
+            // startDate
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(130, 145);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(96, 20);
-            this.dateTimePicker1.TabIndex = 83;
+            this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.startDate.Location = new System.Drawing.Point(213, 164);
+            this.startDate.Name = "startDate";
+            this.startDate.Size = new System.Drawing.Size(96, 20);
+            this.startDate.TabIndex = 83;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label5.Location = new System.Drawing.Point(232, 145);
+            this.label5.Location = new System.Drawing.Point(315, 167);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 17);
             this.label5.TabIndex = 84;
@@ -109,7 +113,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label4.Location = new System.Drawing.Point(278, 217);
+            this.label4.Location = new System.Drawing.Point(356, 227);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 17);
             this.label4.TabIndex = 85;
@@ -118,24 +122,24 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(48, 217);
+            this.comboBox2.Location = new System.Drawing.Point(126, 227);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(224, 21);
             this.comboBox2.TabIndex = 86;
             // 
-            // richTextBox2
+            // strComments
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(48, 256);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(227, 68);
-            this.richTextBox2.TabIndex = 87;
-            this.richTextBox2.Text = "";
+            this.strComments.Location = new System.Drawing.Point(126, 266);
+            this.strComments.Name = "strComments";
+            this.strComments.Size = new System.Drawing.Size(227, 68);
+            this.strComments.TabIndex = 87;
+            this.strComments.Text = "";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label6.Location = new System.Drawing.Point(304, 256);
+            this.label6.Location = new System.Drawing.Point(382, 266);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 17);
             this.label6.TabIndex = 88;
@@ -145,36 +149,79 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label7.Location = new System.Drawing.Point(246, 179);
+            this.label7.Location = new System.Drawing.Point(329, 194);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 17);
             this.label7.TabIndex = 90;
             this.label7.Text = "ת.סיום התנדבות:";
             // 
-            // dateTimePicker2
+            // endDate
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(130, 179);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(96, 20);
-            this.dateTimePicker2.TabIndex = 89;
+            this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.endDate.Location = new System.Drawing.Point(213, 194);
+            this.endDate.Name = "endDate";
+            this.endDate.Size = new System.Drawing.Size(96, 20);
+            this.endDate.TabIndex = 89;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(309, 343);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(119, 27);
+            this.button2.TabIndex = 97;
+            this.button2.Text = "שמירה";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(126, 343);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(119, 27);
+            this.button3.TabIndex = 96;
+            this.button3.Text = "ביטול";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // emailAdd
+            // 
+            this.emailAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.emailAdd.Location = new System.Drawing.Point(78, 138);
+            this.emailAdd.Multiline = true;
+            this.emailAdd.Name = "emailAdd";
+            this.emailAdd.Size = new System.Drawing.Size(267, 20);
+            this.emailAdd.TabIndex = 102;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(351, 140);
+            this.label8.Name = "label8";
+            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label8.Size = new System.Drawing.Size(96, 17);
+            this.label8.TabIndex = 101;
+            this.label8.Text = "דואר אלקטרוני:";
             // 
             // AddVolunteer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(404, 381);
+            this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.emailAdd);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.endDate);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.strComments);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.startDate);
+            this.Controls.Add(this.strLName);
+            this.Controls.Add(this.strFName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -192,15 +239,19 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox strFName;
+        private System.Windows.Forms.TextBox strLName;
+        private System.Windows.Forms.DateTimePicker startDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox strComments;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker endDate;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox emailAdd;
+        private System.Windows.Forms.Label label8;
     }
 }

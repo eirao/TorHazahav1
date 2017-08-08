@@ -27,7 +27,7 @@ namespace TorHazahav
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddCustomerPage2());
+            Application.Run(new AddProgram());
         }
     }
 }

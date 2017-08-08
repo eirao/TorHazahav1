@@ -30,8 +30,8 @@
         {
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.strLName = new System.Windows.Forms.TextBox();
+            this.strFName = new System.Windows.Forms.TextBox();
             this.areaCodeM = new System.Windows.Forms.ComboBox();
             this.phoneNumM = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -50,36 +50,37 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(216, 337);
+            this.button2.Location = new System.Drawing.Point(231, 322);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(119, 27);
             this.button2.TabIndex = 95;
             this.button2.Text = "שמירה";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(55, 337);
+            this.button3.Location = new System.Drawing.Point(37, 322);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(119, 27);
             this.button3.TabIndex = 94;
             this.button3.Text = "ביטול";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // strLName
             // 
-            this.textBox2.Location = new System.Drawing.Point(37, 94);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(230, 20);
-            this.textBox2.TabIndex = 81;
+            this.strLName.Location = new System.Drawing.Point(37, 94);
+            this.strLName.Multiline = true;
+            this.strLName.Name = "strLName";
+            this.strLName.Size = new System.Drawing.Size(230, 20);
+            this.strLName.TabIndex = 81;
             // 
-            // textBox1
+            // strFName
             // 
-            this.textBox1.Location = new System.Drawing.Point(37, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 20);
-            this.textBox1.TabIndex = 80;
+            this.strFName.Location = new System.Drawing.Point(37, 58);
+            this.strFName.Name = "strFName";
+            this.strFName.Size = new System.Drawing.Size(230, 20);
+            this.strFName.TabIndex = 80;
             // 
             // areaCodeM
             // 
@@ -251,8 +252,8 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.cityName);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.strLName);
+            this.Controls.Add(this.strFName);
             this.Controls.Add(this.areaCodeM);
             this.Controls.Add(this.phoneNumM);
             this.Controls.Add(this.label9);
@@ -262,6 +263,7 @@
             this.Name = "AddForeignWorker";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "AddForeignWorker";
+            this.Load += new System.EventHandler(this.AddForeignWorker_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,8 +273,8 @@
 
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox strLName;
+        private System.Windows.Forms.TextBox strFName;
         private System.Windows.Forms.ComboBox areaCodeM;
         private System.Windows.Forms.TextBox phoneNumM;
         private System.Windows.Forms.Label label9;

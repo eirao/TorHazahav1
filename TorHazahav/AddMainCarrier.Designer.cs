@@ -32,13 +32,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.areaCodeM = new System.Windows.Forms.ComboBox();
-            this.areaCodeH = new System.Windows.Forms.ComboBox();
             this.phoneNumM = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.phoneNumH = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.strFName = new System.Windows.Forms.TextBox();
+            this.strLName = new System.Windows.Forms.TextBox();
             this.postCode = new System.Windows.Forms.TextBox();
             this.apartNum = new System.Windows.Forms.TextBox();
             this.houseNum = new System.Windows.Forms.TextBox();
@@ -103,29 +100,6 @@
             this.areaCodeM.Size = new System.Drawing.Size(53, 25);
             this.areaCodeM.TabIndex = 54;
             // 
-            // areaCodeH
-            // 
-            this.areaCodeH.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.areaCodeH.FormattingEnabled = true;
-            this.areaCodeH.Items.AddRange(new object[] {
-            "03",
-            "071",
-            "072",
-            "073",
-            "074",
-            "075",
-            "076",
-            "077",
-            "078",
-            "079",
-            "",
-            "",
-            ""});
-            this.areaCodeH.Location = new System.Drawing.Point(105, 145);
-            this.areaCodeH.Name = "areaCodeH";
-            this.areaCodeH.Size = new System.Drawing.Size(53, 25);
-            this.areaCodeH.TabIndex = 53;
-            // 
             // phoneNumM
             // 
             this.phoneNumM.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -146,39 +120,19 @@
             this.label9.TabIndex = 50;
             this.label9.Text = "טלפון נייד:";
             // 
-            // label8
+            // strFName
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(311, 148);
-            this.label8.Name = "label8";
-            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label8.Size = new System.Drawing.Size(78, 17);
-            this.label8.TabIndex = 49;
-            this.label8.Text = "טלפון בבית:";
+            this.strFName.Location = new System.Drawing.Point(12, 62);
+            this.strFName.Name = "strFName";
+            this.strFName.Size = new System.Drawing.Size(289, 20);
+            this.strFName.TabIndex = 55;
             // 
-            // phoneNumH
+            // strLName
             // 
-            this.phoneNumH.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.phoneNumH.Location = new System.Drawing.Point(164, 145);
-            this.phoneNumH.MaxLength = 8;
-            this.phoneNumH.Name = "phoneNumH";
-            this.phoneNumH.Size = new System.Drawing.Size(137, 25);
-            this.phoneNumH.TabIndex = 48;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(289, 20);
-            this.textBox1.TabIndex = 55;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(12, 88);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(289, 20);
-            this.textBox2.TabIndex = 56;
+            this.strLName.Location = new System.Drawing.Point(12, 88);
+            this.strLName.Name = "strLName";
+            this.strLName.Size = new System.Drawing.Size(289, 20);
+            this.strLName.TabIndex = 56;
             // 
             // postCode
             // 
@@ -313,6 +267,7 @@
             this.button2.TabIndex = 70;
             this.button2.Text = "שמירה";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -342,14 +297,11 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.cityName);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.strLName);
+            this.Controls.Add(this.strFName);
             this.Controls.Add(this.areaCodeM);
-            this.Controls.Add(this.areaCodeH);
             this.Controls.Add(this.phoneNumM);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.phoneNumH);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -367,13 +319,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox areaCodeM;
-        private System.Windows.Forms.ComboBox areaCodeH;
         private System.Windows.Forms.TextBox phoneNumM;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox phoneNumH;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox strFName;
+        private System.Windows.Forms.TextBox strLName;
         private System.Windows.Forms.TextBox postCode;
         private System.Windows.Forms.TextBox apartNum;
         private System.Windows.Forms.TextBox houseNum;

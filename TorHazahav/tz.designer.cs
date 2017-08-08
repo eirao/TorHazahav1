@@ -290,6 +290,8 @@ namespace TorHazahav
 		
 		private EntitySet<contact_address> _contact_addresses;
 		
+		private EntitySet<contact_phone> _contact_phones;
+		
 		private EntitySet<customer_contact> _customer_contacts;
 		
 		private EntitySet<ext_contact_address> _ext_contact_addresses;
@@ -315,6 +317,7 @@ namespace TorHazahav
 		public contact()
 		{
 			this._contact_addresses = new EntitySet<contact_address>(new Action<contact_address>(this.attach_contact_addresses), new Action<contact_address>(this.detach_contact_addresses));
+			this._contact_phones = new EntitySet<contact_phone>(new Action<contact_phone>(this.attach_contact_phones), new Action<contact_phone>(this.detach_contact_phones));
 			this._customer_contacts = new EntitySet<customer_contact>(new Action<customer_contact>(this.attach_customer_contacts), new Action<customer_contact>(this.detach_customer_contacts));
 			this._ext_contact_addresses = new EntitySet<ext_contact_address>(new Action<ext_contact_address>(this.attach_ext_contact_addresses), new Action<ext_contact_address>(this.detach_ext_contact_addresses));
 			this._requests = new EntitySet<request>(new Action<request>(this.attach_requests), new Action<request>(this.detach_requests));
@@ -434,6 +437,19 @@ namespace TorHazahav
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="contact_contact_phone", Storage="_contact_phones", ThisKey="ID", OtherKey="contact_id")]
+		public EntitySet<contact_phone> contact_phones
+		{
+			get
+			{
+				return this._contact_phones;
+			}
+			set
+			{
+				this._contact_phones.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="contact_customer_contact", Storage="_customer_contacts", ThisKey="ID", OtherKey="contact_id")]
 		public EntitySet<customer_contact> customer_contacts
 		{
@@ -500,6 +516,18 @@ namespace TorHazahav
 		}
 		
 		private void detach_contact_addresses(contact_address entity)
+		{
+			this.SendPropertyChanging();
+			entity.contact = null;
+		}
+		
+		private void attach_contact_phones(contact_phone entity)
+		{
+			this.SendPropertyChanging();
+			entity.contact = this;
+		}
+		
+		private void detach_contact_phones(contact_phone entity)
 		{
 			this.SendPropertyChanging();
 			entity.contact = null;
@@ -1082,7 +1110,7 @@ namespace TorHazahav
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _contact_id;
+		private int _contact_id;
 		
 		private int _phone_id;
 		
@@ -1090,7 +1118,7 @@ namespace TorHazahav
 		
 		private string _type;
 		
-		private EntityRef<Customer> _Customer;
+		private EntityRef<contact> _contact;
 		
 		private EntityRef<phone> _phone;
 		
@@ -1098,7 +1126,7 @@ namespace TorHazahav
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Oncontact_idChanging(string value);
+    partial void Oncontact_idChanging(int value);
     partial void Oncontact_idChanged();
     partial void Onphone_idChanging(int value);
     partial void Onphone_idChanged();
@@ -1110,13 +1138,13 @@ namespace TorHazahav
 		
 		public contact_phone()
 		{
-			this._Customer = default(EntityRef<Customer>);
+			this._contact = default(EntityRef<contact>);
 			this._phone = default(EntityRef<phone>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contact_id", DbType="VarChar(9) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string contact_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contact_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int contact_id
 		{
 			get
 			{
@@ -1126,7 +1154,7 @@ namespace TorHazahav
 			{
 				if ((this._contact_id != value))
 				{
-					if (this._Customer.HasLoadedOrAssignedValue)
+					if (this._contact.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1163,7 +1191,7 @@ namespace TorHazahav
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="NVarChar(30)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="VarChar(30)")]
 		public string status
 		{
 			get
@@ -1203,36 +1231,36 @@ namespace TorHazahav
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_contact_phone", Storage="_Customer", ThisKey="contact_id", OtherKey="Id", IsForeignKey=true)]
-		public Customer Customer
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="contact_contact_phone", Storage="_contact", ThisKey="contact_id", OtherKey="ID", IsForeignKey=true)]
+		public contact contact
 		{
 			get
 			{
-				return this._Customer.Entity;
+				return this._contact.Entity;
 			}
 			set
 			{
-				Customer previousValue = this._Customer.Entity;
+				contact previousValue = this._contact.Entity;
 				if (((previousValue != value) 
-							|| (this._Customer.HasLoadedOrAssignedValue == false)))
+							|| (this._contact.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Customer.Entity = null;
+						this._contact.Entity = null;
 						previousValue.contact_phones.Remove(this);
 					}
-					this._Customer.Entity = value;
+					this._contact.Entity = value;
 					if ((value != null))
 					{
 						value.contact_phones.Add(this);
-						this._contact_id = value.Id;
+						this._contact_id = value.ID;
 					}
 					else
 					{
-						this._contact_id = default(string);
+						this._contact_id = default(int);
 					}
-					this.SendPropertyChanged("Customer");
+					this.SendPropertyChanged("contact");
 				}
 			}
 		}
@@ -1334,8 +1362,6 @@ namespace TorHazahav
 		
 		private string _status_cd;
 		
-		private EntitySet<contact_phone> _contact_phones;
-		
 		private EntitySet<customer_address> _customer_addresses;
 		
 		private EntitySet<customer_contact> _customer_contacts;
@@ -1394,7 +1420,6 @@ namespace TorHazahav
 		
 		public Customer()
 		{
-			this._contact_phones = new EntitySet<contact_phone>(new Action<contact_phone>(this.attach_contact_phones), new Action<contact_phone>(this.detach_contact_phones));
 			this._customer_addresses = new EntitySet<customer_address>(new Action<customer_address>(this.attach_customer_addresses), new Action<customer_address>(this.detach_customer_addresses));
 			this._customer_contacts = new EntitySet<customer_contact>(new Action<customer_contact>(this.attach_customer_contacts), new Action<customer_contact>(this.detach_customer_contacts));
 			this._customer_medical_histories = new EntitySet<customer_medical_history>(new Action<customer_medical_history>(this.attach_customer_medical_histories), new Action<customer_medical_history>(this.detach_customer_medical_histories));
@@ -1765,19 +1790,6 @@ namespace TorHazahav
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_contact_phone", Storage="_contact_phones", ThisKey="Id", OtherKey="contact_id")]
-		public EntitySet<contact_phone> contact_phones
-		{
-			get
-			{
-				return this._contact_phones;
-			}
-			set
-			{
-				this._contact_phones.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_customer_address", Storage="_customer_addresses", ThisKey="Id", OtherKey="customer_id")]
 		public EntitySet<customer_address> customer_addresses
 		{
@@ -1887,18 +1899,6 @@ namespace TorHazahav
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_contact_phones(contact_phone entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = this;
-		}
-		
-		private void detach_contact_phones(contact_phone entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = null;
 		}
 		
 		private void attach_customer_addresses(customer_address entity)
