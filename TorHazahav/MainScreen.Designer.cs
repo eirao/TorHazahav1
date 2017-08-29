@@ -40,13 +40,6 @@
             this.כליםוניהולמערכתToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label20 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tOR_HAZAHAVDataSet1 = new TorHazahav.TOR_HAZAHAVDataSet1();
-            this.customerTableAdapter = new TorHazahav.TOR_HAZAHAVDataSet1TableAdapters.CustomerTableAdapter();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +49,14 @@
             this.holocaustsurvaviourDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.entitledtodiscountDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.MoreInfo = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tOR_HAZAHAVDataSet1 = new TorHazahav.TOR_HAZAHAVDataSet1();
+            this.customerTableAdapter = new TorHazahav.TOR_HAZAHAVDataSet1TableAdapters.CustomerTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.הוספתמקבלשירותToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
@@ -98,10 +99,13 @@
             // מקבלישירותToolStripMenuItem
             // 
             this.מקבלישירותToolStripMenuItem.BackColor = System.Drawing.Color.Gainsboro;
+            this.מקבלישירותToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.הוספתמקבלשירותToolStripMenuItem});
             this.מקבלישירותToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.מקבלישירותToolStripMenuItem.Name = "מקבלישירותToolStripMenuItem";
             this.מקבלישירותToolStripMenuItem.Size = new System.Drawing.Size(132, 29);
             this.מקבלישירותToolStripMenuItem.Text = "מקבלי שירות";
+            this.מקבלישירותToolStripMenuItem.Click += new System.EventHandler(this.מקבלישירותToolStripMenuItem_Click);
             // 
             // פניותToolStripMenuItem
             // 
@@ -116,6 +120,7 @@
             this.תוכניותToolStripMenuItem.Name = "תוכניותToolStripMenuItem";
             this.תוכניותToolStripMenuItem.Size = new System.Drawing.Size(86, 29);
             this.תוכניותToolStripMenuItem.Text = "תוכניות";
+            this.תוכניותToolStripMenuItem.Click += new System.EventHandler(this.תוכניותToolStripMenuItem_Click);
             // 
             // מתנדביםToolStripMenuItem
             // 
@@ -123,6 +128,7 @@
             this.מתנדביםToolStripMenuItem.Name = "מתנדביםToolStripMenuItem";
             this.מתנדביםToolStripMenuItem.Size = new System.Drawing.Size(98, 29);
             this.מתנדביםToolStripMenuItem.Text = "מתנדבים";
+            this.מתנדביםToolStripMenuItem.Click += new System.EventHandler(this.מתנדביםToolStripMenuItem_Click);
             // 
             // עובדיםToolStripMenuItem
             // 
@@ -168,58 +174,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(981, 368);
             this.dataGridView1.TabIndex = 81;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.tOR_HAZAHAVDataSet1;
-            // 
-            // tOR_HAZAHAVDataSet1
-            // 
-            this.tOR_HAZAHAVDataSet1.DataSetName = "TOR_HAZAHAVDataSet1";
-            this.tOR_HAZAHAVDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerTableAdapter
-            // 
-            this.customerTableAdapter.ClearBeforeFill = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(7, 76);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 27);
-            this.button2.TabIndex = 82;
-            this.button2.Text = "חיפוש";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(767, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(229, 37);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 80;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 33);
-            this.pictureBox1.TabIndex = 79;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label2.Location = new System.Drawing.Point(759, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 32);
-            this.label2.TabIndex = 83;
-            this.label2.Text = "רשימת מקבלי שירות";
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -280,6 +234,66 @@
             this.MoreInfo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.MoreInfo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.tOR_HAZAHAVDataSet1;
+            // 
+            // tOR_HAZAHAVDataSet1
+            // 
+            this.tOR_HAZAHAVDataSet1.DataSetName = "TOR_HAZAHAVDataSet1";
+            this.tOR_HAZAHAVDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // customerTableAdapter
+            // 
+            this.customerTableAdapter.ClearBeforeFill = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(7, 76);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(119, 27);
+            this.button2.TabIndex = 82;
+            this.button2.Text = "חיפוש";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(767, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(229, 37);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 80;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 33);
+            this.pictureBox1.TabIndex = 79;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label2.Location = new System.Drawing.Point(759, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(237, 32);
+            this.label2.TabIndex = 83;
+            this.label2.Text = "רשימת מקבלי שירות";
+            // 
+            // הוספתמקבלשירותToolStripMenuItem
+            // 
+            this.הוספתמקבלשירותToolStripMenuItem.Name = "הוספתמקבלשירותToolStripMenuItem";
+            this.הוספתמקבלשירותToolStripMenuItem.Size = new System.Drawing.Size(249, 30);
+            this.הוספתמקבלשירותToolStripMenuItem.Text = "הוספת מקבל שירות";
+            this.הוספתמקבלשירותToolStripMenuItem.Click += new System.EventHandler(this.הוספתמקבלשירותToolStripMenuItem_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,5 +352,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn holocaustsurvaviourDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn entitledtodiscountDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn MoreInfo;
+        private System.Windows.Forms.ToolStripMenuItem הוספתמקבלשירותToolStripMenuItem;
     }
 }

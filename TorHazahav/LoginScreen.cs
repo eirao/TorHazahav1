@@ -21,8 +21,15 @@ namespace TorHazahav
 
         private void LoginScreen_Load(object sender, EventArgs e)
         {
-            var ans = (from emp in dc.employees where emp.username == strUser.Text &&
-                emp.u_password == strPassword.Text select emp).FirstOrDefault();
+           
+        }
+
+        private void enter_bttn_Click(object sender, EventArgs e)
+        {
+            var ans = (from emp in dc.employees
+                       where emp.username == strUser.Text &&
+                        emp.u_password == strPassword.Text
+                       select emp).FirstOrDefault();
 
             if (ans != null)
             {

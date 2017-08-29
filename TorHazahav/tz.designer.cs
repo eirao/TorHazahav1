@@ -66,9 +66,6 @@ namespace TorHazahav
     partial void Insertemployee(employee instance);
     partial void Updateemployee(employee instance);
     partial void Deleteemployee(employee instance);
-    partial void Insertext_contact_address(ext_contact_address instance);
-    partial void Updateext_contact_address(ext_contact_address instance);
-    partial void Deleteext_contact_address(ext_contact_address instance);
     partial void Insertexternal_contact(external_contact instance);
     partial void Updateexternal_contact(external_contact instance);
     partial void Deleteexternal_contact(external_contact instance);
@@ -215,14 +212,6 @@ namespace TorHazahav
 			}
 		}
 		
-		public System.Data.Linq.Table<ext_contact_address> ext_contact_addresses
-		{
-			get
-			{
-				return this.GetTable<ext_contact_address>();
-			}
-		}
-		
 		public System.Data.Linq.Table<external_contact> external_contacts
 		{
 			get
@@ -294,8 +283,6 @@ namespace TorHazahav
 		
 		private EntitySet<customer_contact> _customer_contacts;
 		
-		private EntitySet<ext_contact_address> _ext_contact_addresses;
-		
 		private EntitySet<request> _requests;
 		
     #region Extensibility Method Definitions
@@ -319,7 +306,6 @@ namespace TorHazahav
 			this._contact_addresses = new EntitySet<contact_address>(new Action<contact_address>(this.attach_contact_addresses), new Action<contact_address>(this.detach_contact_addresses));
 			this._contact_phones = new EntitySet<contact_phone>(new Action<contact_phone>(this.attach_contact_phones), new Action<contact_phone>(this.detach_contact_phones));
 			this._customer_contacts = new EntitySet<customer_contact>(new Action<customer_contact>(this.attach_customer_contacts), new Action<customer_contact>(this.detach_customer_contacts));
-			this._ext_contact_addresses = new EntitySet<ext_contact_address>(new Action<ext_contact_address>(this.attach_ext_contact_addresses), new Action<ext_contact_address>(this.detach_ext_contact_addresses));
 			this._requests = new EntitySet<request>(new Action<request>(this.attach_requests), new Action<request>(this.detach_requests));
 			OnCreated();
 		}
@@ -463,19 +449,6 @@ namespace TorHazahav
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="contact_ext_contact_address", Storage="_ext_contact_addresses", ThisKey="ID", OtherKey="contact_id")]
-		public EntitySet<ext_contact_address> ext_contact_addresses
-		{
-			get
-			{
-				return this._ext_contact_addresses;
-			}
-			set
-			{
-				this._ext_contact_addresses.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="contact_request", Storage="_requests", ThisKey="ID", OtherKey="contact_id")]
 		public EntitySet<request> requests
 		{
@@ -545,18 +518,6 @@ namespace TorHazahav
 			entity.contact = null;
 		}
 		
-		private void attach_ext_contact_addresses(ext_contact_address entity)
-		{
-			this.SendPropertyChanging();
-			entity.contact = this;
-		}
-		
-		private void detach_ext_contact_addresses(ext_contact_address entity)
-		{
-			this.SendPropertyChanging();
-			entity.contact = null;
-		}
-		
 		private void attach_requests(request entity)
 		{
 			this.SendPropertyChanging();
@@ -594,10 +555,6 @@ namespace TorHazahav
 		
 		private EntitySet<customer_address> _customer_addresses;
 		
-		private EntitySet<ext_contact_address> _ext_contact_addresses;
-		
-		private EntitySet<external_contact> _external_contacts;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -622,8 +579,6 @@ namespace TorHazahav
 		{
 			this._contact_addresses = new EntitySet<contact_address>(new Action<contact_address>(this.attach_contact_addresses), new Action<contact_address>(this.detach_contact_addresses));
 			this._customer_addresses = new EntitySet<customer_address>(new Action<customer_address>(this.attach_customer_addresses), new Action<customer_address>(this.detach_customer_addresses));
-			this._ext_contact_addresses = new EntitySet<ext_contact_address>(new Action<ext_contact_address>(this.attach_ext_contact_addresses), new Action<ext_contact_address>(this.detach_ext_contact_addresses));
-			this._external_contacts = new EntitySet<external_contact>(new Action<external_contact>(this.attach_external_contacts), new Action<external_contact>(this.detach_external_contacts));
 			OnCreated();
 		}
 		
@@ -793,32 +748,6 @@ namespace TorHazahav
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="wh_address_ext_contact_address", Storage="_ext_contact_addresses", ThisKey="ID", OtherKey="address_id")]
-		public EntitySet<ext_contact_address> ext_contact_addresses
-		{
-			get
-			{
-				return this._ext_contact_addresses;
-			}
-			set
-			{
-				this._ext_contact_addresses.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="wh_address_external_contact", Storage="_external_contacts", ThisKey="ID", OtherKey="address_id")]
-		public EntitySet<external_contact> external_contacts
-		{
-			get
-			{
-				return this._external_contacts;
-			}
-			set
-			{
-				this._external_contacts.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -858,30 +787,6 @@ namespace TorHazahav
 		}
 		
 		private void detach_customer_addresses(customer_address entity)
-		{
-			this.SendPropertyChanging();
-			entity.wh_address = null;
-		}
-		
-		private void attach_ext_contact_addresses(ext_contact_address entity)
-		{
-			this.SendPropertyChanging();
-			entity.wh_address = this;
-		}
-		
-		private void detach_ext_contact_addresses(ext_contact_address entity)
-		{
-			this.SendPropertyChanging();
-			entity.wh_address = null;
-		}
-		
-		private void attach_external_contacts(external_contact entity)
-		{
-			this.SendPropertyChanging();
-			entity.wh_address = this;
-		}
-		
-		private void detach_external_contacts(external_contact entity)
 		{
 			this.SendPropertyChanging();
 			entity.wh_address = null;
@@ -3575,222 +3480,6 @@ namespace TorHazahav
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ext_contact_address")]
-	public partial class ext_contact_address : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _contact_id;
-		
-		private int _address_id;
-		
-		private string _status;
-		
-		private string _type;
-		
-		private EntityRef<wh_address> _wh_address;
-		
-		private EntityRef<contact> _contact;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Oncontact_idChanging(int value);
-    partial void Oncontact_idChanged();
-    partial void Onaddress_idChanging(int value);
-    partial void Onaddress_idChanged();
-    partial void OnstatusChanging(string value);
-    partial void OnstatusChanged();
-    partial void OntypeChanging(string value);
-    partial void OntypeChanged();
-    #endregion
-		
-		public ext_contact_address()
-		{
-			this._wh_address = default(EntityRef<wh_address>);
-			this._contact = default(EntityRef<contact>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contact_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int contact_id
-		{
-			get
-			{
-				return this._contact_id;
-			}
-			set
-			{
-				if ((this._contact_id != value))
-				{
-					if (this._contact.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncontact_idChanging(value);
-					this.SendPropertyChanging();
-					this._contact_id = value;
-					this.SendPropertyChanged("contact_id");
-					this.Oncontact_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int address_id
-		{
-			get
-			{
-				return this._address_id;
-			}
-			set
-			{
-				if ((this._address_id != value))
-				{
-					if (this._wh_address.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onaddress_idChanging(value);
-					this.SendPropertyChanging();
-					this._address_id = value;
-					this.SendPropertyChanged("address_id");
-					this.Onaddress_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="NVarChar(30)")]
-		public string status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this.OnstatusChanging(value);
-					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_type", DbType="NVarChar(30)")]
-		public string type
-		{
-			get
-			{
-				return this._type;
-			}
-			set
-			{
-				if ((this._type != value))
-				{
-					this.OntypeChanging(value);
-					this.SendPropertyChanging();
-					this._type = value;
-					this.SendPropertyChanged("type");
-					this.OntypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="wh_address_ext_contact_address", Storage="_wh_address", ThisKey="address_id", OtherKey="ID", IsForeignKey=true)]
-		public wh_address wh_address
-		{
-			get
-			{
-				return this._wh_address.Entity;
-			}
-			set
-			{
-				wh_address previousValue = this._wh_address.Entity;
-				if (((previousValue != value) 
-							|| (this._wh_address.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._wh_address.Entity = null;
-						previousValue.ext_contact_addresses.Remove(this);
-					}
-					this._wh_address.Entity = value;
-					if ((value != null))
-					{
-						value.ext_contact_addresses.Add(this);
-						this._address_id = value.ID;
-					}
-					else
-					{
-						this._address_id = default(int);
-					}
-					this.SendPropertyChanged("wh_address");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="contact_ext_contact_address", Storage="_contact", ThisKey="contact_id", OtherKey="ID", IsForeignKey=true)]
-		public contact contact
-		{
-			get
-			{
-				return this._contact.Entity;
-			}
-			set
-			{
-				contact previousValue = this._contact.Entity;
-				if (((previousValue != value) 
-							|| (this._contact.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._contact.Entity = null;
-						previousValue.ext_contact_addresses.Remove(this);
-					}
-					this._contact.Entity = value;
-					if ((value != null))
-					{
-						value.ext_contact_addresses.Add(this);
-						this._contact_id = value.ID;
-					}
-					else
-					{
-						this._contact_id = default(int);
-					}
-					this.SendPropertyChanged("contact");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.external_contact")]
 	public partial class external_contact : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3813,11 +3502,7 @@ namespace TorHazahav
 		
 		private string _comments;
 		
-		private int _address_id;
-		
 		private EntitySet<program> _programs;
-		
-		private EntityRef<wh_address> _wh_address;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3839,14 +3524,11 @@ namespace TorHazahav
     partial void OnjobChanged();
     partial void OncommentsChanging(string value);
     partial void OncommentsChanged();
-    partial void Onaddress_idChanging(int value);
-    partial void Onaddress_idChanged();
     #endregion
 		
 		public external_contact()
 		{
 			this._programs = new EntitySet<program>(new Action<program>(this.attach_programs), new Action<program>(this.detach_programs));
-			this._wh_address = default(EntityRef<wh_address>);
 			OnCreated();
 		}
 		
@@ -4010,30 +3692,6 @@ namespace TorHazahav
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address_id", DbType="Int NOT NULL")]
-		public int address_id
-		{
-			get
-			{
-				return this._address_id;
-			}
-			set
-			{
-				if ((this._address_id != value))
-				{
-					if (this._wh_address.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onaddress_idChanging(value);
-					this.SendPropertyChanging();
-					this._address_id = value;
-					this.SendPropertyChanged("address_id");
-					this.Onaddress_idChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="external_contact_program", Storage="_programs", ThisKey="ID", OtherKey="external_contact_id")]
 		public EntitySet<program> programs
 		{
@@ -4044,40 +3702,6 @@ namespace TorHazahav
 			set
 			{
 				this._programs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="wh_address_external_contact", Storage="_wh_address", ThisKey="address_id", OtherKey="ID", IsForeignKey=true)]
-		public wh_address wh_address
-		{
-			get
-			{
-				return this._wh_address.Entity;
-			}
-			set
-			{
-				wh_address previousValue = this._wh_address.Entity;
-				if (((previousValue != value) 
-							|| (this._wh_address.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._wh_address.Entity = null;
-						previousValue.external_contacts.Remove(this);
-					}
-					this._wh_address.Entity = value;
-					if ((value != null))
-					{
-						value.external_contacts.Add(this);
-						this._address_id = value.ID;
-					}
-					else
-					{
-						this._address_id = default(int);
-					}
-					this.SendPropertyChanged("wh_address");
-				}
 			}
 		}
 		

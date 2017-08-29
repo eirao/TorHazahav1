@@ -126,7 +126,7 @@
             // 
             this.strComments.Location = new System.Drawing.Point(630, 316);
             this.strComments.Name = "strComments";
-            this.strComments.Size = new System.Drawing.Size(290, 24);
+            this.strComments.Size = new System.Drawing.Size(251, 24);
             this.strComments.TabIndex = 123;
             this.strComments.Text = "";
             // 
@@ -312,7 +312,7 @@
             // postCode
             // 
             this.postCode.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.postCode.Location = new System.Drawing.Point(141, 317);
+            this.postCode.Location = new System.Drawing.Point(39, 317);
             this.postCode.MaxLength = 8;
             this.postCode.Multiline = true;
             this.postCode.Name = "postCode";
@@ -322,7 +322,7 @@
             // apartNum
             // 
             this.apartNum.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.apartNum.Location = new System.Drawing.Point(288, 320);
+            this.apartNum.Location = new System.Drawing.Point(216, 317);
             this.apartNum.Multiline = true;
             this.apartNum.Name = "apartNum";
             this.apartNum.Size = new System.Drawing.Size(63, 20);
@@ -331,7 +331,7 @@
             // houseNum
             // 
             this.houseNum.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.houseNum.Location = new System.Drawing.Point(401, 320);
+            this.houseNum.Location = new System.Drawing.Point(393, 317);
             this.houseNum.Multiline = true;
             this.houseNum.Name = "houseNum";
             this.houseNum.Size = new System.Drawing.Size(63, 20);
@@ -340,10 +340,10 @@
             // streetName
             // 
             this.streetName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.streetName.Location = new System.Drawing.Point(141, 284);
+            this.streetName.Location = new System.Drawing.Point(38, 284);
             this.streetName.Multiline = true;
             this.streetName.Name = "streetName";
-            this.streetName.Size = new System.Drawing.Size(341, 20);
+            this.streetName.Size = new System.Drawing.Size(418, 20);
             this.streetName.TabIndex = 108;
             // 
             // neighbName
@@ -358,7 +358,7 @@
             "מורשה",
             "נווה גן",
             "נווה מגן"});
-            this.neighbName.Location = new System.Drawing.Point(141, 249);
+            this.neighbName.Location = new System.Drawing.Point(38, 246);
             this.neighbName.Name = "neighbName";
             this.neighbName.Size = new System.Drawing.Size(118, 20);
             this.neighbName.TabIndex = 107;
@@ -367,7 +367,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(235, 318);
+            this.label18.Location = new System.Drawing.Point(134, 316);
             this.label18.Name = "label18";
             this.label18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label18.Size = new System.Drawing.Size(44, 17);
@@ -378,7 +378,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(357, 320);
+            this.label17.Location = new System.Drawing.Point(285, 320);
             this.label17.Name = "label17";
             this.label17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label17.Size = new System.Drawing.Size(38, 17);
@@ -389,7 +389,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(470, 320);
+            this.label16.Location = new System.Drawing.Point(470, 317);
             this.label16.Name = "label16";
             this.label16.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label16.Size = new System.Drawing.Size(58, 17);
@@ -411,7 +411,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(265, 249);
+            this.label14.Location = new System.Drawing.Point(162, 250);
             this.label14.Name = "label14";
             this.label14.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label14.Size = new System.Drawing.Size(47, 17);
@@ -427,7 +427,7 @@
             this.cityName.ItemHeight = 14;
             this.cityName.Items.AddRange(new object[] {
             "רמת השרון"});
-            this.cityName.Location = new System.Drawing.Point(373, 249);
+            this.cityName.Location = new System.Drawing.Point(338, 247);
             this.cityName.Name = "cityName";
             this.cityName.Size = new System.Drawing.Size(118, 20);
             this.cityName.TabIndex = 101;
@@ -499,10 +499,10 @@
             // emailAdd
             // 
             this.emailAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.emailAdd.Location = new System.Drawing.Point(141, 213);
+            this.emailAdd.Location = new System.Drawing.Point(38, 216);
             this.emailAdd.Multiline = true;
             this.emailAdd.Name = "emailAdd";
-            this.emailAdd.Size = new System.Drawing.Size(282, 20);
+            this.emailAdd.Size = new System.Drawing.Size(418, 20);
             this.emailAdd.TabIndex = 94;
             // 
             // label9
@@ -542,12 +542,12 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(432, 216);
+            this.label6.Location = new System.Drawing.Point(486, 216);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label6.Size = new System.Drawing.Size(96, 17);
+            this.label6.Size = new System.Drawing.Size(41, 17);
             this.label6.TabIndex = 90;
-            this.label6.Text = "דואר אלקטרוני:";
+            this.label6.Text = "דוא\"ל";
             // 
             // label5
             // 
@@ -639,10 +639,10 @@
             // 
             this.strLName.Enabled = false;
             this.strLName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.strLName.Location = new System.Drawing.Point(722, 213);
+            this.strLName.Location = new System.Drawing.Point(630, 213);
             this.strLName.Multiline = true;
             this.strLName.Name = "strLName";
-            this.strLName.Size = new System.Drawing.Size(188, 20);
+            this.strLName.Size = new System.Drawing.Size(251, 20);
             this.strLName.TabIndex = 80;
             this.strLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -650,10 +650,10 @@
             // 
             this.strId.Enabled = false;
             this.strId.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.strId.Location = new System.Drawing.Point(800, 179);
+            this.strId.Location = new System.Drawing.Point(630, 179);
             this.strId.Multiline = true;
             this.strId.Name = "strId";
-            this.strId.Size = new System.Drawing.Size(141, 20);
+            this.strId.Size = new System.Drawing.Size(251, 20);
             this.strId.TabIndex = 78;
             this.strId.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -739,7 +739,7 @@
             this.textBox4.Location = new System.Drawing.Point(732, 476);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(178, 20);
+            this.textBox4.Size = new System.Drawing.Size(157, 20);
             this.textBox4.TabIndex = 142;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -846,7 +846,7 @@
             "עצמאי"});
             this.indepependency.Location = new System.Drawing.Point(320, 393);
             this.indepependency.Name = "indepependency";
-            this.indepependency.Size = new System.Drawing.Size(144, 21);
+            this.indepependency.Size = new System.Drawing.Size(114, 21);
             this.indepependency.TabIndex = 151;
             // 
             // label29
@@ -935,7 +935,7 @@
             "אחר"});
             this.mobility.Location = new System.Drawing.Point(320, 427);
             this.mobility.Name = "mobility";
-            this.mobility.Size = new System.Drawing.Size(144, 21);
+            this.mobility.Size = new System.Drawing.Size(114, 21);
             this.mobility.TabIndex = 162;
             // 
             // mobilityTl
@@ -992,7 +992,7 @@
             "מועדון חברתי"});
             this.dayCenter.Location = new System.Drawing.Point(319, 461);
             this.dayCenter.Name = "dayCenter";
-            this.dayCenter.Size = new System.Drawing.Size(142, 21);
+            this.dayCenter.Size = new System.Drawing.Size(115, 21);
             this.dayCenter.TabIndex = 172;
             // 
             // dayCenterTl
@@ -1020,7 +1020,7 @@
             // nursLawfalse
             // 
             this.nursLawfalse.AutoSize = true;
-            this.nursLawfalse.Location = new System.Drawing.Point(38, 519);
+            this.nursLawfalse.Location = new System.Drawing.Point(38, 517);
             this.nursLawfalse.Name = "nursLawfalse";
             this.nursLawfalse.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.nursLawfalse.Size = new System.Drawing.Size(40, 17);
@@ -1044,7 +1044,7 @@
             // holocSurvfalse
             // 
             this.holocSurvfalse.AutoSize = true;
-            this.holocSurvfalse.Location = new System.Drawing.Point(38, 495);
+            this.holocSurvfalse.Location = new System.Drawing.Point(38, 491);
             this.holocSurvfalse.Name = "holocSurvfalse";
             this.holocSurvfalse.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.holocSurvfalse.Size = new System.Drawing.Size(40, 17);

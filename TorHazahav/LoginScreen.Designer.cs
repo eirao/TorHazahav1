@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.strUser = new System.Windows.Forms.TextBox();
             this.strPassword = new System.Windows.Forms.TextBox();
+            this.enter_bttn = new System.Windows.Forms.Button();
+            this.exit_bttn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,12 +83,35 @@
             this.strPassword.Size = new System.Drawing.Size(151, 20);
             this.strPassword.TabIndex = 85;
             // 
+            // enter_bttn
+            // 
+            this.enter_bttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.enter_bttn.Location = new System.Drawing.Point(466, 370);
+            this.enter_bttn.Name = "enter_bttn";
+            this.enter_bttn.Size = new System.Drawing.Size(108, 34);
+            this.enter_bttn.TabIndex = 86;
+            this.enter_bttn.Text = "כניסה";
+            this.enter_bttn.UseVisualStyleBackColor = true;
+            this.enter_bttn.Click += new System.EventHandler(this.enter_bttn_Click);
+            // 
+            // exit_bttn
+            // 
+            this.exit_bttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.exit_bttn.Location = new System.Drawing.Point(335, 370);
+            this.exit_bttn.Name = "exit_bttn";
+            this.exit_bttn.Size = new System.Drawing.Size(108, 34);
+            this.exit_bttn.TabIndex = 87;
+            this.exit_bttn.Text = "יציאה";
+            this.exit_bttn.UseVisualStyleBackColor = true;
+            // 
             // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.Controls.Add(this.exit_bttn);
+            this.Controls.Add(this.enter_bttn);
             this.Controls.Add(this.strPassword);
             this.Controls.Add(this.strUser);
             this.Controls.Add(this.label1);
@@ -109,5 +134,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox strUser;
         private System.Windows.Forms.TextBox strPassword;
+        private System.Windows.Forms.Button enter_bttn;
+        private System.Windows.Forms.Button exit_bttn;
     }
 }

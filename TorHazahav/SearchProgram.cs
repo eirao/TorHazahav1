@@ -84,7 +84,11 @@ namespace TorHazahav
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int index = Convert.ToInt32(e.RowIndex);
+            int programNum = int.Parse(dataGridView1.Rows[index].Cells[0].Value.ToString());
+            SearchResultsProgram f = new SearchResultsProgram();
+            f.Show();
+            this.Hide();
         }
     }
 

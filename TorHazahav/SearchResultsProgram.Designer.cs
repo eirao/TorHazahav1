@@ -35,7 +35,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.AddNewProgram = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.startDatedt = new System.Windows.Forms.DateTimePicker();
             this.commentsStr = new System.Windows.Forms.RichTextBox();
@@ -127,14 +127,15 @@
             this.button4.Text = "צא מהמערכת";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // AddNewProgram
             // 
-            this.button2.Location = new System.Drawing.Point(190, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 27);
-            this.button2.TabIndex = 105;
-            this.button2.Text = "הוספת תוכנית חדשה";
-            this.button2.UseVisualStyleBackColor = true;
+            this.AddNewProgram.Location = new System.Drawing.Point(190, 133);
+            this.AddNewProgram.Name = "AddNewProgram";
+            this.AddNewProgram.Size = new System.Drawing.Size(137, 27);
+            this.AddNewProgram.TabIndex = 105;
+            this.AddNewProgram.Text = "הוספת תוכנית חדשה";
+            this.AddNewProgram.UseVisualStyleBackColor = true;
+            this.AddNewProgram.Click += new System.EventHandler(this.button2_Click);
             // 
             // cancelButton
             // 
@@ -404,7 +405,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.AddNewProgram);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.startDatedt);
             this.Controls.Add(this.commentsStr);
@@ -446,7 +447,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AddNewProgram;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.DateTimePicker startDatedt;
         private System.Windows.Forms.RichTextBox commentsStr;

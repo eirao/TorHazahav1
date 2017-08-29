@@ -10,7 +10,6 @@
       <Association Name="contact_contact_address" Member="contact_addresses" ThisKey="ID" OtherKey="contact_id" Type="contact_address" />
       <Association Name="contact_contact_phone" Member="contact_phones" ThisKey="ID" OtherKey="contact_id" Type="contact_phone" />
       <Association Name="contact_customer_contact" Member="customer_contacts" ThisKey="ID" OtherKey="contact_id" Type="customer_contact" />
-      <Association Name="contact_ext_contact_address" Member="ext_contact_addresses" ThisKey="ID" OtherKey="contact_id" Type="ext_contact_address" />
       <Association Name="contact_request" Member="requests" ThisKey="ID" OtherKey="contact_id" Type="request" />
     </Type>
   </Table>
@@ -25,8 +24,6 @@
       <Column Name="zip_code" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Association Name="wh_address_contact_address" Member="contact_addresses" ThisKey="ID" OtherKey="address_id" Type="contact_address" />
       <Association Name="wh_address_customer_address" Member="customer_addresses" ThisKey="ID" OtherKey="address_id" Type="customer_address" />
-      <Association Name="wh_address_ext_contact_address" Member="ext_contact_addresses" ThisKey="ID" OtherKey="address_id" Type="ext_contact_address" />
-      <Association Name="wh_address_external_contact" Member="external_contacts" ThisKey="ID" OtherKey="address_id" Type="external_contact" />
     </Type>
   </Table>
   <Table Name="dbo.contact_address" Member="contact_addresses">
@@ -153,16 +150,6 @@
       <Association Name="phone_employee" Member="phone" ThisKey="phone_id" OtherKey="ID" Type="phone" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.ext_contact_address" Member="ext_contact_addresses">
-    <Type Name="ext_contact_address">
-      <Column Name="contact_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="address_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="type" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Association Name="wh_address_ext_contact_address" Member="wh_address" ThisKey="address_id" OtherKey="ID" Type="wh_address" IsForeignKey="true" />
-      <Association Name="contact_ext_contact_address" Member="contact" ThisKey="contact_id" OtherKey="ID" Type="contact" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.external_contact" Member="external_contacts">
     <Type Name="external_contact">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -173,9 +160,7 @@
       <Column Name="email_address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="job" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="comments" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="address_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="external_contact_program" Member="programs" ThisKey="ID" OtherKey="external_contact_id" Type="program" />
-      <Association Name="wh_address_external_contact" Member="wh_address" ThisKey="address_id" OtherKey="ID" Type="wh_address" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.phone" Member="phones">
